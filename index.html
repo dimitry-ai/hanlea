@@ -3,20 +3,238 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Hanlea – Company Website</title>
+  <title>Hanlea — Data & AI Consulting</title>
+  <meta name="description" content="Hanlea hilft Teams, Data & AI in Produkte zu verwandeln: Strategie, Implementierung, Plattform & AI-Apps." />
+  <link rel="stylesheet" href="style.css">
 </head>
-<body style="font-family: system-ui; margin: 0; padding: 0;">
-  <main style="max-width: 900px; margin: 90px auto; padding: 0 20px;">
-    <h1>Hanlea</h1>
-    <p><strong>Willkommen!</strong></p>
-    <p>
-      Wir bauen gerade unsere neue Website.<br>
-      Bald gibt es hier mehr Infos.
-    </p>
 
-    <p>
-      📩 <a href="mailto:info@hanlea.com">info@hanlea.com</a>
-    </p>
+<body>
+  <!-- NAV -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#top" aria-label="Hanlea">
+        <!-- Simple Logo Mark (placeholder) -->
+        <svg viewBox="0 0 64 64" fill="none" role="img" aria-label="Hanlea Logo">
+          <path d="M32 6c12.7 0 23 10.3 23 23 0 12.7-10.3 23-23 23S9 41.7 9 29C9 16.3 19.3 6 32 6Z" stroke="rgba(255,255,255,.22)" />
+          <path d="M18 40c7-15 21-22 28-18 7 4 2 20-12 24-7 2-13 0-16-6Z" fill="url(#g)"/>
+          <defs>
+            <linearGradient id="g" x1="14" y1="44" x2="52" y2="14" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#7c3aed" stop-opacity=".95"/>
+              <stop offset="1" stop-color="#22d3ee" stop-opacity=".95"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <strong>Hanlea</strong>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#platform">Plattform</a>
+        <a href="#process">Vorgehen</a>
+      </nav>
+
+      <a class="btn btn-primary" href="#contact">Kontakt</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main id="top" class="hero">
+    <div class="container hero-grid">
+      <section>
+        <span class="badge">Data & AI Consulting · AI Produkte · Platform Engineering</span>
+        <h1 class="grad" style="margin-top:14px;">
+          Wir bauen AI-fähige Produkte<br/>und Plattformen, die liefern.
+        </h1>
+        <p class="sub">
+          Hanlea unterstützt Teams von der AI-Strategie bis zum produktiven Betrieb:
+          saubere Daten, robuste Pipelines, sichere Deployments und AI-Apps, die messbaren Impact erzeugen.
+        </p>
+
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#contact">Projekt anfragen</a>
+          <a class="btn" href="#services">Leistungen ansehen</a>
+        </div>
+
+        <div class="kpis" aria-label="Key benefits">
+          <div class="kpi">
+            <b>Delivery-Fokus</b>
+            <span>Von PoC → Production mit klaren Milestones</span>
+          </div>
+          <div class="kpi">
+            <b>Platform-Denke</b>
+            <span>Wiederverwendbar, skalierbar, observierbar</span>
+          </div>
+          <div class="kpi">
+            <b>AI-Ready</b>
+            <span>Security, Governance, MLOps/LLMOps</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Right panel -->
+      <aside class="panel" aria-label="AI workflow preview">
+        <div class="panel-top">
+          <div class="dots" aria-hidden="true"><i></i><i></i><i></i></div>
+          <span class="badge">Preview</span>
+        </div>
+        <div class="panel-body">
+          <div class="codebox">
+            <div><span class="muted">// Example: LLM-enabled pipeline</span></div>
+            <div>ingest(data) → validate() → feature_store()</div>
+            <div>→ <b>train_or_prompt()</b> → evaluate()</div>
+            <div>→ deploy(api) → monitor()</div>
+            <div style="margin-top:10px" class="muted">Focus: reliability · cost · speed · security</div>
+          </div>
+
+          <div class="pillrow">
+            <span class="pill">LLMOps</span>
+            <span class="pill">Data Quality</span>
+            <span class="pill">MLOps</span>
+            <span class="pill">Vector Search</span>
+            <span class="pill">Governance</span>
+          </div>
+        </div>
+      </aside>
+    </div>
   </main>
+
+  <!-- SERVICES -->
+  <section id="services" class="section">
+    <div class="container">
+      <h2>Was wir liefern</h2>
+      <p class="lead">
+        Von der Idee bis zur produktiven Skalierung — modular, pragmatisch und mit sauberer Engineering-Qualität.
+      </p>
+
+      <div class="cards">
+        <article class="card">
+          <div class="icon">⚡</div>
+          <h3>AI Produktentwicklung</h3>
+          <p>AI-Features & Agent-Workflows, Retrieval/RAG, Evaluation & Guardrails, UX für AI-Apps.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon">🧱</div>
+          <h3>Data Platform</h3>
+          <p>Lakehouse/Modern Data Stack, ELT/ETL, Data Contracts, Observability, Cost Control.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon">🛡️</div>
+          <h3>MLOps / LLMOps</h3>
+          <p>CI/CD für Modelle & Prompts, Monitoring, Drift, Security, Governance, compliant deployment.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLATFORM -->
+  <section id="platform" class="section">
+    <div class="container">
+      <h2>AI-Plattform & Bausteine</h2>
+      <p class="lead">
+        Wir bauen ein Fundament, das Teams schneller macht — mit wiederverwendbaren Komponenten statt Einzellösungen.
+      </p>
+
+      <div class="split">
+        <div class="list">
+          <h3 style="font-size:16px;">Typische Module</h3>
+          <ul>
+            <li>Identity & Access, Secrets, Audit Trails</li>
+            <li>Vector DB / Search + Dokumenten-Pipelines</li>
+            <li>Prompt & Model Registry, Evaluation Harness</li>
+            <li>Observability: Traces, Costs, Quality</li>
+          </ul>
+        </div>
+        <div class="list">
+          <h3 style="font-size:16px;">Beispiele für Use-Cases</h3>
+          <ul>
+            <li>AI-Assistenten für Support, Sales, Ops</li>
+            <li>Automatisierte Dokumenten-Workflows</li>
+            <li>Analytics-Copilot / Natural Language BI</li>
+            <li>Internal Tools: Knowledge, Compliance, Search</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process" class="section">
+    <div class="container">
+      <h2>Vorgehen: schnell starten, sauber skalieren</h2>
+      <p class="lead">
+        Ein klarer Ablauf, damit du nach wenigen Wochen produktive Resultate siehst — nicht nach Monaten Folien.
+      </p>
+
+      <div class="cards">
+        <article class="card">
+          <div class="icon">1</div>
+          <h3>Discovery</h3>
+          <p>Use-Case, Datenlage, Constraints. Outcome: Zielbild + Plan (1–2 Wochen).</p>
+        </article>
+
+        <article class="card">
+          <div class="icon">2</div>
+          <h3>Build</h3>
+          <p>Implementierung mit Milestones: MVP, Integration, Tests, Monitoring.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon">3</div>
+          <h3>Operate</h3>
+          <p>Stabilisierung, Guardrails, Governance, Enablement deines Teams.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="panel" style="padding:18px;">
+        <h2>Kontakt</h2>
+        <p class="lead">
+          Schreib uns kurz, was du bauen möchtest. Wir melden uns mit einer ersten Einschätzung und möglichen nächsten Schritten.
+        </p>
+
+        <div class="cta-row">
+          <a class="btn btn-primary" href="mailto:info@hanlea.com?subject=Projektanfrage%20Hanlea&body=Hi%20Hanlea%2C%0A%0AKurz%20zum%20Projekt%3A%0A-%20Ziel%3A%0A-%20Timeline%3A%0A-%20Tech%20Stack%3A%0A-%20Kontakt%3A%0A%0ADanke!">
+            E-Mail senden
+          </a>
+          <a class="btn" href="#top">Nach oben</a>
+        </div>
+
+        <p class="small" style="margin-top:10px;">
+          info@hanlea.com · © <span id="y"></span> Hanlea
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container row">
+      <div class="small">Dark, modern, AI-ready.</div>
+      <div class="row" style="gap:14px;">
+        <a class="small" href="/impressum.html">Impressum</a>
+        <a class="small" href="/datenschutz.html">Datenschutz</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+    // smooth scroll for in-page anchors
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener("click", (e)=>{
+        const id = a.getAttribute("href");
+        if(!id || id === "#") return;
+        const el = document.querySelector(id);
+        if(!el) return;
+        e.preventDefault();
+        el.scrollIntoView({behavior:"smooth", block:"start"});
+      });
+    });
+  </script>
 </body>
 </html>
