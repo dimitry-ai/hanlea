@@ -14,6 +14,10 @@
   --radius: 18px;
   --radius2: 26px;
   --max: 1120px;
+
+  --scroll-p: 0;
+  --scroll-y: 0px;
+  --hue-shift: 0deg;
 }
 
 *{box-sizing:border-box}
@@ -22,12 +26,40 @@ body{
   margin:0;
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
   color:var(--text);
-  background:
-    radial-gradient(1200px 600px at 15% 10%, rgba(124,58,237,.25), transparent 60%),
-    radial-gradient(900px 520px at 80% 5%, rgba(34,211,238,.22), transparent 55%),
-    radial-gradient(900px 520px at 70% 80%, rgba(16,185,129,.12), transparent 55%),
-    linear-gradient(180deg, var(--bg), var(--bg2));
+  background: linear-gradient(180deg, var(--bg), var(--bg2));
   overflow-x:hidden;
+  position: relative;
+}
+
+.bg-ambient{
+  position: fixed;
+  inset: -20vh -12vw;
+  z-index: -1;
+  pointer-events: none;
+  filter: hue-rotate(var(--hue-shift)) saturate(1.08) contrast(1.06);
+  transform: translate3d(0, calc(var(--scroll-y) * -0.03), 0);
+}
+
+.bg-ambient::before,
+.bg-ambient::after{
+  content:"";
+  position:absolute;
+  inset: 0;
+}
+
+.bg-ambient::before{
+  background:
+    radial-gradient(1200px 700px at calc(12% + (var(--scroll-p) * 8%)) 10%, rgba(124,58,237,.34), transparent 62%),
+    radial-gradient(980px 620px at calc(84% - (var(--scroll-p) * 6%)) 6%, rgba(34,211,238,.30), transparent 58%),
+    radial-gradient(1040px 680px at calc(64% + (var(--scroll-p) * 5%)) calc(84% - (var(--scroll-p) * 5%)), rgba(16,185,129,.20), transparent 60%);
+  transform: scale(1.02);
+}
+
+.bg-ambient::after{
+  background:
+    linear-gradient(170deg, rgba(255,255,255,.06), transparent 28%),
+    linear-gradient(190deg, rgba(11,13,16,.14), rgba(11,13,16,.30));
+  opacity: calc(.80 + (var(--scroll-p) * .14));
 }
 
 a{color:inherit; text-decoration:none}

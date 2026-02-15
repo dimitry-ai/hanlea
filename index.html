@@ -9,6 +9,7 @@
 </head>
 
 <body>
+  <div class="bg-ambient" aria-hidden="true"></div>
   <!-- NAV -->
   <header class="nav">
     <div class="container nav-inner">
@@ -235,6 +236,29 @@
         el.scrollIntoView({behavior:"smooth", block:"start"});
       });
     });
+
+    const root = document.documentElement;
+    let ticking = false;
+
+    function updateAmbient() {
+      const maxScroll = Math.max(document.body.scrollHeight - window.innerHeight, 1);
+      const scrollY = window.scrollY || window.pageYOffset;
+      const progress = Math.min(scrollY / maxScroll, 1);
+
+      root.style.setProperty("--scroll-y", `${scrollY.toFixed(1)}px`);
+      root.style.setProperty("--scroll-p", progress.toFixed(4));
+      root.style.setProperty("--hue-shift", `${(progress * 12).toFixed(2)}deg`);
+      ticking = false;
+    }
+
+    window.addEventListener("scroll", () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(updateAmbient);
+    }, { passive: true });
+
+    window.addEventListener("resize", updateAmbient, { passive: true });
+    updateAmbient();
   </script>
 </body>
 </html>
