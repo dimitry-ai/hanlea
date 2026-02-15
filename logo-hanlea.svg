@@ -1,0 +1,27 @@
+<svg width="920" height="240" viewBox="0 0 920 240" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Hanlea Logo</title>
+  <desc id="desc">Wordmark with overlapping gradient rings and Hanlea text.</desc>
+  <defs>
+    <linearGradient id="ringA" x1="60" y1="180" x2="188" y2="48" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7C3AED"/>
+      <stop offset="1" stop-color="#34D399"/>
+    </linearGradient>
+    <linearGradient id="ringB" x1="112" y1="196" x2="224" y2="70" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A78BFA"/>
+      <stop offset="1" stop-color="#22D3EE"/>
+    </linearGradient>
+    <linearGradient id="textG" x1="300" y1="48" x2="740" y2="210" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#E6EEF9"/>
+    </linearGradient>
+  </defs>
+
+  <g opacity="0.96">
+    <ellipse cx="120" cy="120" rx="44" ry="96" transform="rotate(40 120 120)" fill="url(#ringA)"/>
+    <ellipse cx="168" cy="122" rx="44" ry="96" transform="rotate(40 168 122)" fill="url(#ringB)"/>
+  </g>
+
+  <text x="286" y="164" fill="url(#textG)" font-size="98" font-family="Segoe UI, Inter, Arial, sans-serif" font-weight="700" letter-spacing="0.4">
+    Hanlea
+  </text>
+</svg>

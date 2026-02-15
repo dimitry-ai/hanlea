@@ -1,9 +1,9 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="de">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Hanlea — Data & AI Consulting</title>
+  <title>Hanlea â€” Data & AI Consulting</title>
   <meta name="description" content="Hanlea hilft Teams, Data & AI in Produkte zu verwandeln: Strategie, Implementierung, Plattform & AI-Apps." />
   <link rel="stylesheet" href="style.css">
 </head>
@@ -14,18 +14,7 @@
   <header class="nav">
     <div class="container nav-inner">
       <a class="brand" href="#top" aria-label="Hanlea">
-        <!-- Simple Logo Mark (placeholder) -->
-        <svg viewBox="0 0 64 64" fill="none" role="img" aria-label="Hanlea Logo">
-          <path d="M32 6c12.7 0 23 10.3 23 23 0 12.7-10.3 23-23 23S9 41.7 9 29C9 16.3 19.3 6 32 6Z" stroke="rgba(255,255,255,.22)" />
-          <path d="M18 40c7-15 21-22 28-18 7 4 2 20-12 24-7 2-13 0-16-6Z" fill="url(#g)"/>
-          <defs>
-            <linearGradient id="g" x1="14" y1="44" x2="52" y2="14" gradientUnits="userSpaceOnUse">
-              <stop stop-color="#7c3aed" stop-opacity=".95"/>
-              <stop offset="1" stop-color="#22d3ee" stop-opacity=".95"/>
-            </linearGradient>
-          </defs>
-        </svg>
-        <strong>Hanlea</strong>
+        <img class="brand-logo" src="logo-hanlea.svg" alt="Hanlea" />
       </a>
 
       <nav class="nav-links">
@@ -42,12 +31,12 @@
   <main id="top" class="hero">
     <div class="container hero-grid">
       <section>
-        <span class="badge">Data & AI Consulting · AI Produkte · Platform Engineering</span>
+        <span class="badge">Data & AI Consulting Â· AI Produkte Â· Platform Engineering</span>
         <h1 class="grad" style="margin-top:14px;">
-          Wir bauen AI-fähige Produkte<br/>und Plattformen, die liefern.
+          Wir bauen AI-fÃ¤hige Produkte<br/>und Plattformen, die liefern.
         </h1>
         <p class="sub">
-          Hanlea unterstützt Teams von der AI-Strategie bis zum produktiven Betrieb:
+          Hanlea unterstÃ¼tzt Teams von der AI-Strategie bis zum produktiven Betrieb:
           saubere Daten, robuste Pipelines, sichere Deployments und AI-Apps, die messbaren Impact erzeugen.
         </p>
 
@@ -59,7 +48,7 @@
         <div class="kpis" aria-label="Key benefits">
           <div class="kpi">
             <b>Delivery-Fokus</b>
-            <span>Von PoC → Production mit klaren Milestones</span>
+            <span>Von PoC â†’ Production mit klaren Milestones</span>
           </div>
           <div class="kpi">
             <b>Platform-Denke</b>
@@ -76,23 +65,46 @@
       <aside class="panel" aria-label="AI workflow preview">
         <div class="panel-top">
           <div class="dots" aria-hidden="true"><i></i><i></i><i></i></div>
-          <span class="badge">Preview</span>
+          <span class="badge">Live Workflow</span>
         </div>
         <div class="panel-body">
-          <div class="codebox">
-            <div><span class="muted">// Example: LLM-enabled pipeline</span></div>
-            <div>ingest(data) → validate() → feature_store()</div>
-            <div>→ <b>train_or_prompt()</b> → evaluate()</div>
-            <div>→ deploy(api) → monitor()</div>
-            <div style="margin-top:10px" class="muted">Focus: reliability · cost · speed · security</div>
+          <div class="agent-flow" aria-label="AI Agent Pipeline">
+            <div class="flow-line" aria-hidden="true">
+              <i class="flow-pulse"></i>
+            </div>
+            <article class="agent-node">
+              <span class="node-tag">1</span>
+              <h4>Intake Agent</h4>
+              <p>nimmt Anfrage, Ziel und Datenquellen auf</p>
+            </article>
+            <article class="agent-node">
+              <span class="node-tag">2</span>
+              <h4>Retrieval Agent</h4>
+              <p>sucht Wissen aus DWH, Docs und Tickets</p>
+            </article>
+            <article class="agent-node">
+              <span class="node-tag">3</span>
+              <h4>Reasoning Agent</h4>
+              <p>plant Schritte, priorisiert und begrundet</p>
+            </article>
+            <article class="agent-node">
+              <span class="node-tag">4</span>
+              <h4>Action Agent</h4>
+              <p>erstellt SQL, API Calls und Automationen</p>
+            </article>
+            <article class="agent-node">
+              <span class="node-tag">5</span>
+              <h4>Review Agent</h4>
+              <p>Quality Gate mit Guardrails und Logs</p>
+            </article>
           </div>
 
           <div class="pillrow">
-            <span class="pill">LLMOps</span>
-            <span class="pill">Data Quality</span>
-            <span class="pill">MLOps</span>
-            <span class="pill">Vector Search</span>
-            <span class="pill">Governance</span>
+            <span class="pill">Lead Qualification</span>
+            <span class="pill">Ticket Triage</span>
+            <span class="pill">BI Copilot</span>
+            <span class="pill">Knowledge QA</span>
+            <span class="pill">Compliance Checks</span>
           </div>
         </div>
       </aside>
@@ -104,26 +116,26 @@
     <div class="container">
       <h2>Was wir liefern</h2>
       <p class="lead">
-        Von der Idee bis zur produktiven Skalierung — modular, pragmatisch und mit sauberer Engineering-Qualität.
+        Von der Idee bis zur produktiven Skalierung â€” modular, pragmatisch und mit sauberer Engineering-QualitÃ¤t.
       </p>
 
       <div class="cards">
         <article class="card">
-          <div class="icon">⚡</div>
+          <div class="icon">âš¡</div>
           <h3>AI Produktentwicklung</h3>
-          <p>AI-Features & Agent-Workflows, Retrieval/RAG, Evaluation & Guardrails, UX für AI-Apps.</p>
+          <p>AI-Features & Agent-Workflows, Retrieval/RAG, Evaluation & Guardrails, UX fÃ¼r AI-Apps.</p>
         </article>
 
         <article class="card">
-          <div class="icon">🧱</div>
+          <div class="icon">ðŸ§±</div>
           <h3>Data Platform</h3>
           <p>Lakehouse/Modern Data Stack, ELT/ETL, Data Contracts, Observability, Cost Control.</p>
         </article>
 
         <article class="card">
-          <div class="icon">🛡️</div>
+          <div class="icon">ðŸ›¡ï¸</div>
           <h3>MLOps / LLMOps</h3>
-          <p>CI/CD für Modelle & Prompts, Monitoring, Drift, Security, Governance, compliant deployment.</p>
+          <p>CI/CD fÃ¼r Modelle & Prompts, Monitoring, Drift, Security, Governance, compliant deployment.</p>
         </article>
       </div>
     </div>
@@ -134,7 +146,7 @@
     <div class="container">
       <h2>AI-Plattform & Bausteine</h2>
       <p class="lead">
-        Wir bauen ein Fundament, das Teams schneller macht — mit wiederverwendbaren Komponenten statt Einzellösungen.
+        Wir bauen ein Fundament, das Teams schneller macht â€” mit wiederverwendbaren Komponenten statt EinzellÃ¶sungen.
       </p>
 
       <div class="split">
@@ -148,9 +160,9 @@
           </ul>
         </div>
         <div class="list">
-          <h3 style="font-size:16px;">Beispiele für Use-Cases</h3>
+          <h3 style="font-size:16px;">Beispiele fÃ¼r Use-Cases</h3>
           <ul>
-            <li>AI-Assistenten für Support, Sales, Ops</li>
+            <li>AI-Assistenten fÃ¼r Support, Sales, Ops</li>
             <li>Automatisierte Dokumenten-Workflows</li>
             <li>Analytics-Copilot / Natural Language BI</li>
             <li>Internal Tools: Knowledge, Compliance, Search</li>
@@ -165,14 +177,14 @@
     <div class="container">
       <h2>Vorgehen: schnell starten, sauber skalieren</h2>
       <p class="lead">
-        Ein klarer Ablauf, damit du nach wenigen Wochen produktive Resultate siehst — nicht nach Monaten Folien.
+        Ein klarer Ablauf, damit du nach wenigen Wochen produktive Resultate siehst â€” nicht nach Monaten Folien.
       </p>
 
       <div class="cards">
         <article class="card">
           <div class="icon">1</div>
           <h3>Discovery</h3>
-          <p>Use-Case, Datenlage, Constraints. Outcome: Zielbild + Plan (1–2 Wochen).</p>
+          <p>Use-Case, Datenlage, Constraints. Outcome: Zielbild + Plan (1â€“2 Wochen).</p>
         </article>
 
         <article class="card">
@@ -196,7 +208,7 @@
       <div class="panel" style="padding:18px;">
         <h2>Kontakt</h2>
         <p class="lead">
-          Schreib uns kurz, was du bauen möchtest. Wir melden uns mit einer ersten Einschätzung und möglichen nächsten Schritten.
+          Schreib uns kurz, was du bauen mÃ¶chtest. Wir melden uns mit einer ersten EinschÃ¤tzung und mÃ¶glichen nÃ¤chsten Schritten.
         </p>
 
         <div class="cta-row">
@@ -207,7 +219,7 @@
         </div>
 
         <p class="small" style="margin-top:10px;">
-          info@hanlea.com · © <span id="y"></span> Hanlea
+          info@hanlea.com Â· Â© <span id="y"></span> Hanlea
         </p>
       </div>
     </div>
@@ -267,3 +279,4 @@
   </script>
 </body>
 </html>
+
