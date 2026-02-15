@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Hanlea â€” Data & AI Consulting</title>
+  <title>Hanlea &mdash; Data &amp; AI Consulting</title>
   <meta name="description" content="Hanlea hilft Teams, Data & AI in Produkte zu verwandeln: Strategie, Implementierung, Plattform & AI-Apps." />
   <link rel="stylesheet" href="style.css">
 </head>
@@ -14,7 +14,7 @@
   <header class="nav">
     <div class="container nav-inner">
       <a class="brand" href="#top" aria-label="Hanlea">
-        <img class="brand-logo" src="logo-hanlea.svg" alt="Hanlea" />
+        <img class="brand-logo" src="hanlea_transparent.png" alt="Hanlea" />
       </a>
 
       <nav class="nav-links">
@@ -31,12 +31,12 @@
   <main id="top" class="hero">
     <div class="container hero-grid">
       <section>
-        <span class="badge">Data & AI Consulting Â· AI Produkte Â· Platform Engineering</span>
+        <span class="badge">Data &amp; AI Consulting &middot; AI Produkte &middot; Platform Engineering</span>
         <h1 class="grad" style="margin-top:14px;">
-          Wir bauen AI-fÃ¤hige Produkte<br/>und Plattformen, die liefern.
+          Wir bauen AI-f&auml;hige Produkte<br/>und Plattformen, die liefern.
         </h1>
         <p class="sub">
-          Hanlea unterstÃ¼tzt Teams von der AI-Strategie bis zum produktiven Betrieb:
+          Hanlea unterst&uuml;tzt Teams von der AI-Strategie bis zum produktiven Betrieb:
           saubere Daten, robuste Pipelines, sichere Deployments und AI-Apps, die messbaren Impact erzeugen.
         </p>
 
@@ -48,7 +48,7 @@
         <div class="kpis" aria-label="Key benefits">
           <div class="kpi">
             <b>Delivery-Fokus</b>
-            <span>Von PoC â†’ Production mit klaren Milestones</span>
+            <span>Von PoC &rarr; Production mit klaren Milestones</span>
           </div>
           <div class="kpi">
             <b>Platform-Denke</b>
@@ -68,43 +68,57 @@
           <span class="badge">Live Workflow</span>
         </div>
         <div class="panel-body">
-          <div class="agent-flow" aria-label="AI Agent Pipeline">
-            <div class="flow-line" aria-hidden="true">
-              <i class="flow-pulse"></i>
-            </div>
-            <article class="agent-node">
-              <span class="node-tag">1</span>
-              <h4>Intake Agent</h4>
-              <p>nimmt Anfrage, Ziel und Datenquellen auf</p>
+          <div class="scenario-canvas" aria-label="AI automation scenario">
+            <svg class="scenario-links" viewBox="0 0 760 360" aria-hidden="true" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <path d="M104 92 C178 92, 210 110, 282 128"></path>
+              <path d="M372 128 C450 128, 474 108, 548 90"></path>
+              <path d="M368 148 C448 156, 474 204, 548 224"></path>
+              <path d="M638 90 C700 94, 710 144, 700 198"></path>
+              <circle class="data-dot" r="5">
+                <animateMotion dur="4.2s" repeatCount="indefinite" rotate="auto">
+                  <mpath href="#flow-path" xlink:href="#flow-path"></mpath>
+                </animateMotion>
+              </circle>
+              <path id="flow-path" d="M104 92 C178 92, 210 110, 282 128 C450 128, 474 108, 548 90 C638 90, 700 94, 700 198"></path>
+            </svg>
+
+            <article class="scenario-node node-trigger">
+              <span class="node-kind">Trigger</span>
+              <h4>New Lead in HubSpot</h4>
+              <p>Webhook mit Firma, Segment, Use Case</p>
             </article>
-            <article class="agent-node">
-              <span class="node-tag">2</span>
-              <h4>Retrieval Agent</h4>
-              <p>sucht Wissen aus DWH, Docs und Tickets</p>
+
+            <article class="scenario-node node-ai">
+              <span class="node-kind">AI Agent</span>
+              <h4>Intent + Priority Scoring</h4>
+              <p>klassifiziert Intent und Business-Wert</p>
             </article>
-            <article class="agent-node">
-              <span class="node-tag">3</span>
-              <h4>Reasoning Agent</h4>
-              <p>plant Schritte, priorisiert und begrundet</p>
+
+            <article class="scenario-node node-data">
+              <span class="node-kind">Data</span>
+              <h4>Context Retrieval</h4>
+              <p>CRM, Tickets und Vertragsdaten anreichern</p>
             </article>
-            <article class="agent-node">
-              <span class="node-tag">4</span>
-              <h4>Action Agent</h4>
-              <p>erstellt SQL, API Calls und Automationen</p>
+
+            <article class="scenario-node node-action">
+              <span class="node-kind">Action</span>
+              <h4>Draft Response + Next Step</h4>
+              <p>personalisierte Antwort und Task erzeugen</p>
             </article>
-            <article class="agent-node">
-              <span class="node-tag">5</span>
-              <h4>Review Agent</h4>
-              <p>Quality Gate mit Guardrails und Logs</p>
+
+            <article class="scenario-node node-check">
+              <span class="node-kind">Guardrail</span>
+              <h4>Compliance Check</h4>
+              <p>PII, Freigabe und Audit-Trail validieren</p>
             </article>
           </div>
 
           <div class="pillrow">
-            <span class="pill">Lead Qualification</span>
-            <span class="pill">Ticket Triage</span>
-            <span class="pill">BI Copilot</span>
-            <span class="pill">Knowledge QA</span>
-            <span class="pill">Compliance Checks</span>
+            <span class="pill">Sales Ops</span>
+            <span class="pill">Support Routing</span>
+            <span class="pill">RevOps</span>
+            <span class="pill">Knowledge Agents</span>
+            <span class="pill">Audit Ready</span>
           </div>
         </div>
       </aside>
@@ -116,26 +130,26 @@
     <div class="container">
       <h2>Was wir liefern</h2>
       <p class="lead">
-        Von der Idee bis zur produktiven Skalierung â€” modular, pragmatisch und mit sauberer Engineering-QualitÃ¤t.
+        Von der Idee bis zur produktiven Skalierung &mdash; modular, pragmatisch und mit sauberer Engineering-Qualit&auml;t.
       </p>
 
       <div class="cards">
         <article class="card">
-          <div class="icon">âš¡</div>
+          <div class="icon">&#9889;</div>
           <h3>AI Produktentwicklung</h3>
-          <p>AI-Features & Agent-Workflows, Retrieval/RAG, Evaluation & Guardrails, UX fÃ¼r AI-Apps.</p>
+          <p>AI-Features &amp; Agent-Workflows, Retrieval/RAG, Evaluation &amp; Guardrails, UX f&uuml;r AI-Apps.</p>
         </article>
 
         <article class="card">
-          <div class="icon">ðŸ§±</div>
+          <div class="icon">DB</div>
           <h3>Data Platform</h3>
           <p>Lakehouse/Modern Data Stack, ELT/ETL, Data Contracts, Observability, Cost Control.</p>
         </article>
 
         <article class="card">
-          <div class="icon">ðŸ›¡ï¸</div>
+          <div class="icon">Sec</div>
           <h3>MLOps / LLMOps</h3>
-          <p>CI/CD fÃ¼r Modelle & Prompts, Monitoring, Drift, Security, Governance, compliant deployment.</p>
+          <p>CI/CD f&uuml;r Modelle &amp; Prompts, Monitoring, Drift, Security, Governance, compliant deployment.</p>
         </article>
       </div>
     </div>
@@ -146,7 +160,7 @@
     <div class="container">
       <h2>AI-Plattform & Bausteine</h2>
       <p class="lead">
-        Wir bauen ein Fundament, das Teams schneller macht â€” mit wiederverwendbaren Komponenten statt EinzellÃ¶sungen.
+        Wir bauen ein Fundament, das Teams schneller macht &mdash; mit wiederverwendbaren Komponenten statt Einzell&ouml;sungen.
       </p>
 
       <div class="split">
@@ -160,9 +174,9 @@
           </ul>
         </div>
         <div class="list">
-          <h3 style="font-size:16px;">Beispiele fÃ¼r Use-Cases</h3>
+          <h3 style="font-size:16px;">Beispiele f&uuml;r Use-Cases</h3>
           <ul>
-            <li>AI-Assistenten fÃ¼r Support, Sales, Ops</li>
+            <li>AI-Assistenten f&uuml;r Support, Sales, Ops</li>
             <li>Automatisierte Dokumenten-Workflows</li>
             <li>Analytics-Copilot / Natural Language BI</li>
             <li>Internal Tools: Knowledge, Compliance, Search</li>
@@ -177,14 +191,14 @@
     <div class="container">
       <h2>Vorgehen: schnell starten, sauber skalieren</h2>
       <p class="lead">
-        Ein klarer Ablauf, damit du nach wenigen Wochen produktive Resultate siehst â€” nicht nach Monaten Folien.
+        Ein klarer Ablauf, damit du nach wenigen Wochen produktive Resultate siehst &mdash; nicht nach Monaten Folien.
       </p>
 
       <div class="cards">
         <article class="card">
           <div class="icon">1</div>
           <h3>Discovery</h3>
-          <p>Use-Case, Datenlage, Constraints. Outcome: Zielbild + Plan (1â€“2 Wochen).</p>
+          <p>Use-Case, Datenlage, Constraints. Outcome: Zielbild + Plan (1&ndash;2 Wochen).</p>
         </article>
 
         <article class="card">
@@ -208,7 +222,7 @@
       <div class="panel" style="padding:18px;">
         <h2>Kontakt</h2>
         <p class="lead">
-          Schreib uns kurz, was du bauen mÃ¶chtest. Wir melden uns mit einer ersten EinschÃ¤tzung und mÃ¶glichen nÃ¤chsten Schritten.
+          Schreib uns kurz, was du bauen m&ouml;chtest. Wir melden uns mit einer ersten Einsch&auml;tzung und m&ouml;glichen n&auml;chsten Schritten.
         </p>
 
         <div class="cta-row">
@@ -219,7 +233,7 @@
         </div>
 
         <p class="small" style="margin-top:10px;">
-          info@hanlea.com Â· Â© <span id="y"></span> Hanlea
+          info@hanlea.com &middot; &copy; <span id="y"></span> Hanlea
         </p>
       </div>
     </div>
