@@ -25,14 +25,14 @@ body{
   margin:0;
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
   color:var(--text);
-  background: linear-gradient(180deg, var(--bg), var(--bg2));
+  background: var(--bg);
   overflow-x:hidden;
   position: relative;
 }
 
 .bg-ambient{
   position: fixed;
-  inset: -28vmax;
+  inset: -35vmax;
   z-index: -1;
   pointer-events: none;
   will-change: transform;
@@ -48,22 +48,21 @@ body{
 
 .bg-ambient::before{
   background:
-    radial-gradient(78vmax 48vmax at 14% 10%, rgba(124,58,237,.34), transparent 62%),
-    radial-gradient(66vmax 42vmax at 82% 6%, rgba(34,211,238,.30), transparent 58%),
-    radial-gradient(72vmax 46vmax at 66% 82%, rgba(16,185,129,.20), transparent 60%);
+    linear-gradient(180deg, #0a0d11 0%, #0d1320 46%, #0b1016 100%),
+    radial-gradient(96vmax 60vmax at 14% -8%, rgba(124,58,237,.52), transparent 70%),
+    radial-gradient(70vmax 44vmax at 82% 6%, rgba(34,211,238,.26), transparent 62%),
+    radial-gradient(74vmax 48vmax at 66% 82%, rgba(16,185,129,.17), transparent 66%),
+    radial-gradient(58vmax 38vmax at 24% 36%, rgba(124,58,237,.20), transparent 72%);
   background-repeat: no-repeat;
   transform: translate3d(0, 0, 0) scale(1.04);
-  filter: hue-rotate(var(--hue-shift)) saturate(1.1) contrast(1.05);
+  filter: hue-rotate(var(--hue-shift)) saturate(1.08) contrast(1.03);
   will-change: transform, filter;
   animation: ambientFloat 24s ease-in-out infinite alternate, ambientHue 18s ease-in-out infinite alternate;
 }
 
 .bg-ambient::after{
-  background:
-    linear-gradient(170deg, rgba(255,255,255,.06), transparent 28%),
-    linear-gradient(190deg, rgba(11,13,16,.14), rgba(11,13,16,.30));
-  background-repeat: no-repeat;
-  opacity: .84;
+  background: none;
+  opacity: 0;
 }
 
 @keyframes ambientFloat{
