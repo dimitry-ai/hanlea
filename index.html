@@ -238,27 +238,32 @@
     });
 
     const root = document.documentElement;
-    let ticking = false;
+    const ambientState = { target: 0, current: 0, raf: 0 };
 
-    function updateAmbient() {
-      const maxScroll = Math.max(document.body.scrollHeight - window.innerHeight, 1);
-      const scrollY = window.scrollY || window.pageYOffset;
-      const progress = Math.min(scrollY / maxScroll, 1);
+    function animateAmbient() {
+      ambientState.current += (ambientState.target - ambientState.current) * 0.08;
+      root.style.setProperty("--scroll-y", `${ambientState.current.toFixed(2)}px`);
+      root.style.setProperty("--hue-shift", `${Math.min(ambientState.current * 0.006, 6).toFixed(2)}deg`);
 
-      root.style.setProperty("--scroll-y", `${scrollY.toFixed(1)}px`);
-      root.style.setProperty("--scroll-p", progress.toFixed(4));
-      root.style.setProperty("--hue-shift", `${(progress * 12).toFixed(2)}deg`);
-      ticking = false;
+      if (Math.abs(ambientState.target - ambientState.current) > 0.1) {
+        ambientState.raf = requestAnimationFrame(animateAmbient);
+      } else {
+        ambientState.current = ambientState.target;
+        root.style.setProperty("--scroll-y", `${ambientState.current.toFixed(2)}px`);
+        ambientState.raf = 0;
+      }
     }
 
-    window.addEventListener("scroll", () => {
-      if (ticking) return;
-      ticking = true;
-      requestAnimationFrame(updateAmbient);
-    }, { passive: true });
+    function onScrollAmbient() {
+      ambientState.target = window.scrollY || window.pageYOffset || 0;
+      if (!ambientState.raf) {
+        ambientState.raf = requestAnimationFrame(animateAmbient);
+      }
+    }
 
-    window.addEventListener("resize", updateAmbient, { passive: true });
-    updateAmbient();
+    window.addEventListener("scroll", onScrollAmbient, { passive: true });
+    window.addEventListener("resize", onScrollAmbient, { passive: true });
+    onScrollAmbient();
   </script>
 </body>
 </html>
