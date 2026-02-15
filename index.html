@@ -61,67 +61,69 @@
         </div>
       </section>
 
-      <!-- Right panel -->
-      <aside class="panel" aria-label="AI workflow preview">
-        <div class="panel-top">
-          <div class="dots" aria-hidden="true"><i></i><i></i><i></i></div>
-          <span class="badge">Live Workflow</span>
+      <div class="hero-flow" aria-label="AI workflow preview">
+        <div class="scenario-canvas" aria-label="Agentic AI workflow phases">
+          <svg class="scenario-links" viewBox="0 0 100 48" preserveAspectRatio="none" aria-hidden="true">
+            <defs>
+              <linearGradient id="flow-glow" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#7c3aed" stop-opacity="0" />
+                <stop offset="50%" stop-color="#34d399" stop-opacity="1" />
+                <stop offset="100%" stop-color="#7c3aed" stop-opacity="0" />
+              </linearGradient>
+            </defs>
+            <path class="connection" d="M14.5 28 C16 28, 18.4 17, 20 17"></path>
+            <path class="connection glow seg1" d="M14.5 28 C16 28, 18.4 17, 20 17"></path>
+
+            <path class="connection" d="M32.5 17 C34 17, 35.8 31, 37.2 31"></path>
+            <path class="connection glow seg2" d="M32.5 17 C34 17, 35.8 31, 37.2 31"></path>
+
+            <path class="connection" d="M49.5 31 C51 31, 52.8 17, 54.2 17"></path>
+            <path class="connection glow seg3" d="M49.5 31 C51 31, 52.8 17, 54.2 17"></path>
+
+            <path class="connection" d="M66.5 17 C68 17, 69.8 29, 71.2 29"></path>
+            <path class="connection glow seg4" d="M66.5 17 C68 17, 69.8 29, 71.2 29"></path>
+
+            <path class="connection" d="M83.5 29 C84.5 29, 85.2 20, 86 20"></path>
+            <path class="connection glow seg5" d="M83.5 29 C84.5 29, 85.2 20, 86 20"></path>
+          </svg>
+
+          <article class="scenario-node node-context">
+            <span class="node-kind">Context</span>
+            <h4>Task Analysis</h4>
+            <p>Ziel, Kontext und Datenlage erkennen</p>
+          </article>
+
+          <article class="scenario-node node-plan">
+            <span class="node-kind">Planner</span>
+            <h4>Task Creation</h4>
+            <p>Workflow-Schritte und Subagents planen</p>
+          </article>
+
+          <article class="scenario-node node-orchestrate">
+            <span class="node-kind">Orchestration</span>
+            <h4>Tool + Agent Routing</h4>
+            <p>richtige Tools, Reihenfolge und Services</p>
+          </article>
+
+          <article class="scenario-node node-execute">
+            <span class="node-kind">Execution</span>
+            <h4>Action Run</h4>
+            <p>Tasks ausf&uuml;hren und Ergebnisse loggen</p>
+          </article>
+
+          <article class="scenario-node node-decision">
+            <span class="node-kind">Decision</span>
+            <h4>Guardrails</h4>
+            <p>Risiko, Regeln und Human Check</p>
+          </article>
+
+          <article class="scenario-node node-learn">
+            <span class="node-kind">Learning</span>
+            <h4>Assessment + Adaptation</h4>
+            <p>Feedback nutzen und Workflow optimieren</p>
+          </article>
         </div>
-        <div class="panel-body">
-          <div class="scenario-canvas" aria-label="AI automation scenario">
-            <svg class="scenario-links" viewBox="0 0 760 360" aria-hidden="true" xmlns:xlink="http://www.w3.org/1999/xlink">
-              <path d="M104 92 C178 92, 210 110, 282 128"></path>
-              <path d="M372 128 C450 128, 474 108, 548 90"></path>
-              <path d="M368 148 C448 156, 474 204, 548 224"></path>
-              <path d="M638 90 C700 94, 710 144, 700 198"></path>
-              <circle class="data-dot" r="5">
-                <animateMotion dur="4.2s" repeatCount="indefinite" rotate="auto">
-                  <mpath href="#flow-path" xlink:href="#flow-path"></mpath>
-                </animateMotion>
-              </circle>
-              <path id="flow-path" d="M104 92 C178 92, 210 110, 282 128 C450 128, 474 108, 548 90 C638 90, 700 94, 700 198"></path>
-            </svg>
-
-            <article class="scenario-node node-trigger">
-              <span class="node-kind">Trigger</span>
-              <h4>New Lead in HubSpot</h4>
-              <p>Webhook mit Firma, Segment, Use Case</p>
-            </article>
-
-            <article class="scenario-node node-ai">
-              <span class="node-kind">AI Agent</span>
-              <h4>Intent + Priority Scoring</h4>
-              <p>klassifiziert Intent und Business-Wert</p>
-            </article>
-
-            <article class="scenario-node node-data">
-              <span class="node-kind">Data</span>
-              <h4>Context Retrieval</h4>
-              <p>CRM, Tickets und Vertragsdaten anreichern</p>
-            </article>
-
-            <article class="scenario-node node-action">
-              <span class="node-kind">Action</span>
-              <h4>Draft Response + Next Step</h4>
-              <p>personalisierte Antwort und Task erzeugen</p>
-            </article>
-
-            <article class="scenario-node node-check">
-              <span class="node-kind">Guardrail</span>
-              <h4>Compliance Check</h4>
-              <p>PII, Freigabe und Audit-Trail validieren</p>
-            </article>
-          </div>
-
-          <div class="pillrow">
-            <span class="pill">Sales Ops</span>
-            <span class="pill">Support Routing</span>
-            <span class="pill">RevOps</span>
-            <span class="pill">Knowledge Agents</span>
-            <span class="pill">Audit Ready</span>
-          </div>
-        </div>
-      </aside>
+      </div>
     </div>
   </main>
 

@@ -78,6 +78,7 @@ body{
 @media (prefers-reduced-motion: reduce){
   .bg-ambient{ transform: none; }
   .bg-ambient::before{ animation: none; }
+  .scenario-links .connection.glow{ animation: none; }
 }
 
 a{color:inherit; text-decoration:none}
@@ -137,9 +138,13 @@ h1,h2,h3{margin:0; letter-spacing:-.02em}
 }
 .hero-grid{
   display:grid;
-  grid-template-columns: 1.15fr .85fr;
+  grid-template-columns: 1fr;
   gap: 26px;
   align-items: start;
+}
+.hero-flow{
+  grid-column: 1 / -1;
+  margin-top: 4px;
 }
 .hero h1{
   font-size: clamp(38px, 4.2vw, 58px);
@@ -153,7 +158,7 @@ h1,h2,h3{margin:0; letter-spacing:-.02em}
 .hero .sub{
   margin-top:14px;
   font-size: 16px;
-  max-width: 62ch;
+  max-width: 72ch;
 }
 .cta-row{
   display:flex; flex-wrap:wrap; gap:12px;
@@ -191,14 +196,14 @@ h1,h2,h3{margin:0; letter-spacing:-.02em}
 .panel-body{padding:16px 18px 18px}
 .scenario-canvas{
   position: relative;
-  height: 252px;
+  height: 286px;
   border-radius: 16px;
   border:1px solid rgba(255,255,255,.08);
   background:
-    linear-gradient(180deg, rgba(10,16,30,.9), rgba(10,16,30,.56)),
-    radial-gradient(660px 280px at 10% 100%, rgba(124,58,237,.22), transparent 64%),
-    radial-gradient(620px 280px at 90% 0%, rgba(52,211,153,.18), transparent 62%);
-  padding: 12px;
+    linear-gradient(180deg, rgba(10,16,30,.92), rgba(10,16,30,.56)),
+    radial-gradient(900px 340px at 10% 100%, rgba(124,58,237,.24), transparent 66%),
+    radial-gradient(900px 340px at 90% 0%, rgba(52,211,153,.18), transparent 64%);
+  padding: 14px;
   overflow: hidden;
 }
 .scenario-links{
@@ -210,23 +215,35 @@ h1,h2,h3{margin:0; letter-spacing:-.02em}
 }
 .scenario-links path{
   fill:none;
-  stroke: rgba(156,173,199,.36);
-  stroke-width: 2;
   stroke-linecap: round;
 }
-.data-dot{
-  fill:#34d399;
-  filter: drop-shadow(0 0 6px rgba(52,211,153,.65));
+.scenario-links .connection{
+  stroke: rgba(156,173,199,.26);
+  stroke-width: 1.65;
+  stroke-dasharray: 11 11;
 }
+.scenario-links .connection.glow{
+  stroke: url(#flow-glow);
+  stroke-width: 2.25;
+  stroke-dasharray: 10 28;
+  animation: flowLight 4.8s linear infinite;
+}
+.scenario-links .seg1{animation-delay:0s}
+.scenario-links .seg2{animation-delay:.35s}
+.scenario-links .seg3{animation-delay:.7s}
+.scenario-links .seg4{animation-delay:1.05s}
+.scenario-links .seg5{animation-delay:1.4s}
+
 .scenario-node{
   position:absolute;
   z-index:1;
-  width: 170px;
+  width: clamp(108px, 12.2%, 152px);
   border-radius: 12px;
   border:1px solid rgba(255,255,255,.12);
   background: linear-gradient(180deg, rgba(255,255,255,.09), rgba(255,255,255,.03));
   padding: 10px 10px 9px;
   animation: nodeFloat 4.8s ease-in-out infinite;
+  transition: border-color .22s ease, box-shadow .22s ease;
 }
 .scenario-node h4{
   margin: 6px 0 4px;
@@ -250,21 +267,27 @@ h1,h2,h3{margin:0; letter-spacing:-.02em}
   text-transform:uppercase;
   color:#e5edf9;
 }
-.node-trigger{left: 16px; top: 18px;}
-.node-ai{left: 194px; top: 92px; animation-delay: .25s;}
-.node-data{left: 462px; top: 16px; animation-delay: .5s;}
-.node-action{left: 462px; top: 152px; animation-delay: .75s;}
-.node-check{left: 612px; top: 98px; width: 132px; animation-delay: 1s;}
+.node-context{left: 2%; top: 35%;}
+.node-plan{left: 20%; top: 8%; animation-delay: .18s;}
+.node-orchestrate{left: 37%; top: 44%; animation-delay: .32s;}
+.node-execute{left: 54%; top: 8%; animation-delay: .48s;}
+.node-decision{left: 71%; top: 38%; animation-delay: .62s;}
+.node-learn{left: 86%; top: 10%; width: clamp(92px, 10.5%, 132px); animation-delay: .78s;}
 
-.node-trigger .node-kind{background: rgba(34,211,238,.2);}
-.node-ai .node-kind{background: rgba(124,58,237,.26);}
-.node-data .node-kind{background: rgba(16,185,129,.22);}
-.node-action .node-kind{background: rgba(52,211,153,.24);}
-.node-check .node-kind{background: rgba(245,158,11,.24);}
-
+.node-context .node-kind{background: rgba(34,211,238,.2);}
+.node-plan .node-kind{background: rgba(124,58,237,.26);}
+.node-orchestrate .node-kind{background: rgba(16,185,129,.22);}
+.node-execute .node-kind{background: rgba(52,211,153,.24);}
+.node-decision .node-kind{background: rgba(245,158,11,.24);}
+.node-learn .node-kind{background: rgba(99,102,241,.24);}
 @keyframes nodeFloat{
   0%, 100% { transform: translateY(0); border-color: rgba(255,255,255,.12); }
   50% { transform: translateY(-2px); border-color: rgba(124,58,237,.38); }
+}
+@keyframes flowLight{
+  0% { stroke-dashoffset: 84; opacity: .3; }
+  25% { opacity: .95; }
+  100% { stroke-dashoffset: 0; opacity: .3; }
 }
 
 .section{padding: 44px 0}
@@ -338,11 +361,11 @@ h1,h2,h3{margin:0; letter-spacing:-.02em}
   .brand-logo{height:38px}
   .scenario-canvas{
     height:auto;
-    min-height: 430px;
+    min-height: 516px;
     display:grid;
     grid-template-columns: 1fr;
     gap:8px;
-    padding-top: 84px;
+    padding-top: 96px;
   }
   .scenario-links{display:none}
   .scenario-node{
@@ -350,5 +373,5 @@ h1,h2,h3{margin:0; letter-spacing:-.02em}
     width: 100%;
     animation: none;
   }
-  .node-check{width:100%}
+  .node-learn{width:100%}
 }
