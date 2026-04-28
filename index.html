@@ -1,250 +1,473 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="de">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Hanlea &mdash; Data &amp; AI Consulting</title>
-  <meta name="description" content="Hanlea hilft Teams, Data & AI in Produkte zu verwandeln: Strategie, Implementierung, Plattform & AI-Apps." />
-  <link rel="stylesheet" href="style.css">
+  <title>Hanlea | Data &amp; AI Consulting, Platform Engineering und BI</title>
+  <meta name="description" content="Hanlea begleitet Unternehmen von Data- und AI-Strategie über Governance, Data Platform Engineering und BI bis zum produktiven Betrieb skalierbarer Lösungen." />
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
   <div class="bg-ambient" aria-hidden="true"></div>
-  <!-- NAV -->
+
   <header class="nav">
     <div class="container nav-inner">
-      <a class="brand" href="#top" aria-label="Hanlea">
-        <img class="brand-logo" src="hanlea_transparent.png" alt="Hanlea" />
+      <a class="brand" href="#top" aria-label="Hanlea Startseite">
+        <img class="brand-logo" src="hanlea_transparent.png" alt="Hanlea" width="186" height="59" />
       </a>
 
-      <nav class="nav-links">
-        <a href="#services">Services</a>
-        <a href="#platform">Plattform</a>
-        <a href="#process">Vorgehen</a>
+      <nav class="nav-links" aria-label="Hauptnavigation">
+        <a href="#einstieg">Einstieg</a>
+        <a href="#leistungen">Leistungen</a>
+        <a href="#vorgehen">Vorgehen</a>
+        <a href="#use-cases">Use Cases</a>
       </nav>
 
-      <a class="btn btn-primary" href="#contact">Kontakt</a>
+      <a class="btn btn-primary nav-cta" href="#contact">Erstgespräch</a>
     </div>
   </header>
 
-  <!-- HERO -->
-  <main id="top" class="hero">
-    <div class="container hero-grid">
-      <section>
-        <span class="badge">Data &amp; AI Consulting &middot; AI Produkte &middot; Platform Engineering</span>
-        <h1 class="grad" style="margin-top:14px;">
-          Wir bauen AI-f&auml;hige Produkte<br/>und Plattformen, die liefern.
-        </h1>
-        <p class="sub">
-          Hanlea unterst&uuml;tzt Teams von der AI-Strategie bis zum produktiven Betrieb:
-          saubere Daten, robuste Pipelines, sichere Deployments und AI-Apps, die messbaren Impact erzeugen.
-        </p>
+  <main id="main">
+    <section id="top" class="hero section-pad">
+      <div class="container hero-grid">
+        <div class="hero-copy" data-reveal>
+          <span class="badge">Data &amp; AI Consulting · Platform Engineering · GenAI, Data Science &amp; BI Lösungen</span>
+          <h1>Von der Datenstrategie zur skalierbaren Data Platform für AI, Analytics und BI.</h1>
+          <p class="hero-sub">
+            Hanlea begleitet Unternehmen von der Data- und AI-Strategie bis zum produktiven Betrieb — mit klarer Governance, robuster Datenbasis, zuverlässigen Pipelines, sicheren Deployments und Lösungen, die messbaren Impact erzeugen.
+          </p>
 
-        <div class="cta-row">
-          <a class="btn btn-primary" href="#contact">Projekt anfragen</a>
-          <a class="btn" href="#services">Leistungen ansehen</a>
-        </div>
-
-        <div class="kpis" aria-label="Key benefits">
-          <div class="kpi">
-            <b>Delivery-Fokus</b>
-            <span>Von PoC &rarr; Production mit klaren Milestones</span>
-          </div>
-          <div class="kpi">
-            <b>Platform-Denke</b>
-            <span>Wiederverwendbar, skalierbar, observierbar</span>
-          </div>
-          <div class="kpi">
-            <b>AI-Ready</b>
-            <span>Security, Governance, MLOps/LLMOps</span>
+          <div class="cta-row" aria-label="Primäre Aktionen">
+            <a class="btn btn-primary" href="#contact">Strategiegespräch anfragen</a>
+            <a class="btn btn-secondary" href="#leistungen">Leistungen ansehen</a>
           </div>
         </div>
-      </section>
 
-      <div class="hero-flow" aria-label="AI workflow preview">
-        <div class="scenario-canvas" aria-label="Agentic AI workflow phases">
-          <svg class="scenario-links" viewBox="0 0 100 48" preserveAspectRatio="none" aria-hidden="true">
-            <defs>
-              <linearGradient id="flow-glow" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stop-color="#7c3aed" stop-opacity="0" />
-                <stop offset="50%" stop-color="#34d399" stop-opacity="1" />
-                <stop offset="100%" stop-color="#7c3aed" stop-opacity="0" />
-              </linearGradient>
-            </defs>
-            <path class="connection" d="M14.5 28 C16 28, 18.4 17, 20 17"></path>
-            <path class="connection glow seg1" d="M14.5 28 C16 28, 18.4 17, 20 17"></path>
+        <aside class="hero-visual" aria-label="Data Platform Architektur von Hanlea" data-reveal>
+          <div class="platform-map">
+            <div class="map-header">
+              <span>Enterprise Data &amp; AI Platform</span>
+              <span class="status-dot">Production-ready</span>
+            </div>
 
-            <path class="connection" d="M32.5 17 C34 17, 35.8 31, 37.2 31"></path>
-            <path class="connection glow seg2" d="M32.5 17 C34 17, 35.8 31, 37.2 31"></path>
+            <div class="map-body" aria-hidden="true">
+              <div class="map-layer source-layer">
+                <span class="layer-label">Sources</span>
+                <div class="capability-row">
+                  <span>ERP</span>
+                  <span>CRM</span>
+                  <span>Apps</span>
+                  <span>Files</span>
+                </div>
+              </div>
 
-            <path class="connection" d="M49.5 31 C51 31, 52.8 17, 54.2 17"></path>
-            <path class="connection glow seg3" d="M49.5 31 C51 31, 52.8 17, 54.2 17"></path>
+              <div class="flow-connector"></div>
 
-            <path class="connection" d="M66.5 17 C68 17, 69.8 29, 71.2 29"></path>
-            <path class="connection glow seg4" d="M66.5 17 C68 17, 69.8 29, 71.2 29"></path>
+              <div class="map-layer ingest-layer">
+                <span class="layer-label">Ingestion &amp; Pipelines</span>
+                <div class="capability-row">
+                  <span>Batch</span>
+                  <span>Streaming</span>
+                  <span>Quality</span>
+                  <span>Contracts</span>
+                </div>
+              </div>
 
-            <path class="connection" d="M83.5 29 C84.5 29, 85.2 20, 86 20"></path>
-            <path class="connection glow seg5" d="M83.5 29 C84.5 29, 85.2 20, 86 20"></path>
-          </svg>
+              <div class="platform-core-layer">
+                <span class="layer-label">Data Foundation</span>
+                <div class="foundation-grid">
+                  <span>Lakehouse</span>
+                  <span>Warehouse</span>
+                  <span>Semantic Layer</span>
+                </div>
+              </div>
 
-          <article class="scenario-node node-context">
-            <span class="node-kind">Context</span>
-            <h4>Task Analysis</h4>
-            <p>Ziel, Kontext und Datenlage erkennen</p>
+              <div class="governance-layer">
+                <span>Governance</span>
+                <span>Security</span>
+                <span>Lineage</span>
+              </div>
+
+              <div class="map-layer product-layer">
+                <span class="layer-label">Data Products</span>
+                <div class="capability-row">
+                  <span>BI</span>
+                  <span>AI Apps</span>
+                  <span>ML</span>
+                  <span>APIs</span>
+                </div>
+              </div>
+
+              <div class="operate-layer">
+                <span>CI/CD</span>
+                <span>Monitoring</span>
+                <span>Cost</span>
+                <span>Reliability</span>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <div class="container value-grid" aria-label="Kernwerte von Hanlea">
+        <article class="value-card" data-reveal>
+          <span class="eyebrow">01</span>
+          <h2>Strategy &amp; Governance</h2>
+          <p>Zielbild, Use-Case-Priorisierung, klare Verantwortlichkeiten und eine Roadmap, die Business Value und Umsetzbarkeit zusammenbringt.</p>
+        </article>
+        <article class="value-card" data-reveal>
+          <span class="eyebrow">02</span>
+          <h2>Platform Engineering</h2>
+          <p>Skalierbare Datenbasis, robuste Pipelines, Datenqualität, Security und Deployments, die auch im produktiven Betrieb tragfähig bleiben.</p>
+        </article>
+        <article class="value-card" data-reveal>
+          <span class="eyebrow">03</span>
+          <h2>AI &amp; BI Products</h2>
+          <p>Priorisierte Use Cases, Dashboards, Analytics-Produkte und AI-Apps, die Fachbereiche nutzen und deren Wirkung messbar wird.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="problem" class="section-pad section-band">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <span class="section-kicker">Ausgangslage</span>
+          <h2>Viele Data- und AI-Initiativen scheitern nicht an Ideen, sondern an fehlender Struktur.</h2>
+          <p>
+            In vielen Organisationen existieren Datenquellen, BI-Tools, erste AI-Prototypen und ambitionierte Use Cases. Was häufig fehlt, ist ein belastbares Zusammenspiel aus Strategie, Architektur, Governance und Delivery. Ohne klare Priorisierung, stabile Datenmodelle und verantwortete Betriebsprozesse bleiben Initiativen punktuell, schwer skalierbar und für Fachbereiche nur begrenzt vertrauenswürdig.
+          </p>
+        </div>
+
+        <div class="problem-grid">
+          <article class="card" data-reveal>
+            <h3>Strategie ohne belastbare Roadmap</h3>
+            <p>Data- und AI-Ziele sind formuliert, aber Use Cases, Verantwortlichkeiten, Investitionen und technische Abhängigkeiten sind nicht sauber priorisiert.</p>
           </article>
-
-          <article class="scenario-node node-plan">
-            <span class="node-kind">Planner</span>
-            <h4>Task Creation</h4>
-            <p>Workflow-Schritte und Subagents planen</p>
+          <article class="card" data-reveal>
+            <h3>Fragmentierte Datenlandschaft</h3>
+            <p>Daten liegen in Silos, Pipelines sind historisch gewachsen und wichtige Kennzahlen lassen sich nur mit manuellen Abstimmungen erklären.</p>
           </article>
-
-          <article class="scenario-node node-orchestrate">
-            <span class="node-kind">Orchestration</span>
-            <h4>Tool + Agent Routing</h4>
-            <p>richtige Tools, Reihenfolge und Services</p>
+          <article class="card" data-reveal>
+            <h3>PoCs ohne Produktionspfad</h3>
+            <p>AI-Prototypen zeigen Potenzial, scheitern aber an Security, Monitoring, Datenqualität, Governance oder fehlender Integration in reale Prozesse.</p>
           </article>
-
-          <article class="scenario-node node-execute">
-            <span class="node-kind">Execution</span>
-            <h4>Action Run</h4>
-            <p>Tasks ausf&uuml;hren und Ergebnisse loggen</p>
-          </article>
-
-          <article class="scenario-node node-decision">
-            <span class="node-kind">Decision</span>
-            <h4>Guardrails</h4>
-            <p>Risiko, Regeln und Human Check</p>
-          </article>
-
-          <article class="scenario-node node-learn">
-            <span class="node-kind">Learning</span>
-            <h4>Assessment + Adaptation</h4>
-            <p>Feedback nutzen und Workflow optimieren</p>
+          <article class="card" data-reveal>
+            <h3>BI ohne einheitliche KPI-Logik</h3>
+            <p>Dashboards entstehen schnell, aber ohne semantische Schicht, Ownership und Datenqualitätsregeln fehlt die Grundlage für verlässliche Steuerung.</p>
           </article>
         </div>
       </div>
-    </div>
+    </section>
+
+    <section id="einstieg" class="section-pad">
+      <div class="container">
+        <div class="section-heading compact" data-reveal>
+          <span class="section-kicker">Schneller Einstieg</span>
+          <h2>Wo steht Ihr Data- und AI-Vorhaben gerade?</h2>
+          <p>Vier strukturierte Einstiegspfade helfen, aus einer offenen Fragestellung ein greifbares Mandat mit klaren Ergebnissen zu machen.</p>
+        </div>
+
+        <div class="entry-grid">
+          <a class="entry-card" href="#contact" data-reveal>
+            <span class="entry-label">Strategie klären</span>
+            <h3>Data &amp; AI Strategy Sprint</h3>
+            <p>Wir schärfen Zielbild, Use-Case-Portfolio, Governance und Roadmap, damit Prioritäten nicht aus Bauchgefühl, sondern aus Business Value, Risiken und Umsetzbarkeit entstehen.</p>
+            <strong>Ziel: Entscheidungsfähige Roadmap und nächste Umsetzungsschritte.</strong>
+            <span class="micro-cta">Strategiegespräch anfragen</span>
+          </a>
+
+          <a class="entry-card" href="#contact" data-reveal>
+            <span class="entry-label">Plattform prüfen</span>
+            <h3>Data Platform Review</h3>
+            <p>Wir bewerten Architektur, Pipelines, Datenqualität, Security, Deployments und Betriebsfähigkeit, um Risiken und Modernisierungspotenziale konkret sichtbar zu machen.</p>
+            <strong>Ziel: Belastbare Einschätzung mit Quick Wins und Architekturpfad.</strong>
+            <span class="micro-cta">Plattform bewerten lassen</span>
+          </a>
+
+          <a class="entry-card" href="#contact" data-reveal>
+            <span class="entry-label">BI modernisieren</span>
+            <h3>BI &amp; Analytics Modernization</h3>
+            <p>Wir ordnen KPI-Logik, Datenmodelle, Dashboard-Landschaft und Self-Service-Ansatz, damit Reporting wieder steuerungsfähig und fachlich konsistent wird.</p>
+            <strong>Ziel: Klareres Kennzahlensystem und bessere Entscheidungsgrundlagen.</strong>
+            <span class="micro-cta">BI-Vorhaben besprechen</span>
+          </a>
+
+          <a class="entry-card" href="#contact" data-reveal>
+            <span class="entry-label">AI validieren</span>
+            <h3>GenAI Use Case Pilot</h3>
+            <p>Wir prüfen Nutzen, Datenbasis, Risiken und Betriebsanforderungen eines AI- oder GenAI-Use-Cases und entwickeln bei Bedarf einen fokussierten Prototyp.</p>
+            <strong>Ziel: Fundierte Entscheidung statt isoliertem Experiment.</strong>
+            <span class="micro-cta">Use Case validieren</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="leistungen" class="section-pad section-band">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <span class="section-kicker">Leistungsbereiche</span>
+          <h2>Consulting und Umsetzung für moderne Data- und AI-Landschaften.</h2>
+          <p>
+            Hanlea verbindet strategische Orientierung mit technischer Umsetzung. Das Ergebnis sind keine isolierten Tool-Entscheidungen, sondern belastbare Datenprodukte, Plattformbausteine und Betriebsmodelle, die Fachbereiche, IT und Data Teams gemeinsam tragen können.
+          </p>
+        </div>
+
+        <div class="service-stack">
+          <article class="service-panel" data-reveal>
+            <div>
+              <span class="eyebrow">Strategy</span>
+              <h3>Data &amp; AI Strategy</h3>
+              <p>Wir entwickeln ein klares Zielbild für Data, Analytics und AI, priorisieren Use Cases und übersetzen strategische Ambition in realistische Roadmaps. Dabei werden Business Value, Datenverfügbarkeit, technische Machbarkeit, Governance und organisatorische Verantwortlichkeiten gemeinsam betrachtet.</p>
+            </div>
+            <ul>
+              <li>Use-Case-Priorisierung nach Wertbeitrag, Risiko und Umsetzbarkeit</li>
+              <li>Target Operating Model, Rollenmodell und Governance-Prinzipien</li>
+              <li>Roadmap, Investmentlogik und Entscheidungsgrundlagen für Führungsteams</li>
+              <li>Übersetzung zwischen Business-Anforderungen und technischer Delivery</li>
+            </ul>
+          </article>
+
+          <article class="service-panel" data-reveal>
+            <div>
+              <span class="eyebrow">Engineering</span>
+              <h3>Data Platform Engineering</h3>
+              <p>Wir konzipieren und bauen moderne Datenplattformen, die verlässliche Datenflüsse, skalierbare Architektur und sicheren Betrieb verbinden. Der Fokus liegt auf wartbaren Pipelines, Qualitätssicherung, Observability, Deployment-Fähigkeit und einer Plattform, die BI, AI und Data Products gleichzeitig unterstützt.</p>
+            </div>
+            <ul>
+              <li>Architektur für Lakehouse-, Warehouse- und Cloud-Data-Plattformen</li>
+              <li>Data Engineering, Datenqualität, Data Contracts und Observability</li>
+              <li>CI/CD, Security, Secrets, Monitoring und produktionsnahe Deployments</li>
+              <li>Technische Modernisierung mit Blick auf Skalierung und Betriebskosten</li>
+            </ul>
+          </article>
+
+          <article class="service-panel" data-reveal>
+            <div>
+              <span class="eyebrow">Products</span>
+              <h3>AI, Analytics &amp; BI Products</h3>
+              <p>Wir entwickeln Analytics- und AI-Lösungen, die nicht im Prototyp enden. Dazu gehören KPI-Frameworks, semantische Modelle, Dashboards, GenAI-Anwendungen, AI Assistants, Data-Science-Use-Cases sowie MLOps- und LLMOps-Strukturen für den kontrollierten Betrieb.</p>
+            </div>
+            <ul>
+              <li>BI-Modernisierung, Semantic Layer und konsistente KPI-Logik</li>
+              <li>GenAI Apps, AI Assistants und produktionsfähige Use-Case-Architekturen</li>
+              <li>Data Science, Forecasting, Monitoring und Modellbetrieb</li>
+              <li>Lösungen mit klarer Nutzerführung, Governance und messbarem Ergebnis</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="context-cta" data-reveal>
+          <p>Sie wissen bereits, wo der Engpass liegt, oder möchten erst die Ausgangslage sortieren?</p>
+          <a class="btn btn-secondary" href="#einstieg">Passenden Einstieg finden</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="pakete" class="section-pad">
+      <div class="container">
+        <div class="section-heading compact" data-reveal>
+          <span class="section-kicker">Beratungsformate</span>
+          <h2>Klarer Einstieg statt endloser Transformationsprogramme.</h2>
+          <p>Die Formate schaffen in kurzer Zeit Orientierung, priorisierte Entscheidungen und eine belastbare Basis für Umsetzung.</p>
+        </div>
+
+        <div class="package-grid">
+          <article class="package-card" data-reveal>
+            <h3>Data &amp; AI Strategy Sprint</h3>
+            <p>Ein strukturierter Einstieg für Unternehmen, die ihre Data- und AI-Ambition in ein tragfähiges Zielbild, ein priorisiertes Use-Case-Portfolio und klare Verantwortlichkeiten übersetzen möchten.</p>
+            <span>Typische Ergebnisse</span>
+            <ul>
+              <li>Zielbild, Roadmap und priorisierte Initiativen</li>
+              <li>Governance- und Rollenmodell für die nächsten Schritte</li>
+              <li>Entscheidungsvorlage für Umsetzung und Investment</li>
+            </ul>
+          </article>
+
+          <article class="package-card" data-reveal>
+            <h3>Data Platform Review</h3>
+            <p>Ein technisches und organisatorisches Assessment für Datenplattformen, Pipelines und Betriebsprozesse, wenn Skalierung, Qualität oder Wartbarkeit an Grenzen stoßen.</p>
+            <span>Typische Ergebnisse</span>
+            <ul>
+              <li>Architektur- und Risikoanalyse inklusive technischer Schulden</li>
+              <li>Quick Wins für Datenqualität, Stabilität und Security</li>
+              <li>Modernisierungs-Roadmap mit priorisierten Maßnahmen</li>
+            </ul>
+          </article>
+
+          <article class="package-card" data-reveal>
+            <h3>BI Modernization Sprint</h3>
+            <p>Ein fokussiertes Format für Unternehmen, die Reporting-Landschaften konsolidieren, KPI-Logik vereinheitlichen und Self-Service Analytics kontrolliert ermöglichen wollen.</p>
+            <span>Typische Ergebnisse</span>
+            <ul>
+              <li>KPI-Framework, semantische Modellierung und Dashboard-Priorisierung</li>
+              <li>Bewertung von Datenmodellen, Ownership und Reporting-Qualität</li>
+              <li>Konkrete Modernisierungsschritte für Fachbereiche und IT</li>
+            </ul>
+          </article>
+
+          <article class="package-card" data-reveal>
+            <h3>GenAI Use Case Pilot</h3>
+            <p>Ein belastbarer Pilot für AI- und GenAI-Vorhaben, der Nutzen, Datenbasis, Sicherheitsanforderungen und Produktionsfähigkeit gemeinsam betrachtet.</p>
+            <span>Typische Ergebnisse</span>
+            <ul>
+              <li>Use-Case-Konzept mit Risiko- und Governance-Bewertung</li>
+              <li>Prototyp oder MVP-Architektur mit Integrationspfad</li>
+              <li>Empfehlung für Betrieb, Monitoring und Skalierung</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="vorgehen" class="section-pad section-band">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <span class="section-kicker">Delivery-Modell</span>
+          <h2>Von der Idee zum produktiven Datenprodukt.</h2>
+          <p>
+            Hanlea arbeitet iterativ, transparent und delivery-orientiert. Jede Phase reduziert Unsicherheit, macht Entscheidungen nachvollziehbar und schafft die Grundlage für stabile Umsetzung statt isolierter Konzeptarbeit.
+          </p>
+        </div>
+
+        <div class="process">
+          <article class="process-step" data-reveal>
+            <span>01</span>
+            <h3>Assess</h3>
+            <p>Wir prüfen Ausgangslage, Datenquellen, Architektur, Use Cases, Risiken und organisatorische Rahmenbedingungen. So entsteht ein gemeinsames Bild der Realität.</p>
+          </article>
+          <article class="process-step" data-reveal>
+            <span>02</span>
+            <h3>Align</h3>
+            <p>Wir bringen Business, IT und Data Stakeholder auf gemeinsame Prioritäten, Erfolgskriterien und Verantwortlichkeiten. Das verhindert parallele Zielbilder.</p>
+          </article>
+          <article class="process-step" data-reveal>
+            <span>03</span>
+            <h3>Architect</h3>
+            <p>Wir entwerfen Zielarchitektur, Datenmodelle, Governance-Mechanismen und Betriebsanforderungen so, dass Umsetzung und Skalierung zusammenpassen.</p>
+          </article>
+          <article class="process-step" data-reveal>
+            <span>04</span>
+            <h3>Build</h3>
+            <p>Wir setzen priorisierte Plattformbausteine, Pipelines, Dashboards oder AI-Produkte mit klaren Milestones, Tests und Übergabepunkten um.</p>
+          </article>
+          <article class="process-step" data-reveal>
+            <span>05</span>
+            <h3>Operate</h3>
+            <p>Wir stabilisieren Betrieb, Monitoring, Governance und Enablement, damit Lösungen wartbar bleiben und intern weiterentwickelt werden können.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="use-cases" class="section-pad">
+      <div class="container">
+        <div class="section-heading compact" data-reveal>
+          <span class="section-kicker">Beratungsanlässe</span>
+          <h2>Use Cases, bei denen Struktur und Umsetzung zusammenkommen müssen.</h2>
+          <p>Hanlea unterstützt dort, wo fachlicher Nutzen, technische Architektur und produktiver Betrieb gemeinsam geklärt werden müssen.</p>
+        </div>
+
+        <div class="usecase-grid">
+          <article class="usecase-card" data-reveal>
+            <h3>AI Readiness &amp; Governance</h3>
+            <p>Bewertung von Datenbasis, Sicherheitsanforderungen, Verantwortlichkeiten und Betriebsmodell, bevor AI-Initiativen skaliert werden.</p>
+          </article>
+          <article class="usecase-card" data-reveal>
+            <h3>GenAI Assistants &amp; AI Apps</h3>
+            <p>Konzeption und Umsetzung von Assistants, RAG-Lösungen und internen AI-Anwendungen mit Guardrails, Evaluation und Integrationspfad.</p>
+          </article>
+          <article class="usecase-card" data-reveal>
+            <h3>BI &amp; KPI Modernisierung</h3>
+            <p>Vereinheitlichung von Kennzahlen, semantischen Modellen und Dashboards, damit Reporting nicht nur schneller, sondern verlässlicher wird.</p>
+          </article>
+          <article class="usecase-card" data-reveal>
+            <h3>Data Platform Modernisierung</h3>
+            <p>Weiterentwicklung gewachsener Plattformen in Richtung skalierbarer Architektur, stabiler Pipelines, Observability und Security.</p>
+          </article>
+          <article class="usecase-card" data-reveal>
+            <h3>Data Products &amp; Self-Service Analytics</h3>
+            <p>Aufbau fachlich verantworteter Datenprodukte, die wiederverwendbar sind und Self-Service ermöglichen, ohne Governance zu verlieren.</p>
+          </article>
+          <article class="usecase-card" data-reveal>
+            <h3>MLOps &amp; LLMOps Enablement</h3>
+            <p>Strukturen für Deployment, Monitoring, Evaluation und Kostenkontrolle, damit Modelle und Prompts nicht außerhalb des Betriebsmodells laufen.</p>
+          </article>
+          <article class="usecase-card" data-reveal>
+            <h3>Data Quality &amp; Observability</h3>
+            <p>Transparenz über Datenflüsse, Qualitätsregeln und Fehlerbilder, damit Teams Probleme früher erkennen und Vertrauen in Datenprodukte steigt.</p>
+          </article>
+          <article class="usecase-card" data-reveal>
+            <h3>Forecasting &amp; Predictive Analytics</h3>
+            <p>Validierung und Umsetzung analytischer Modelle für Planung, Nachfrage, Operations oder Controlling mit klaren Annahmen und Monitoring.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="warum-hanlea" class="section-pad section-band">
+      <div class="container why-grid">
+        <div class="section-heading sticky-heading" data-reveal>
+          <span class="section-kicker">Warum Hanlea</span>
+          <h2>Professionelle Beratung für Unternehmen, die Data und AI produktiv nutzbar machen wollen.</h2>
+          <p>
+            Hanlea denkt nicht in isolierten Tools oder einmaligen PoCs, sondern in belastbaren Plattformen, Datenprodukten und Betriebsmodellen. Strategie, Architektur und Hands-on Delivery greifen ineinander, damit aus Ambition eine tragfähige Lösung wird.
+          </p>
+        </div>
+
+        <div class="why-list">
+          <article class="why-card" data-reveal>
+            <h3>Senior Expertise ohne Overhead</h3>
+            <p>Direkte Zusammenarbeit mit erfahrenem Blick auf Strategie, Architektur, Delivery und Betrieb statt schwerfälliger Projektmechanik.</p>
+          </article>
+          <article class="why-card" data-reveal>
+            <h3>Strategie und Umsetzung verbunden</h3>
+            <p>Roadmaps werden so entwickelt, dass sie technisch umsetzbar sind und nicht bei Präsentationen enden.</p>
+          </article>
+          <article class="why-card" data-reveal>
+            <h3>Platform-first Mindset</h3>
+            <p>Lösungen werden als wiederverwendbare Bausteine gedacht, damit BI, Analytics und AI auf derselben belastbaren Basis wachsen.</p>
+          </article>
+          <article class="why-card" data-reveal>
+            <h3>Business Value vor Tool-Auswahl</h3>
+            <p>Technologieentscheidungen folgen dem Nutzen, den Risiken und den Betriebsanforderungen, nicht kurzfristigen Trends.</p>
+          </article>
+          <article class="why-card" data-reveal>
+            <h3>Governance ohne Bürokratie</h3>
+            <p>Ownership, Sicherheit und Qualitätsregeln werden so gestaltet, dass sie Delivery ermöglichen und Vertrauen schaffen.</p>
+          </article>
+          <article class="why-card" data-reveal>
+            <h3>Verständlich zwischen Business und IT</h3>
+            <p>Komplexe Architektur- und Datenfragen werden so übersetzt, dass Entscheidungen gemeinsam und fundiert getroffen werden können.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section-pad final-cta">
+      <div class="container">
+        <div class="final-panel" data-reveal>
+          <span class="section-kicker">Nächster Schritt</span>
+          <h2>Bereit, Ihre Data- und AI-Initiativen auf ein belastbares Fundament zu stellen?</h2>
+          <p>
+            Lassen Sie uns über Ihre Datenlandschaft, priorisierte Use Cases, technische Engpässe und mögliche nächste Schritte sprechen. Ziel ist eine ehrliche Einschätzung, wo Hanlea konkret helfen kann und welcher Einstieg sinnvoll ist.
+          </p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="mailto:info@hanlea.com?subject=Vorhaben%20besprechen%20mit%20Hanlea&body=Hallo%20Hanlea%2C%0A%0Aich%20m%C3%B6chte%20ein%20Data-%20oder%20AI-Vorhaben%20besprechen.%0A%0AKurz%20zur%20Ausgangslage%3A%0A-%20Unternehmen%20%2F%20Bereich%3A%0A-%20Thema%20oder%20Use%20Case%3A%0A-%20Aktuelle%20Herausforderung%3A%0A-%20Gew%C3%BCnschter%20n%C3%A4chster%20Schritt%3A%0A%0AViele%20Gr%C3%BC%C3%9Fe">Vorhaben besprechen</a>
+            <a class="btn btn-secondary" href="#leistungen">Leistungen ansehen</a>
+          </div>
+          <p class="contact-note">Oder direkt per E-Mail: <a href="mailto:info@hanlea.com">info@hanlea.com</a></p>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <!-- SERVICES -->
-  <section id="services" class="section">
-    <div class="container">
-      <h2>Was wir liefern</h2>
-      <p class="lead">
-        Von der Idee bis zur produktiven Skalierung &mdash; modular, pragmatisch und mit sauberer Engineering-Qualit&auml;t.
-      </p>
-
-      <div class="cards">
-        <article class="card">
-          <div class="icon">&#9889;</div>
-          <h3>AI Produktentwicklung</h3>
-          <p>AI-Features &amp; Agent-Workflows, Retrieval/RAG, Evaluation &amp; Guardrails, UX f&uuml;r AI-Apps.</p>
-        </article>
-
-        <article class="card">
-          <div class="icon">DB</div>
-          <h3>Data Platform</h3>
-          <p>Lakehouse/Modern Data Stack, ELT/ETL, Data Contracts, Observability, Cost Control.</p>
-        </article>
-
-        <article class="card">
-          <div class="icon">Sec</div>
-          <h3>MLOps / LLMOps</h3>
-          <p>CI/CD f&uuml;r Modelle &amp; Prompts, Monitoring, Drift, Security, Governance, compliant deployment.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- PLATFORM -->
-  <section id="platform" class="section">
-    <div class="container">
-      <h2>AI-Plattform & Bausteine</h2>
-      <p class="lead">
-        Wir bauen ein Fundament, das Teams schneller macht &mdash; mit wiederverwendbaren Komponenten statt Einzell&ouml;sungen.
-      </p>
-
-      <div class="split">
-        <div class="list">
-          <h3 style="font-size:16px;">Typische Module</h3>
-          <ul>
-            <li>Identity & Access, Secrets, Audit Trails</li>
-            <li>Vector DB / Search + Dokumenten-Pipelines</li>
-            <li>Prompt & Model Registry, Evaluation Harness</li>
-            <li>Observability: Traces, Costs, Quality</li>
-          </ul>
-        </div>
-        <div class="list">
-          <h3 style="font-size:16px;">Beispiele f&uuml;r Use-Cases</h3>
-          <ul>
-            <li>AI-Assistenten f&uuml;r Support, Sales, Ops</li>
-            <li>Automatisierte Dokumenten-Workflows</li>
-            <li>Analytics-Copilot / Natural Language BI</li>
-            <li>Internal Tools: Knowledge, Compliance, Search</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROCESS -->
-  <section id="process" class="section">
-    <div class="container">
-      <h2>Vorgehen: schnell starten, sauber skalieren</h2>
-      <p class="lead">
-        Ein klarer Ablauf, damit du nach wenigen Wochen produktive Resultate siehst &mdash; nicht nach Monaten Folien.
-      </p>
-
-      <div class="cards">
-        <article class="card">
-          <div class="icon">1</div>
-          <h3>Discovery</h3>
-          <p>Use-Case, Datenlage, Constraints. Outcome: Zielbild + Plan (1&ndash;2 Wochen).</p>
-        </article>
-
-        <article class="card">
-          <div class="icon">2</div>
-          <h3>Build</h3>
-          <p>Implementierung mit Milestones: MVP, Integration, Tests, Monitoring.</p>
-        </article>
-
-        <article class="card">
-          <div class="icon">3</div>
-          <h3>Operate</h3>
-          <p>Stabilisierung, Guardrails, Governance, Enablement deines Teams.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="section">
-    <div class="container">
-      <div class="panel" style="padding:18px;">
-        <h2>Kontakt</h2>
-        <p class="lead">
-          Schreib uns kurz, was du bauen m&ouml;chtest. Wir melden uns mit einer ersten Einsch&auml;tzung und m&ouml;glichen n&auml;chsten Schritten.
-        </p>
-
-        <div class="cta-row">
-          <a class="btn btn-primary" href="mailto:info@hanlea.com?subject=Projektanfrage%20Hanlea&body=Hi%20Hanlea%2C%0A%0AKurz%20zum%20Projekt%3A%0A-%20Ziel%3A%0A-%20Timeline%3A%0A-%20Tech%20Stack%3A%0A-%20Kontakt%3A%0A%0ADanke!">
-            E-Mail senden
-          </a>
-          <a class="btn" href="#top">Nach oben</a>
-        </div>
-
-        <p class="small" style="margin-top:10px;">
-          info@hanlea.com &middot; &copy; <span id="y"></span> Hanlea
-        </p>
-      </div>
-    </div>
-  </section>
-
   <footer class="footer">
-    <div class="container row">
-      <div class="small">Dark, modern, AI-ready.</div>
-      <div class="row" style="gap:14px;">
+    <div class="container footer-inner">
+      <div class="small">&copy; <span id="y"></span> Hanlea · Data &amp; AI Consulting</div>
+      <div class="footer-links">
         <a class="small" href="/impressum.html">Impressum</a>
         <a class="small" href="/datenschutz.html">Datenschutz</a>
       </div>
@@ -253,46 +476,33 @@
 
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
-    // smooth scroll for in-page anchors
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener("click", (e)=>{
-        const id = a.getAttribute("href");
-        if(!id || id === "#") return;
-        const el = document.querySelector(id);
-        if(!el) return;
-        e.preventDefault();
-        el.scrollIntoView({behavior:"smooth", block:"start"});
+
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener("click", (event) => {
+        const id = anchor.getAttribute("href");
+        if (!id || id === "#") return;
+        const target = document.querySelector(id);
+        if (!target) return;
+        event.preventDefault();
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
       });
     });
 
-    const root = document.documentElement;
-    const ambientState = { target: 0, current: 0, raf: 0 };
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!reduceMotion && "IntersectionObserver" in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
 
-    function animateAmbient() {
-      ambientState.current += (ambientState.target - ambientState.current) * 0.08;
-      root.style.setProperty("--scroll-y", `${ambientState.current.toFixed(2)}px`);
-      root.style.setProperty("--hue-shift", `${Math.min(ambientState.current * 0.006, 6).toFixed(2)}deg`);
-
-      if (Math.abs(ambientState.target - ambientState.current) > 0.1) {
-        ambientState.raf = requestAnimationFrame(animateAmbient);
-      } else {
-        ambientState.current = ambientState.target;
-        root.style.setProperty("--scroll-y", `${ambientState.current.toFixed(2)}px`);
-        ambientState.raf = 0;
-      }
+      document.querySelectorAll("[data-reveal]").forEach((element) => observer.observe(element));
+    } else {
+      document.querySelectorAll("[data-reveal]").forEach((element) => element.classList.add("is-visible"));
     }
-
-    function onScrollAmbient() {
-      ambientState.target = window.scrollY || window.pageYOffset || 0;
-      if (!ambientState.raf) {
-        ambientState.raf = requestAnimationFrame(animateAmbient);
-      }
-    }
-
-    window.addEventListener("scroll", onScrollAmbient, { passive: true });
-    window.addEventListener("resize", onScrollAmbient, { passive: true });
-    onScrollAmbient();
   </script>
 </body>
 </html>
-
