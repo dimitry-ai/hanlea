@@ -18,14 +18,20 @@
         <img class="brand-logo" src="hanlea_transparent.png" alt="Hanlea" width="186" height="59" />
       </a>
 
-      <nav class="nav-links" aria-label="Hauptnavigation">
+      <nav id="primary-nav" class="nav-links" aria-label="Hauptnavigation">
         <a href="#einstieg">Einstieg</a>
         <a href="#leistungen">Leistungen</a>
         <a href="#vorgehen">Vorgehen</a>
         <a href="#use-cases">Use Cases</a>
+        <a class="nav-mobile-cta" href="#contact">Vorhaben besprechen</a>
       </nav>
 
-      <a class="btn btn-primary nav-cta" href="#contact">Erstgespräch</a>
+      <a class="btn btn-primary nav-cta" href="#contact">Vorhaben besprechen</a>
+      <button class="nav-toggle" type="button" aria-controls="primary-nav" aria-expanded="false" aria-label="Navigation öffnen">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </header>
 
@@ -40,7 +46,7 @@
           </p>
 
           <div class="cta-row" aria-label="Primäre Aktionen">
-            <a class="btn btn-primary" href="#contact">Strategiegespräch anfragen</a>
+            <a class="btn btn-primary" href="#contact">Vorhaben besprechen</a>
             <a class="btn btn-secondary" href="#leistungen">Leistungen ansehen</a>
           </div>
         </div>
@@ -170,7 +176,7 @@
         </div>
 
         <div class="entry-grid">
-          <a class="entry-card" href="#contact" data-reveal>
+          <a class="entry-card" href="#contact" data-contact-topic="Data &amp; AI Strategy" data-reveal>
             <span class="entry-label">Strategie klären</span>
             <h3>Data &amp; AI Strategy Sprint</h3>
             <p>Wir schärfen Zielbild, Use-Case-Portfolio, Governance und Roadmap, damit Prioritäten nicht aus Bauchgefühl, sondern aus Business Value, Risiken und Umsetzbarkeit entstehen.</p>
@@ -178,7 +184,7 @@
             <span class="micro-cta">Strategiegespräch anfragen</span>
           </a>
 
-          <a class="entry-card" href="#contact" data-reveal>
+          <a class="entry-card" href="#contact" data-contact-topic="Data Platform Review" data-reveal>
             <span class="entry-label">Plattform prüfen</span>
             <h3>Data Platform Review</h3>
             <p>Wir bewerten Architektur, Pipelines, Datenqualität, Security, Deployments und Betriebsfähigkeit, um Risiken und Modernisierungspotenziale konkret sichtbar zu machen.</p>
@@ -186,7 +192,7 @@
             <span class="micro-cta">Plattform bewerten lassen</span>
           </a>
 
-          <a class="entry-card" href="#contact" data-reveal>
+          <a class="entry-card" href="#contact" data-contact-topic="BI &amp; Analytics" data-reveal>
             <span class="entry-label">BI modernisieren</span>
             <h3>BI &amp; Analytics Modernization</h3>
             <p>Wir ordnen KPI-Logik, Datenmodelle, Dashboard-Landschaft und Self-Service-Ansatz, damit Reporting wieder steuerungsfähig und fachlich konsistent wird.</p>
@@ -194,7 +200,7 @@
             <span class="micro-cta">BI-Vorhaben besprechen</span>
           </a>
 
-          <a class="entry-card" href="#contact" data-reveal>
+          <a class="entry-card" href="#contact" data-contact-topic="GenAI / AI Use Case" data-reveal>
             <span class="entry-label">AI validieren</span>
             <h3>GenAI Use Case Pilot</h3>
             <p>Wir prüfen Nutzen, Datenbasis, Risiken und Betriebsanforderungen eines AI- oder GenAI-Use-Cases und entwickeln bei Bedarf einen fokussierten Prototyp.</p>
@@ -455,7 +461,7 @@
             Lassen Sie uns über Ihre Datenlandschaft, priorisierte Use Cases, technische Engpässe und mögliche nächste Schritte sprechen. Ziel ist eine ehrliche Einschätzung, wo Hanlea konkret helfen kann und welcher Einstieg sinnvoll ist.
           </p>
           <div class="cta-row">
-            <a class="btn btn-primary" href="mailto:info@hanlea.com?subject=Vorhaben%20besprechen%20mit%20Hanlea&body=Hallo%20Hanlea%2C%0A%0Aich%20m%C3%B6chte%20ein%20Data-%20oder%20AI-Vorhaben%20besprechen.%0A%0AKurz%20zur%20Ausgangslage%3A%0A-%20Unternehmen%20%2F%20Bereich%3A%0A-%20Thema%20oder%20Use%20Case%3A%0A-%20Aktuelle%20Herausforderung%3A%0A-%20Gew%C3%BCnschter%20n%C3%A4chster%20Schritt%3A%0A%0AViele%20Gr%C3%BC%C3%9Fe">Vorhaben besprechen</a>
+            <a class="btn btn-primary" href="#contact">Vorhaben besprechen</a>
             <a class="btn btn-secondary" href="#leistungen">Leistungen ansehen</a>
           </div>
           <p class="contact-note">Oder direkt per E-Mail: <a href="mailto:info@hanlea.com">info@hanlea.com</a></p>
@@ -463,6 +469,114 @@
       </div>
     </section>
   </main>
+
+  <dialog id="contact-dialog" class="contact-dialog" aria-labelledby="contact-dialog-title" aria-describedby="contact-dialog-intro">
+    <div class="contact-modal">
+      <button class="modal-close" type="button" aria-label="Kontaktformular schließen">&times;</button>
+
+      <div class="modal-heading">
+        <span class="section-kicker">Anfrage</span>
+        <h2 id="contact-dialog-title">Data- und AI-Vorhaben besprechen</h2>
+        <p id="contact-dialog-intro">
+          Teilen Sie kurz mit, wobei Hanlea unterstützen kann. Die Anfrage wird strukturiert an info@hanlea.com übermittelt.
+        </p>
+      </div>
+
+      <!-- Set data-endpoint to a form backend URL, e.g. a Formspree endpoint, to send without mailto fallback. -->
+      <form id="contact-form" class="contact-form" data-endpoint="https://formspree.io/f/xojygrgz">
+        <label class="honeypot" aria-hidden="true">
+          <span>Bitte leer lassen</span>
+          <input type="text" name="website" tabindex="-1" autocomplete="off" />
+        </label>
+
+        <div class="form-grid">
+          <label class="field">
+            <span>Name</span>
+            <input type="text" name="name" autocomplete="name" required />
+          </label>
+
+          <label class="field">
+            <span>E-Mail</span>
+            <input type="email" name="email" autocomplete="email" required />
+          </label>
+
+          <label class="field">
+            <span>Unternehmen / Bereich</span>
+            <input type="text" name="company" autocomplete="organization" required />
+          </label>
+
+          <label class="field">
+            <span>Telefon</span>
+            <input type="tel" name="phone" autocomplete="tel" />
+          </label>
+        </div>
+
+        <fieldset class="field-group">
+          <legend>Themen / Leistungen</legend>
+          <div class="checkbox-grid">
+            <label class="check-card">
+              <input type="checkbox" name="topics" value="Data & AI Strategy" />
+              <span>Data &amp; AI Strategy</span>
+            </label>
+            <label class="check-card">
+              <input type="checkbox" name="topics" value="Data Platform Review" />
+              <span>Data Platform Review</span>
+            </label>
+            <label class="check-card">
+              <input type="checkbox" name="topics" value="Platform Engineering" />
+              <span>Platform Engineering</span>
+            </label>
+            <label class="check-card">
+              <input type="checkbox" name="topics" value="BI & Analytics" />
+              <span>BI &amp; Analytics</span>
+            </label>
+            <label class="check-card">
+              <input type="checkbox" name="topics" value="GenAI / AI Use Case" />
+              <span>GenAI / AI Use Case</span>
+            </label>
+            <label class="check-card">
+              <input type="checkbox" name="topics" value="Governance & Data Quality" />
+              <span>Governance &amp; Data Quality</span>
+            </label>
+          </div>
+          <p id="topic-error" class="form-error" aria-live="polite"></p>
+        </fieldset>
+
+        <div class="form-grid">
+          <label class="field">
+            <span>Zeithorizont</span>
+            <select name="timing" required>
+              <option value="">Bitte auswählen</option>
+              <option value="Kurzfristig">Kurzfristig</option>
+              <option value="In den nächsten 1-3 Monaten">In den nächsten 1-3 Monaten</option>
+              <option value="Später / Orientierung">Später / Orientierung</option>
+            </select>
+          </label>
+
+          <label class="field">
+            <span>Gewünschter nächster Schritt</span>
+            <select name="next_step">
+              <option value="Erstgespräch">Erstgespräch</option>
+              <option value="Einschätzung per E-Mail">Einschätzung per E-Mail</option>
+              <option value="Workshop / Review">Workshop / Review</option>
+            </select>
+          </label>
+        </div>
+
+        <label class="field field-full">
+          <span>Kurz zur Ausgangslage</span>
+          <textarea name="message" rows="5" required placeholder="Worum geht es, was ist die aktuelle Herausforderung, und was wäre ein gutes Ergebnis?"></textarea>
+        </label>
+
+        <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+
+        <div class="form-actions">
+          <p class="form-note">Die Anfrage wird strukturiert an Hanlea übermittelt. Bei Bedarf melden wir uns mit konkreten Rückfragen.</p>
+          <button class="btn btn-primary" type="submit" data-default-label="Anfrage senden">Anfrage senden</button>
+        </div>
+      </form>
+    </div>
+  </dialog>
 
   <footer class="footer">
     <div class="container footer-inner">
@@ -481,11 +595,257 @@
       anchor.addEventListener("click", (event) => {
         const id = anchor.getAttribute("href");
         if (!id || id === "#") return;
+        if (id === "#contact" && document.getElementById("contact-dialog")) return;
         const target = document.querySelector(id);
         if (!target) return;
         event.preventDefault();
         target.scrollIntoView({ behavior: "smooth", block: "start" });
       });
+    });
+
+    const siteNav = document.querySelector(".nav");
+    const navToggle = document.querySelector(".nav-toggle");
+    const primaryNav = document.getElementById("primary-nav");
+
+    if (siteNav && navToggle && primaryNav) {
+      const closeNav = () => {
+        siteNav.removeAttribute("data-open");
+        navToggle.setAttribute("aria-expanded", "false");
+        navToggle.setAttribute("aria-label", "Navigation öffnen");
+      };
+
+      navToggle.addEventListener("click", () => {
+        const isOpen = siteNav.getAttribute("data-open") === "true";
+        if (isOpen) {
+          closeNav();
+          return;
+        }
+
+        siteNav.setAttribute("data-open", "true");
+        navToggle.setAttribute("aria-expanded", "true");
+        navToggle.setAttribute("aria-label", "Navigation schließen");
+      });
+
+      siteNav.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeNav));
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") closeNav();
+      });
+
+      const desktopNav = window.matchMedia("(min-width: 821px)");
+      const handleDesktopNav = (event) => {
+        if (event.matches) closeNav();
+      };
+
+      if (desktopNav.addEventListener) {
+        desktopNav.addEventListener("change", handleDesktopNav);
+      } else {
+        desktopNav.addListener(handleDesktopNav);
+      }
+    }
+
+    const contactDialog = document.getElementById("contact-dialog");
+    const contactForm = document.getElementById("contact-form");
+    const contactClose = contactDialog?.querySelector(".modal-close");
+    const topicError = document.getElementById("topic-error");
+    const topicInputs = contactForm ? Array.from(contactForm.querySelectorAll('input[name="topics"]')) : [];
+    const formStatus = document.getElementById("form-status");
+    const submitButton = contactForm?.querySelector('button[type="submit"]');
+    const contactRecipient = "info@hanlea.com";
+
+    const setContactDialogState = (isOpen) => {
+      document.body.classList.toggle("modal-open", isOpen);
+    };
+
+    const openContactDialog = () => {
+      if (!contactDialog) {
+        window.location.href = `mailto:${contactRecipient}`;
+        return;
+      }
+
+      if (contactDialog.open) {
+        setContactDialogState(true);
+        return;
+      }
+
+      if (typeof contactDialog.showModal === "function") {
+        contactDialog.showModal();
+      } else {
+        contactDialog.setAttribute("open", "");
+      }
+
+      setContactDialogState(true);
+      setTimeout(() => contactForm?.querySelector("input, select, textarea, button")?.focus(), 0);
+    };
+
+    const closeContactDialog = () => {
+      if (!contactDialog) return;
+
+      if (typeof contactDialog.close === "function" && contactDialog.open) {
+        contactDialog.close();
+      } else {
+        contactDialog.removeAttribute("open");
+        setContactDialogState(false);
+      }
+    };
+
+    const preselectContactTopic = (topic) => {
+      const selectedTopic = topic?.trim();
+      if (!selectedTopic || !topicInputs.length) return;
+
+      const matchingTopic = topicInputs.find((input) => input.value === selectedTopic);
+      if (!matchingTopic) return;
+
+      topicInputs.forEach((input) => {
+        input.checked = input === matchingTopic;
+      });
+
+      if (topicError) topicError.textContent = "";
+    };
+
+    document.querySelectorAll('a[href="#contact"]').forEach((link) => {
+      link.addEventListener("click", (event) => {
+        event.preventDefault();
+        if (siteNav && navToggle) {
+          siteNav.removeAttribute("data-open");
+          navToggle.setAttribute("aria-expanded", "false");
+          navToggle.setAttribute("aria-label", "Navigation öffnen");
+        }
+        preselectContactTopic(link.dataset.contactTopic);
+        openContactDialog();
+      });
+    });
+
+    contactClose?.addEventListener("click", closeContactDialog);
+
+    contactDialog?.addEventListener("click", (event) => {
+      if (event.target !== contactDialog) return;
+      const modalBounds = contactDialog.querySelector(".contact-modal")?.getBoundingClientRect();
+      if (!modalBounds) return;
+
+      const isBackdropClick =
+        event.clientX < modalBounds.left ||
+        event.clientX > modalBounds.right ||
+        event.clientY < modalBounds.top ||
+        event.clientY > modalBounds.bottom;
+
+      if (isBackdropClick) closeContactDialog();
+    });
+
+    contactDialog?.addEventListener("close", () => setContactDialogState(false));
+
+    topicInputs.forEach((input) => {
+      input.addEventListener("change", () => {
+        if (topicInputs.some((topic) => topic.checked) && topicError) {
+          topicError.textContent = "";
+        }
+      });
+    });
+
+    const setFormStatus = (message, type = "") => {
+      if (!formStatus) return;
+      formStatus.textContent = message;
+      formStatus.dataset.type = type;
+    };
+
+    const setFormLoading = (isLoading) => {
+      if (!submitButton) return;
+      submitButton.disabled = isLoading;
+      submitButton.textContent = isLoading ? "Wird gesendet..." : submitButton.dataset.defaultLabel || "Anfrage senden";
+    };
+
+    contactForm?.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      if (!contactForm.reportValidity()) return;
+
+      const data = new FormData(contactForm);
+      const value = (name) => String(data.get(name) || "").trim();
+
+      if (value("website")) return;
+
+      const selectedTopics = topicInputs.filter((input) => input.checked).map((input) => input.value);
+      if (!selectedTopics.length) {
+        if (topicError) topicError.textContent = "Bitte wählen Sie mindestens ein Thema aus.";
+        topicInputs[0]?.focus();
+        return;
+      }
+
+      if (topicError) topicError.textContent = "";
+
+      const lines = [
+        "Hallo Hanlea,",
+        "",
+        "ich möchte ein Data- oder AI-Vorhaben besprechen.",
+        "",
+        "Kontaktdaten:",
+        `Name: ${value("name")}`,
+        `E-Mail: ${value("email")}`,
+        `Unternehmen / Bereich: ${value("company")}`,
+      ];
+
+      if (value("phone")) lines.push(`Telefon: ${value("phone")}`);
+
+      lines.push("", "Themen / Leistungen:");
+      selectedTopics.forEach((topic) => lines.push(`- ${topic}`));
+      lines.push(
+        "",
+        `Zeithorizont: ${value("timing")}`,
+        `Gewünschter nächster Schritt: ${value("next_step") || "Erstgespräch"}`,
+        "",
+        "Kurz zur Ausgangslage:",
+        value("message"),
+        "",
+        "Viele Grüße"
+      );
+
+      const subject = `Anfrage Hanlea: ${selectedTopics.slice(0, 2).join(", ")}`;
+      const messageBody = lines.join("\n");
+      const contactEndpoint = contactForm.dataset.endpoint?.trim();
+
+      if (contactEndpoint) {
+        const payload = new FormData();
+        payload.set("name", value("name"));
+        payload.set("email", value("email"));
+        payload.set("_replyto", value("email"));
+        payload.set("company", value("company"));
+        payload.set("phone", value("phone"));
+        payload.set("topics", selectedTopics.join(", "));
+        payload.set("timing", value("timing"));
+        payload.set("next_step", value("next_step") || "Erstgespräch");
+        payload.set("message", messageBody);
+        payload.set("_subject", subject);
+        payload.set("source", window.location.href);
+
+        setFormStatus("");
+        setFormLoading(true);
+
+        try {
+          const response = await fetch(contactEndpoint, {
+            method: "POST",
+            body: payload,
+            headers: { Accept: "application/json" },
+          });
+
+          if (!response.ok) {
+            throw new Error(`Form endpoint returned ${response.status}`);
+          }
+
+          contactForm.reset();
+          setFormStatus("Danke, Ihre Anfrage wurde gesendet.", "success");
+          setTimeout(closeContactDialog, 1800);
+        } catch (error) {
+          setFormStatus("Das Senden hat gerade nicht geklappt. Bitte versuchen Sie es erneut oder schreiben Sie direkt an info@hanlea.com.", "error");
+        } finally {
+          setFormLoading(false);
+        }
+
+        return;
+      }
+
+      setFormStatus("Es ist noch kein Formular-Endpunkt hinterlegt. Ihr E-Mail-Programm wird geöffnet.", "info");
+      window.location.href = `mailto:${contactRecipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(messageBody)}`;
+      setTimeout(closeContactDialog, 300);
     });
 
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
