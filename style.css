@@ -830,6 +830,96 @@ main{
   transition:transform .18s ease, background .18s ease, border-color .18s ease;
 }
 
+.qa-accordion{
+  display:grid;
+  gap:12px;
+  max-width:940px;
+}
+
+.qa-item{
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  background:var(--surface);
+  overflow:hidden;
+  transition:background .18s ease, border-color .18s ease;
+}
+
+.qa-item:hover,
+.qa-item[open]{
+  border-color:rgba(122,215,245,.3);
+  background:
+    linear-gradient(135deg, rgba(122,215,245,.08), rgba(142,115,255,.055)),
+    var(--surface);
+}
+
+.qa-item summary{
+  min-height:64px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  padding:18px 20px;
+  cursor:pointer;
+  list-style:none;
+}
+
+.qa-item summary::-webkit-details-marker{
+  display:none;
+}
+
+.qa-item summary::marker{
+  content:"";
+}
+
+.qa-item summary:focus-visible{
+  outline:3px solid var(--focus-ring);
+  outline-offset:-3px;
+}
+
+.qa-item summary span{
+  color:#f3f6ff;
+  font-size:1.08rem;
+  font-weight:800;
+  line-height:1.25;
+}
+
+.qa-item summary::after{
+  content:"";
+  width:32px;
+  height:32px;
+  flex:0 0 32px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border:1px solid rgba(122,215,245,.28);
+  border-radius:999px;
+  color:#9fdfff;
+  background-image:
+    linear-gradient(currentColor, currentColor),
+    linear-gradient(currentColor, currentColor);
+  background-position:center;
+  background-repeat:no-repeat;
+  background-size:12px 2px, 2px 12px;
+  transition:background-color .18s ease, border-color .18s ease;
+}
+
+.qa-item[open] summary::after{
+  border-color:rgba(122,215,245,.42);
+  background-color:rgba(122,215,245,.11);
+  background-image:linear-gradient(currentColor, currentColor);
+  background-size:12px 2px;
+}
+
+.qa-item p{
+  max-width:82ch;
+  padding:0 20px 20px;
+  font-size:.98rem;
+}
+
+.qa-item[open] p{
+  animation:qaReveal .2s ease;
+}
+
 .why-grid{
   display:grid;
   grid-template-columns:minmax(280px, .78fr) minmax(0, 1.1fr);
@@ -1245,6 +1335,17 @@ main{
   15%{opacity:1}
   85%{opacity:1}
   100%{left:calc(100% + 10px); opacity:0}
+}
+
+@keyframes qaReveal{
+  from{
+    opacity:0;
+    transform:translateY(-4px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
 }
 
 @media (max-width:1100px){
