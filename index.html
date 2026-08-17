@@ -6,6 +6,8 @@
   <title>Hanlea | Data &amp; AI Consulting, Platform Engineering und BI</title>
   <meta name="description" content="Hanlea begleitet Unternehmen von Data- und AI-Strategie über Governance, Data Platform Engineering und BI bis zum produktiven Betrieb skalierbarer Lösungen." />
   <meta name="google-site-verification" content="hpU7hcMktH6nVfgSEaCP7rXk_JPmxFDDuzI2_PLEEoI" />
+  <meta name="theme-color" content="#070814" />
+  <link rel="icon" href="favicon.png" type="image/png" />
   <link rel="stylesheet" href="style.css" />
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-LGQ37DGD7K"></script>
@@ -119,9 +121,9 @@
       <nav id="primary-nav" class="nav-links" aria-label="Hauptnavigation">
         <a href="#einstieg">Einstieg</a>
         <a href="#leistungen">Leistungen</a>
+        <a href="#ueber-uns">Expertise</a>
         <a href="#vorgehen">Vorgehen</a>
         <a href="#use-cases">Use Cases</a>
-        <a href="#qa">Q&amp;A</a>
         <a class="nav-mobile-cta" href="#contact">Vorhaben besprechen</a>
       </nav>
 
@@ -136,6 +138,18 @@
 
   <main id="main">
     <section id="top" class="hero section-pad">
+      <div class="hero-visual" aria-hidden="true">
+        <div class="hero-media">
+          <canvas class="hero-particle-canvas"></canvas>
+          <div class="hero-map-annotations">
+            <span class="hero-map-label label-strategy">Data Strategy</span>
+            <span class="hero-map-label label-platform">Data Platform</span>
+            <span class="hero-map-label label-governance">Governance</span>
+            <span class="hero-map-label label-products">AI Products</span>
+          </div>
+        </div>
+      </div>
+
       <div class="container hero-grid">
         <div class="hero-copy" data-reveal>
           <span class="badge">Data &amp; AI Consulting · Platform Engineering · GenAI, Data Science &amp; BI Lösungen</span>
@@ -148,72 +162,18 @@
             <a class="btn btn-primary" href="#contact">Vorhaben besprechen</a>
             <a class="btn btn-secondary" href="#leistungen">Leistungen ansehen</a>
           </div>
-        </div>
 
-        <aside class="hero-visual" aria-label="Data Platform Architektur von Hanlea" data-reveal>
-          <div class="platform-map">
-            <div class="map-header">
-              <span>Enterprise Data &amp; AI Platform</span>
-              <span class="status-dot">Production-ready</span>
-            </div>
-
-            <div class="map-body" aria-hidden="true">
-              <div class="map-layer source-layer">
-                <span class="layer-label">Sources</span>
-                <div class="capability-row">
-                  <span>ERP</span>
-                  <span>CRM</span>
-                  <span>Apps</span>
-                  <span>Files</span>
-                </div>
-              </div>
-
-              <div class="flow-connector"></div>
-
-              <div class="map-layer ingest-layer">
-                <span class="layer-label">Ingestion &amp; Pipelines</span>
-                <div class="capability-row">
-                  <span>Batch</span>
-                  <span>Streaming</span>
-                  <span>Quality</span>
-                  <span>Contracts</span>
-                </div>
-              </div>
-
-              <div class="platform-core-layer">
-                <span class="layer-label">Data Foundation</span>
-                <div class="foundation-grid">
-                  <span>Lakehouse</span>
-                  <span>Warehouse</span>
-                  <span>Semantic Layer</span>
-                </div>
-              </div>
-
-              <div class="governance-layer">
-                <span>Governance</span>
-                <span>Security</span>
-                <span>Lineage</span>
-              </div>
-
-              <div class="map-layer product-layer">
-                <span class="layer-label">Data Products</span>
-                <div class="capability-row">
-                  <span>BI</span>
-                  <span>AI Apps</span>
-                  <span>ML</span>
-                  <span>APIs</span>
-                </div>
-              </div>
-
-              <div class="operate-layer">
-                <span>CI/CD</span>
-                <span>Monitoring</span>
-                <span>Cost</span>
-                <span>Reliability</span>
-              </div>
-            </div>
+          <div class="hero-trust" aria-label="Branchenübergreifende Erfahrung">
+            <span>Erfahrung aus Projekten in</span>
+            <ul>
+              <li>Inkasso</li>
+              <li>Handel</li>
+              <li>Telekommunikation</li>
+              <li>Medien</li>
+              <li>Banking</li>
+            </ul>
           </div>
-        </aside>
+        </div>
       </div>
 
       <div class="container value-grid" aria-label="Kernwerte von Hanlea">
@@ -233,6 +193,60 @@
           <p>Priorisierte Use Cases, Dashboards, Analytics-Produkte und AI-Apps, die Fachbereiche nutzen und deren Wirkung messbar wird.</p>
         </article>
       </div>
+
+    <section class="tech-under-hero" aria-label="Technologiekompetenz">
+      <div class="container tech-wide" data-reveal>
+        <div class="tech-heading">
+          <span class="eyebrow">Technologiekompetenz</span>
+          <h3>Technologien, mit denen wir arbeiten.</h3>
+        </div>
+
+        <div class="tech-marquee" aria-label="Technologiekompetenz mit Microsoft Azure, Databricks, Microsoft Fabric, Power BI, OpenAI, Anthropic, MLflow, Git, Apache Spark, Delta Lake, Unity Catalog, Azure DevOps, Python, SQL, Terraform, Azure Data Factory und MCP Server">
+          <div class="tech-row tech-row-primary">
+            <div class="tech-track" aria-hidden="true">
+              <div class="tech-pill"><span class="tech-logo-box"><img src="assets/logos/tech/microsoft-azure.svg" alt="" loading="lazy" decoding="async" width="24" height="24" /></span><span>Microsoft Azure</span></div>
+              <div class="tech-pill"><span class="tech-logo-box"><img src="assets/logos/tech/databricks.svg" alt="" loading="lazy" decoding="async" width="24" height="24" /></span><span>Databricks</span></div>
+              <div class="tech-pill"><span class="tech-logo-box"><img src="assets/logos/tech/microsoft-fabric.svg" alt="" loading="lazy" decoding="async" width="24" height="24" /></span><span>Microsoft Fabric</span></div>
+              <div class="tech-pill"><span class="tech-logo-box"><img src="assets/logos/tech/power-bi.svg" alt="" loading="lazy" decoding="async" width="24" height="24" /></span><span>Power BI</span></div>
+              <div class="tech-pill"><span class="tech-logo-box"><img src="assets/logos/tech/openai.svg" alt="" loading="lazy" decoding="async" width="24" height="24" /></span><span>OpenAI</span></div>
+              <div class="tech-pill"><span class="tech-logo-box"><img src="assets/logos/tech/anthropic.svg" alt="" loading="lazy" decoding="async" width="24" height="24" /></span><span>Anthropic</span></div>
+              <div class="tech-pill"><span class="tech-logo-box"><img src="assets/logos/tech/mlflow.svg" alt="" loading="lazy" decoding="async" width="24" height="24" /></span><span>MLflow</span></div>
+              <div class="tech-pill"><span class="tech-logo-box"><img src="assets/logos/tech/git.svg" alt="" loading="lazy" decoding="async" width="24" height="24" /></span><span>Git</span></div>
+              <div class="tech-pill"><span class="tech-logo-box"><img src="assets/logos/tech/microsoft-azure.svg" alt="" loading="lazy" decoding="async" width="24" height="24" /></span><span>Microsoft Azure</span></div>
+              <div class="tech-pill"><span class="tech-logo-box"><img src="assets/logos/tech/databricks.svg" alt="" loading="lazy" decoding="async" width="24" height="24" /></span><span>Databricks</span></div>
+              <div class="tech-pill"><span class="tech-logo-box"><img src="assets/logos/tech/microsoft-fabric.svg" alt="" loading="lazy" decoding="async" width="24" height="24" /></span><span>Microsoft Fabric</span></div>
+              <div class="tech-pill"><span class="tech-logo-box"><img src="assets/logos/tech/power-bi.svg" alt="" loading="lazy" decoding="async" width="24" height="24" /></span><span>Power BI</span></div>
+              <div class="tech-pill"><span class="tech-logo-box"><img src="assets/logos/tech/openai.svg" alt="" loading="lazy" decoding="async" width="24" height="24" /></span><span>OpenAI</span></div>
+              <div class="tech-pill"><span class="tech-logo-box"><img src="assets/logos/tech/anthropic.svg" alt="" loading="lazy" decoding="async" width="24" height="24" /></span><span>Anthropic</span></div>
+              <div class="tech-pill"><span class="tech-logo-box"><img src="assets/logos/tech/mlflow.svg" alt="" loading="lazy" decoding="async" width="24" height="24" /></span><span>MLflow</span></div>
+              <div class="tech-pill"><span class="tech-logo-box"><img src="assets/logos/tech/git.svg" alt="" loading="lazy" decoding="async" width="24" height="24" /></span><span>Git</span></div>
+            </div>
+          </div>
+          <div class="tech-row tech-row-reverse">
+            <div class="tech-track" aria-hidden="true">
+              <div class="tech-pill"><span class="tech-logo-box"><img src="assets/logos/tech/apache-spark.svg" alt="" loading="lazy" decoding="async" width="24" height="24" /></span><span>Apache Spark</span></div>
+              <div class="tech-pill"><span class="tech-logo-box"><img src="assets/logos/tech/delta-lake.svg" alt="" loading="lazy" decoding="async" width="24" height="24" /></span><span>Delta Lake</span></div>
+              <div class="tech-pill"><span class="tech-logo-box"><img src="assets/logos/tech/unity-catalog.svg" alt="" loading="lazy" decoding="async" width="24" height="24" /></span><span>Unity Catalog</span></div>
+              <div class="tech-pill"><span class="tech-logo-box"><img src="assets/logos/tech/azure-devops.svg" alt="" loading="lazy" decoding="async" width="24" height="24" /></span><span>Azure DevOps</span></div>
+              <div class="tech-pill"><span class="tech-logo-box"><img src="assets/logos/tech/python.svg" alt="" loading="lazy" decoding="async" width="24" height="24" /></span><span>Python</span></div>
+              <div class="tech-pill"><span class="tech-logo-box"><img src="assets/logos/tech/sql.svg" alt="" loading="lazy" decoding="async" width="24" height="24" /></span><span>SQL</span></div>
+              <div class="tech-pill"><span class="tech-logo-box"><img src="assets/logos/tech/terraform.svg" alt="" loading="lazy" decoding="async" width="24" height="24" /></span><span>Terraform</span></div>
+              <div class="tech-pill"><span class="tech-logo-box"><img src="assets/logos/tech/azure-data-factory.svg" alt="" loading="lazy" decoding="async" width="24" height="24" /></span><span>Azure Data Factory</span></div>
+              <div class="tech-pill"><span class="tech-logo-box"><img src="assets/logos/tech/mcp-server.svg" alt="" loading="lazy" decoding="async" width="24" height="24" /></span><span>MCP Server</span></div>
+              <div class="tech-pill"><span class="tech-logo-box"><img src="assets/logos/tech/apache-spark.svg" alt="" loading="lazy" decoding="async" width="24" height="24" /></span><span>Apache Spark</span></div>
+              <div class="tech-pill"><span class="tech-logo-box"><img src="assets/logos/tech/delta-lake.svg" alt="" loading="lazy" decoding="async" width="24" height="24" /></span><span>Delta Lake</span></div>
+              <div class="tech-pill"><span class="tech-logo-box"><img src="assets/logos/tech/unity-catalog.svg" alt="" loading="lazy" decoding="async" width="24" height="24" /></span><span>Unity Catalog</span></div>
+              <div class="tech-pill"><span class="tech-logo-box"><img src="assets/logos/tech/azure-devops.svg" alt="" loading="lazy" decoding="async" width="24" height="24" /></span><span>Azure DevOps</span></div>
+              <div class="tech-pill"><span class="tech-logo-box"><img src="assets/logos/tech/python.svg" alt="" loading="lazy" decoding="async" width="24" height="24" /></span><span>Python</span></div>
+              <div class="tech-pill"><span class="tech-logo-box"><img src="assets/logos/tech/sql.svg" alt="" loading="lazy" decoding="async" width="24" height="24" /></span><span>SQL</span></div>
+              <div class="tech-pill"><span class="tech-logo-box"><img src="assets/logos/tech/terraform.svg" alt="" loading="lazy" decoding="async" width="24" height="24" /></span><span>Terraform</span></div>
+              <div class="tech-pill"><span class="tech-logo-box"><img src="assets/logos/tech/azure-data-factory.svg" alt="" loading="lazy" decoding="async" width="24" height="24" /></span><span>Azure Data Factory</span></div>
+              <div class="tech-pill"><span class="tech-logo-box"><img src="assets/logos/tech/mcp-server.svg" alt="" loading="lazy" decoding="async" width="24" height="24" /></span><span>MCP Server</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     </section>
 
     <section id="problem" class="section-pad section-band">
@@ -367,6 +381,84 @@
         <div class="context-cta" data-reveal>
           <p>Sie wissen bereits, wo der Engpass liegt, oder möchten erst die Ausgangslage sortieren?</p>
           <a class="btn btn-secondary" href="#einstieg">Passenden Einstieg finden</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="ueber-uns" class="about-section section-pad">
+      <div class="container about-grid">
+        <div class="section-heading sticky-heading" data-reveal>
+          <span class="section-kicker">Expertise</span>
+          <h2>Data &amp; AI Beratung für gewachsene Datenlandschaften.</h2>
+          <p>
+            Wir helfen mittelgroßen Unternehmen, aus Datenplattformen, BI und AI Use Cases belastbare Lösungen zu machen: verständlich für das Business, sauber für die IT und pragmatisch genug für den Alltag.
+          </p>
+        </div>
+
+        <div class="about-content">
+          <article class="experience-heading" data-reveal>
+            <span class="eyebrow">Branchenbreite</span>
+            <h3>Erfahrung aus datenintensiven Bereichen.</h3>
+            <p>
+              Inkasso, Handel, Telekommunikation, Medien und Banking stehen für Umfelder, in denen Datenqualität, Prozesse, Compliance und schneller Nutzen gleichzeitig zählen.
+            </p>
+          </article>
+
+          <div class="experience-logo-group" data-reveal>
+            <div class="experience-logos" aria-label="Ausgewählte berufliche Stationen und Projekterfahrungen der Gründer">
+              <span class="experience-logo">
+                <img src="assets/logos/experience/bid.svg" alt="BID Bayerischer Inkasso Dienst" loading="lazy" decoding="async" />
+              </span>
+              <span class="experience-logo experience-logo-rtl">
+                <img src="assets/logos/experience/rtl-mono.svg" alt="RTL" loading="lazy" decoding="async" />
+              </span>
+              <span class="experience-logo experience-logo-hse">
+                <img src="assets/logos/experience/hse-mono.png" alt="HSE" loading="lazy" decoding="async" />
+              </span>
+              <span class="experience-logo">
+                <img src="assets/logos/experience/vodafone-mono.svg" alt="Vodafone" loading="lazy" decoding="async" />
+              </span>
+            </div>
+            <p class="experience-note">
+              Die Logos stehen für frühere berufliche Stationen und Projekterfahrungen unserer Gründer und nicht automatisch für direkte Kundenbeziehungen mit Hanlea.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="about-wide-expertise">
+          <article class="about-story" data-reveal>
+            <span class="eyebrow">Spezialisierte Beratung</span>
+            <h3>Erfahren aus Enterprise-Projekten, nah dran in der Umsetzung.</h3>
+            <p>
+              Unsere Gründer bringen Erfahrung aus datenintensiven Umfeldern mit und arbeiten direkt mit Geschäftsführung, Fachbereichen und IT. So entstehen keine Konzepte für die Schublade, sondern klare Entscheidungen, priorisierte Roadmaps und Lösungen, die betrieben werden können.
+            </p>
+          </article>
+
+          <div class="about-card-grid about-proof-list">
+            <article class="about-card about-proof-card" data-reveal>
+              <span class="about-proof-index">01</span>
+              <div>
+                <h3>Mit der bestehenden Realität arbeiten</h3>
+                <p>Historische Systeme, verstreute Datenquellen, manuelle Reports und Plattformen, die modernisiert werden müssen, ohne den Betrieb auszubremsen.</p>
+              </div>
+            </article>
+            <article class="about-card about-proof-card" data-reveal>
+              <span class="about-proof-index">02</span>
+              <div>
+                <h3>AI erst dann, wenn der Rahmen passt</h3>
+                <p>GenAI Use Cases werden mit Datenzugriff, Qualität, Guardrails, Evaluation, Kosten und Betrieb gedacht, nicht nur als Demo.</p>
+              </div>
+            </article>
+            <article class="about-card about-proof-card" data-reveal>
+              <span class="about-proof-index">03</span>
+              <div>
+                <h3>Business und IT zusammenbringen</h3>
+                <p>Wir übersetzen technische Optionen in entscheidbare Schritte: was Nutzen bringt, was riskant ist und was als Nächstes passieren sollte.</p>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
     </section>
@@ -560,7 +652,7 @@
         </div>
 
         <div class="qa-accordion">
-          <details class="qa-item" data-reveal open>
+          <details class="qa-item" data-reveal>
             <summary>
               <span>Was macht Hanlea?</span>
             </summary>
@@ -696,7 +788,7 @@
           <legend>Themen / Leistungen</legend>
           <div class="checkbox-grid">
             <label class="check-card">
-              <input type="checkbox" name="topics" value="Data & AI Strategy" />
+              <input type="checkbox" name="topics" value="Data &amp; AI Strategy" />
               <span>Data &amp; AI Strategy</span>
             </label>
             <label class="check-card">
@@ -708,7 +800,7 @@
               <span>Platform Engineering</span>
             </label>
             <label class="check-card">
-              <input type="checkbox" name="topics" value="BI & Analytics" />
+              <input type="checkbox" name="topics" value="BI &amp; Analytics" />
               <span>BI &amp; Analytics</span>
             </label>
             <label class="check-card">
@@ -716,7 +808,7 @@
               <span>GenAI / AI Use Case</span>
             </label>
             <label class="check-card">
-              <input type="checkbox" name="topics" value="Governance & Data Quality" />
+              <input type="checkbox" name="topics" value="Governance &amp; Data Quality" />
               <span>Governance &amp; Data Quality</span>
             </label>
           </div>
@@ -1029,7 +1121,217 @@
       setTimeout(closeContactDialog, 300);
     });
 
+    const initHeroParticles = (canvas, reduceMotion) => {
+      const ctx = canvas.getContext("2d");
+      const container = canvas.closest(".hero-media");
+      if (!ctx || !container) return;
+
+      let width = 0;
+      let height = 0;
+      let dpr = 1;
+      let frame = 0;
+      let particles = [];
+      const interactionTarget = canvas.closest(".hero") || container;
+      const labels = Array.from(container.querySelectorAll(".hero-map-label"));
+      const pointer = {
+        x: 0,
+        y: 0,
+        active: false,
+        strength: 0,
+      };
+      let labelAnchors = [];
+
+      const palette = [
+        { r: 122, g: 215, b: 245 },
+        { r: 142, g: 115, b: 255 },
+        { r: 65, g: 215, b: 209 },
+        { r: 246, g: 200, b: 95 },
+      ];
+
+      const setPointer = (event) => {
+        const bounds = canvas.getBoundingClientRect();
+        pointer.x = event.clientX - bounds.left;
+        pointer.y = event.clientY - bounds.top;
+        pointer.active = true;
+        pointer.strength = 1;
+      };
+
+      const buildParticles = () => {
+        const area = width * height;
+        const count = Math.max(58, Math.min(126, Math.round(area / 5200)));
+        particles = Array.from({ length: count }, (_, index) => {
+          const color = palette[index % palette.length];
+          return {
+            baseX: Math.random() * width,
+            baseY: Math.random() * height,
+            x: Math.random() * width,
+            y: Math.random() * height,
+            phase: Math.random() * Math.PI * 2,
+            speed: 0.35 + Math.random() * 0.55,
+            drift: 7 + Math.random() * 18,
+            radius: 1.1 + Math.random() * 1.9,
+            color,
+          };
+        });
+      };
+
+      const resize = () => {
+        const bounds = container.getBoundingClientRect();
+        width = Math.max(1, Math.round(bounds.width));
+        height = Math.max(1, Math.round(bounds.height));
+        dpr = Math.min(window.devicePixelRatio || 1, 2);
+        canvas.width = Math.round(width * dpr);
+        canvas.height = Math.round(height * dpr);
+        canvas.style.width = `${width}px`;
+        canvas.style.height = `${height}px`;
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        buildParticles();
+      };
+
+      const updateLabelAnchors = () => {
+        const canvasBounds = canvas.getBoundingClientRect();
+        labelAnchors = labels.map((label, index) => {
+          const bounds = label.getBoundingClientRect();
+          const x = bounds.left - canvasBounds.left + 4;
+          const y = bounds.top - canvasBounds.top + bounds.height / 2;
+          const color = palette[index % palette.length];
+          const pointerDistance = pointer.active ? Math.hypot(pointer.x - x, pointer.y - y) : 999;
+          const activity = Math.max(0, 1 - pointerDistance / 230) * pointer.strength;
+          label.style.setProperty("--label-active", activity.toFixed(3));
+          return { x, y, color, activity };
+        });
+      };
+
+      const draw = (time = 0) => {
+        ctx.clearRect(0, 0, width, height);
+        const t = time * 0.001;
+        pointer.strength += ((pointer.active ? 1 : 0) - pointer.strength) * 0.08;
+
+        labels.forEach((label) => {
+          const baseX = label.offsetLeft + 4;
+          const baseY = label.offsetTop + label.offsetHeight / 2;
+          const dx = pointer.x - baseX;
+          const dy = pointer.y - baseY;
+          const distance = Math.hypot(dx, dy) || 1;
+          const influence = Math.max(0, 1 - distance / 260) * pointer.strength;
+          const pull = 18 * influence;
+          const offsetX = (dx / distance) * pull;
+          const offsetY = (dy / distance) * pull;
+          label.style.setProperty("--label-x", `${offsetX.toFixed(2)}px`);
+          label.style.setProperty("--label-y", `${offsetY.toFixed(2)}px`);
+        });
+        updateLabelAnchors();
+
+        particles.forEach((particle) => {
+          const driftX = Math.cos(t * particle.speed + particle.phase) * particle.drift;
+          const driftY = Math.sin(t * particle.speed * 0.86 + particle.phase * 1.4) * particle.drift;
+          let targetX = particle.baseX + driftX;
+          let targetY = particle.baseY + driftY;
+
+          const dx = targetX - pointer.x;
+          const dy = targetY - pointer.y;
+          const distance = Math.hypot(dx, dy) || 1;
+          const influence = Math.max(0, 1 - distance / 170) * pointer.strength;
+          if (influence > 0) {
+            targetX += (dx / distance) * influence * 54;
+            targetY += (dy / distance) * influence * 54;
+          }
+
+          particle.x += (targetX - particle.x) * 0.055;
+          particle.y += (targetY - particle.y) * 0.055;
+        });
+
+        ctx.lineWidth = 1;
+        for (let i = 0; i < particles.length; i += 1) {
+          for (let j = i + 1; j < particles.length; j += 1) {
+            const a = particles[i];
+            const b = particles[j];
+            const dx = a.x - b.x;
+            const dy = a.y - b.y;
+            const distance = Math.hypot(dx, dy);
+            if (distance > 118) continue;
+
+            const nearPointer = pointer.active
+              ? Math.max(0, 1 - Math.hypot((a.x + b.x) / 2 - pointer.x, (a.y + b.y) / 2 - pointer.y) / 230)
+              : 0;
+            const alpha = (1 - distance / 118) * (0.12 + nearPointer * 0.26);
+            ctx.strokeStyle = `rgba(122, 215, 245, ${alpha})`;
+            ctx.beginPath();
+            ctx.moveTo(a.x, a.y);
+            ctx.lineTo(b.x, b.y);
+            ctx.stroke();
+          }
+        }
+
+        labelAnchors.forEach((anchor) => {
+          const { r, g, b } = anchor.color;
+          const nearbyParticles = particles
+            .map((particle) => ({
+              particle,
+              distance: Math.hypot(particle.x - anchor.x, particle.y - anchor.y),
+            }))
+            .filter((item) => item.distance < 190)
+            .sort((a, b) => a.distance - b.distance)
+            .slice(0, 5);
+
+          nearbyParticles.forEach(({ particle, distance }) => {
+            const alpha = (1 - distance / 190) * (0.08 + anchor.activity * 0.34);
+            if (alpha <= 0.01) return;
+            ctx.strokeStyle = `rgba(${r}, ${g}, ${b}, ${alpha})`;
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(anchor.x, anchor.y);
+            ctx.lineTo(particle.x, particle.y);
+            ctx.stroke();
+          });
+
+          if (anchor.activity > 0.02) {
+            ctx.strokeStyle = `rgba(${r}, ${g}, ${b}, ${0.16 + anchor.activity * 0.34})`;
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.arc(anchor.x, anchor.y, 14 + anchor.activity * 14, 0, Math.PI * 2);
+            ctx.stroke();
+          }
+        });
+
+        particles.forEach((particle) => {
+          const pointerDistance = pointer.active ? Math.hypot(particle.x - pointer.x, particle.y - pointer.y) : 999;
+          const glow = Math.max(0, 1 - pointerDistance / 170);
+          const { r, g, b } = particle.color;
+          ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${0.54 + glow * 0.42})`;
+          ctx.shadowColor = `rgba(${r}, ${g}, ${b}, ${0.35 + glow * 0.42})`;
+          ctx.shadowBlur = 8 + glow * 18;
+          ctx.beginPath();
+          ctx.arc(particle.x, particle.y, particle.radius + glow * 1.35, 0, Math.PI * 2);
+          ctx.fill();
+        });
+        ctx.shadowBlur = 0;
+
+        if (!reduceMotion) frame = window.requestAnimationFrame(draw);
+      };
+
+      resize();
+      if ("ResizeObserver" in window) {
+        new ResizeObserver(resize).observe(container);
+      } else {
+        window.addEventListener("resize", resize);
+      }
+
+      interactionTarget.addEventListener("pointermove", setPointer);
+      interactionTarget.addEventListener("pointerleave", () => {
+        pointer.active = false;
+      });
+
+      draw();
+      window.addEventListener("pagehide", () => {
+        if (frame) window.cancelAnimationFrame(frame);
+      }, { once: true });
+    };
+
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const heroParticleCanvas = document.querySelector(".hero-particle-canvas");
+    if (heroParticleCanvas) initHeroParticles(heroParticleCanvas, reduceMotion);
+
     if (!reduceMotion && "IntersectionObserver" in window) {
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
