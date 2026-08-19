@@ -246,6 +246,12 @@
       <div class="hero-visual" aria-hidden="true">
         <div class="hero-media">
           <canvas class="hero-particle-canvas"></canvas>
+          <div class="hero-map-annotations">
+            <span class="hero-map-label label-strategy">Data Strategy</span>
+            <span class="hero-map-label label-platform">Data Platform</span>
+            <span class="hero-map-label label-governance">Governance</span>
+            <span class="hero-map-label label-products">AI Products</span>
+          </div>
         </div>
       </div>
 
@@ -1259,71 +1265,23 @@
       let height = 0;
       let dpr = 1;
       let frame = 0;
-      let lastDraw = -Infinity;
+      let particles = [];
       const interactionTarget = canvas.closest(".hero") || container;
+      const labels = Array.from(container.querySelectorAll(".hero-map-label"));
       const pointer = {
         x: 0,
         y: 0,
         active: false,
         strength: 0,
       };
+      let labelAnchors = [];
+
       const palette = [
         { r: 122, g: 215, b: 245 },
         { r: 142, g: 115, b: 255 },
         { r: 65, g: 215, b: 209 },
+        { r: 246, g: 200, b: 95 },
       ];
-
-      const orbitFamilies = [
-        {
-          count: 13,
-          rotation: -0.64,
-          rx: 0.43,
-          ry: 0.27,
-          laneX: -0.008,
-          laneY: 0.011,
-          laneScale: -0.011,
-          alpha: 0.44,
-          width: 1.45,
-          startColor: palette[1],
-          endColor: palette[0],
-        },
-        {
-          count: 9,
-          rotation: 0.62,
-          rx: 0.38,
-          ry: 0.22,
-          laneX: 0.009,
-          laneY: -0.006,
-          laneScale: -0.01,
-          alpha: 0.34,
-          width: 1.25,
-          startColor: palette[0],
-          endColor: palette[2],
-        },
-      ];
-
-      const guideOrbits = [
-        { rotation: -1.05, rx: 0.5, ry: 0.2, alpha: 0.2 },
-        { rotation: -0.05, rx: 0.47, ry: 0.31, alpha: 0.14 },
-        { rotation: 0.88, rx: 0.42, ry: 0.18, alpha: 0.17 },
-      ];
-
-      const orbitNodes = [
-        { guide: 0, angle: -2.12, speed: 0.018, color: palette[1], radius: 5.6 },
-        { guide: 0, angle: 1.52, speed: -0.015, color: palette[0], radius: 6.2 },
-        { guide: 1, angle: -1.86, speed: 0.017, color: palette[0], radius: 5.8 },
-        { guide: 1, angle: 1.58, speed: -0.016, color: palette[1], radius: 5.2 },
-        { guide: 2, angle: -1.24, speed: 0.014, color: palette[2], radius: 4.8 },
-      ];
-
-      const motifLabels = [
-        { text: "DATA STRATEGY", x: -0.22, y: -0.18, color: palette[0] },
-        { text: "DATA PLATFORM", x: 0.15, y: -0.19, color: palette[1] },
-        { text: "GOVERNANCE", x: -0.22, y: 0.06, color: palette[1] },
-        { text: "AI PRODUCTS", x: 0.07, y: 0.04, color: palette[2] },
-      ];
-
-      const rgba = ({ r, g, b }, alpha) => `rgba(${r}, ${g}, ${b}, ${alpha})`;
 
       const setPointer = (event) => {
         const bounds = canvas.getBoundingClientRect();
@@ -1333,150 +1291,155 @@
         pointer.strength = 1;
       };
 
+      const buildParticles = () => {
+        const area = width * height;
+        const count = Math.max(58, Math.min(126, Math.round(area / 5200)));
+        particles = Array.from({ length: count }, (_, index) => {
+          const color = palette[index % palette.length];
+          return {
+            baseX: Math.random() * width,
+            baseY: Math.random() * height,
+            x: Math.random() * width,
+            y: Math.random() * height,
+            phase: Math.random() * Math.PI * 2,
+            speed: 0.35 + Math.random() * 0.55,
+            drift: 7 + Math.random() * 18,
+            radius: 1.1 + Math.random() * 1.9,
+            color,
+          };
+        });
+      };
+
       const resize = () => {
         const bounds = container.getBoundingClientRect();
         width = Math.max(1, Math.round(bounds.width));
         height = Math.max(1, Math.round(bounds.height));
-        dpr = Math.min(window.devicePixelRatio || 1, 1.35);
+        dpr = Math.min(window.devicePixelRatio || 1, 2);
         canvas.width = Math.round(width * dpr);
         canvas.height = Math.round(height * dpr);
         canvas.style.width = `${width}px`;
         canvas.style.height = `${height}px`;
         ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        buildParticles();
       };
 
-      const getMotif = () => {
-        const size = Math.min(width * 0.58, height * 0.9);
-
-        return {
-          cx: width * 0.83,
-          cy: height * 0.34,
-          size,
-        };
-      };
-
-      const ellipsePoint = (cx, cy, rx, ry, rotation, angle) => {
-        const x = Math.cos(angle) * rx;
-        const y = Math.sin(angle) * ry;
-        const cos = Math.cos(rotation);
-        const sin = Math.sin(rotation);
-
-        return {
-          x: cx + x * cos - y * sin,
-          y: cy + x * sin + y * cos,
-        };
-      };
-
-      const drawMotifLabel = (label, motif) => {
-        const baseX = motif.cx + motif.size * label.x;
-        const baseY = motif.cy + motif.size * label.y;
-        const dx = pointer.x - baseX;
-        const dy = pointer.y - baseY;
-        const pointerDistance = pointer.active ? Math.hypot(dx, dy) : 999;
-        const activity = Math.max(0, 1 - pointerDistance / 190) * pointer.strength;
-        const fontSize = 11 + activity * 2.4;
-        const distance = pointerDistance || 1;
-        const move = activity * 10;
-        const x = baseX + (dx / distance) * move;
-        const y = baseY + (dy / distance) * move;
-
-        ctx.save();
-        ctx.font = `800 ${fontSize.toFixed(2)}px 'DM Sans', sans-serif`;
-        ctx.fillStyle = rgba(label.color, 0.7 + activity * 0.22);
-        ctx.textAlign = "center";
-        ctx.textBaseline = "middle";
-        ctx.shadowColor = activity > 0 ? rgba(label.color, 0.2 + activity * 0.28) : "rgba(7, 8, 20, 0.75)";
-        ctx.shadowBlur = 12 + activity * 14;
-        ctx.fillText(label.text, x, y);
-        ctx.restore();
-      };
-
-      const drawOrbitFamily = (family, motif, t) => {
-        const gradient = ctx.createLinearGradient(
-          motif.cx - motif.size * 0.46,
-          motif.cy + motif.size * 0.22,
-          motif.cx + motif.size * 0.46,
-          motif.cy - motif.size * 0.22,
-        );
-        gradient.addColorStop(0, rgba(family.startColor, family.alpha));
-        gradient.addColorStop(0.58, rgba(family.endColor, family.alpha * 0.9));
-        gradient.addColorStop(1, rgba(family.endColor, family.alpha * 0.22));
-
-        ctx.save();
-        ctx.strokeStyle = gradient;
-        ctx.lineCap = "round";
-        ctx.lineJoin = "round";
-
-        for (let lane = 0; lane < family.count; lane += 1) {
-          const laneOffset = lane - (family.count - 1) / 2;
-          const phase = Math.sin(t * 0.16 + lane * 0.33) * motif.size * 0.0025;
-          const cx = motif.cx + laneOffset * family.laneX * motif.size;
-          const cy = motif.cy + laneOffset * family.laneY * motif.size;
-          const scale = 1 + laneOffset * family.laneScale;
-          const rx = motif.size * family.rx * scale + phase;
-          const ry = motif.size * family.ry * scale - phase * 0.4;
-
-          ctx.globalAlpha = Math.max(0.18, 1 - Math.abs(laneOffset) * 0.045);
-          ctx.lineWidth = Math.max(0.75, family.width - Math.abs(laneOffset) * 0.02);
-          ctx.beginPath();
-          ctx.ellipse(cx, cy, rx, ry, family.rotation, 0, Math.PI * 2);
-          ctx.stroke();
-        }
-
-        ctx.restore();
-      };
-
-      const drawGuideOrbit = (guide, motif) => {
-        ctx.save();
-        ctx.setLineDash([2, 7]);
-        ctx.lineWidth = 1.1;
-        ctx.strokeStyle = rgba(palette[0], guide.alpha);
-        ctx.beginPath();
-        ctx.ellipse(motif.cx, motif.cy, motif.size * guide.rx, motif.size * guide.ry, guide.rotation, 0, Math.PI * 2);
-        ctx.stroke();
-        ctx.restore();
-      };
-
-      const drawNode = (spec, motif, t) => {
-        const guide = guideOrbits[spec.guide];
-        const angle = spec.angle + t * spec.speed;
-        const point = ellipsePoint(motif.cx, motif.cy, motif.size * guide.rx, motif.size * guide.ry, guide.rotation, angle);
-        const pointerDistance = pointer.active ? Math.hypot(point.x - pointer.x, point.y - pointer.y) : 999;
-        const activity = Math.max(0, 1 - pointerDistance / 180) * pointer.strength;
-        const radius = spec.radius + activity * 1.8;
-
-        ctx.save();
-        ctx.shadowColor = rgba(spec.color, 0.28 + activity * 0.3);
-        ctx.shadowBlur = 12 + activity * 14;
-        ctx.fillStyle = rgba(spec.color, 0.88);
-        ctx.beginPath();
-        ctx.arc(point.x, point.y, radius, 0, Math.PI * 2);
-        ctx.fill();
-        ctx.restore();
+      const updateLabelAnchors = () => {
+        const canvasBounds = canvas.getBoundingClientRect();
+        labelAnchors = labels.map((label, index) => {
+          const bounds = label.getBoundingClientRect();
+          const x = bounds.left - canvasBounds.left + 4;
+          const y = bounds.top - canvasBounds.top + bounds.height / 2;
+          const color = palette[index % palette.length];
+          const pointerDistance = pointer.active ? Math.hypot(pointer.x - x, pointer.y - y) : 999;
+          const activity = Math.max(0, 1 - pointerDistance / 230) * pointer.strength;
+          label.style.setProperty("--label-active", activity.toFixed(3));
+          return { x, y, color, activity };
+        });
       };
 
       const draw = (time = 0) => {
-        if (!reduceMotion && time - lastDraw < 32) {
-          frame = window.requestAnimationFrame(draw);
-          return;
-        }
-
-        lastDraw = time;
         ctx.clearRect(0, 0, width, height);
         const t = time * 0.001;
         pointer.strength += ((pointer.active ? 1 : 0) - pointer.strength) * 0.08;
 
-        const motif = getMotif();
+        labels.forEach((label) => {
+          const baseX = label.offsetLeft + 4;
+          const baseY = label.offsetTop + label.offsetHeight / 2;
+          const dx = pointer.x - baseX;
+          const dy = pointer.y - baseY;
+          const distance = Math.hypot(dx, dy) || 1;
+          const influence = Math.max(0, 1 - distance / 260) * pointer.strength;
+          const pull = 18 * influence;
+          const offsetX = (dx / distance) * pull;
+          const offsetY = (dy / distance) * pull;
+          label.style.setProperty("--label-x", `${offsetX.toFixed(2)}px`);
+          label.style.setProperty("--label-y", `${offsetY.toFixed(2)}px`);
+        });
+        updateLabelAnchors();
 
-        ctx.globalCompositeOperation = "source-over";
-        orbitFamilies.forEach((family) => drawOrbitFamily(family, motif, t));
-        guideOrbits.forEach((guide) => drawGuideOrbit(guide, motif));
-        orbitNodes.forEach((spec) => drawNode(spec, motif, t));
-        if (width > 860) {
-          motifLabels.forEach((label) => drawMotifLabel(label, motif));
+        particles.forEach((particle) => {
+          const driftX = Math.cos(t * particle.speed + particle.phase) * particle.drift;
+          const driftY = Math.sin(t * particle.speed * 0.86 + particle.phase * 1.4) * particle.drift;
+          let targetX = particle.baseX + driftX;
+          let targetY = particle.baseY + driftY;
+
+          const dx = targetX - pointer.x;
+          const dy = targetY - pointer.y;
+          const distance = Math.hypot(dx, dy) || 1;
+          const influence = Math.max(0, 1 - distance / 170) * pointer.strength;
+          if (influence > 0) {
+            targetX += (dx / distance) * influence * 54;
+            targetY += (dy / distance) * influence * 54;
+          }
+
+          particle.x += (targetX - particle.x) * 0.055;
+          particle.y += (targetY - particle.y) * 0.055;
+        });
+
+        ctx.lineWidth = 1;
+        for (let i = 0; i < particles.length; i += 1) {
+          for (let j = i + 1; j < particles.length; j += 1) {
+            const a = particles[i];
+            const b = particles[j];
+            const dx = a.x - b.x;
+            const dy = a.y - b.y;
+            const distance = Math.hypot(dx, dy);
+            if (distance > 118) continue;
+
+            const nearPointer = pointer.active
+              ? Math.max(0, 1 - Math.hypot((a.x + b.x) / 2 - pointer.x, (a.y + b.y) / 2 - pointer.y) / 230)
+              : 0;
+            const alpha = (1 - distance / 118) * (0.12 + nearPointer * 0.26);
+            ctx.strokeStyle = `rgba(122, 215, 245, ${alpha})`;
+            ctx.beginPath();
+            ctx.moveTo(a.x, a.y);
+            ctx.lineTo(b.x, b.y);
+            ctx.stroke();
+          }
         }
-        ctx.globalAlpha = 1;
-        ctx.setLineDash([]);
+
+        labelAnchors.forEach((anchor) => {
+          const { r, g, b } = anchor.color;
+          const nearbyParticles = particles
+            .map((particle) => ({
+              particle,
+              distance: Math.hypot(particle.x - anchor.x, particle.y - anchor.y),
+            }))
+            .filter((item) => item.distance < 190)
+            .sort((a, b) => a.distance - b.distance)
+            .slice(0, 5);
+
+          nearbyParticles.forEach(({ particle, distance }) => {
+            const alpha = (1 - distance / 190) * (0.08 + anchor.activity * 0.34);
+            if (alpha <= 0.01) return;
+            ctx.strokeStyle = `rgba(${r}, ${g}, ${b}, ${alpha})`;
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(anchor.x, anchor.y);
+            ctx.lineTo(particle.x, particle.y);
+            ctx.stroke();
+          });
+
+          if (anchor.activity > 0.02) {
+            ctx.strokeStyle = `rgba(${r}, ${g}, ${b}, ${0.16 + anchor.activity * 0.34})`;
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.arc(anchor.x, anchor.y, 14 + anchor.activity * 14, 0, Math.PI * 2);
+            ctx.stroke();
+          }
+        });
+
+        particles.forEach((particle) => {
+          const pointerDistance = pointer.active ? Math.hypot(particle.x - pointer.x, particle.y - pointer.y) : 999;
+          const glow = Math.max(0, 1 - pointerDistance / 170);
+          const { r, g, b } = particle.color;
+          ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${0.54 + glow * 0.42})`;
+          ctx.shadowColor = `rgba(${r}, ${g}, ${b}, ${0.35 + glow * 0.42})`;
+          ctx.shadowBlur = 8 + glow * 18;
+          ctx.beginPath();
+          ctx.arc(particle.x, particle.y, particle.radius + glow * 1.35, 0, Math.PI * 2);
+          ctx.fill();
+        });
         ctx.shadowBlur = 0;
 
         if (!reduceMotion) frame = window.requestAnimationFrame(draw);
