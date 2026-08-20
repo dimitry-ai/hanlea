@@ -518,15 +518,15 @@ main{
 
 .hero-media::before{
   background:
-    linear-gradient(90deg, rgba(7,8,20,.98) 0%, rgba(7,8,20,.94) 42%, rgba(7,8,20,.56) 58%, rgba(7,8,20,.1) 82%, rgba(7,8,20,.24) 100%),
-    linear-gradient(180deg, rgba(7,8,20,.02), rgba(7,8,20,.08) 54%, rgba(7,8,20,.84));
+    linear-gradient(90deg, rgba(7,8,20,.84) 0%, rgba(7,8,20,.56) 35%, rgba(7,8,20,.08) 74%, rgba(7,8,20,.16) 100%),
+    linear-gradient(180deg, rgba(7,8,20,.08), rgba(7,8,20,.04) 52%, rgba(7,8,20,.7));
 }
 
 .hero-media::after{
   background:
-    radial-gradient(560px 420px at 82% 34%, rgba(122,215,245,.14), transparent 68%),
-    radial-gradient(500px 380px at 92% 52%, rgba(142,115,255,.15), transparent 72%);
-  opacity:.78;
+    radial-gradient(760px 520px at 72% 28%, rgba(122,215,245,.14), transparent 68%),
+    radial-gradient(520px 420px at 88% 72%, rgba(142,115,255,.12), transparent 70%);
+  opacity:.9;
   mix-blend-mode:screen;
 }
 
@@ -537,8 +537,111 @@ main{
   width:100%;
   height:100%;
   display:block;
-  -webkit-mask-image:linear-gradient(90deg, transparent 0%, transparent 40%, rgba(0,0,0,.5) 54%, #000 68%);
-  mask-image:linear-gradient(90deg, transparent 0%, transparent 40%, rgba(0,0,0,.5) 54%, #000 68%);
+}
+
+.hero-map-annotations{
+  position:absolute;
+  top:0;
+  right:0;
+  left:0;
+  z-index:3;
+  height:clamp(680px, 86vh, 920px);
+  max-height:100%;
+  pointer-events:none;
+}
+
+.hero-map-label{
+  --label-x:0px;
+  --label-y:0px;
+  --label-active:0;
+  position:absolute;
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  color:rgba(229,239,255,.78);
+  font-size:.72rem;
+  font-weight:850;
+  letter-spacing:.08em;
+  line-height:1.2;
+  text-transform:uppercase;
+  text-shadow:0 0 22px rgba(7,8,20,.85);
+  opacity:calc(.68 + var(--label-active) * .24);
+  animation:mapLabelFloat 7.5s ease-in-out infinite;
+}
+
+.hero-map-label::before{
+  content:"";
+  width:calc(9px + var(--label-active) * 3px);
+  height:calc(9px + var(--label-active) * 3px);
+  flex:0 0 calc(9px + var(--label-active) * 3px);
+  border:1px solid rgba(122,215,245,.72);
+  border-radius:999px;
+  background:rgba(7,8,20,.28);
+  box-shadow:0 0 calc(22px + var(--label-active) * 18px) rgba(122,215,245,.58);
+}
+
+.hero-map-label::after{
+  content:"";
+  position:absolute;
+  left:4px;
+  top:50%;
+  width:clamp(58px, 8vw, 118px);
+  height:1px;
+  background:linear-gradient(90deg, rgba(122,215,245,.42), rgba(122,215,245,.08), transparent);
+  opacity:calc(.62 + var(--label-active) * .38);
+  transform:translate(-100%, -50%);
+}
+
+.label-strategy{
+  right:21%;
+  top:24%;
+}
+
+.label-platform{
+  right:10%;
+  top:37%;
+  animation-delay:-1.8s;
+}
+
+.label-governance{
+  right:17%;
+  top:50%;
+  animation-delay:-3.4s;
+}
+
+.label-products{
+  right:8%;
+  top:63%;
+  animation-delay:-5.2s;
+}
+
+.label-platform::before{
+  border-color:rgba(142,115,255,.78);
+  box-shadow:0 0 22px rgba(142,115,255,.34);
+}
+
+.label-platform::after{
+  width:clamp(34px, 5vw, 70px);
+  background:linear-gradient(90deg, rgba(142,115,255,.4), rgba(142,115,255,.08), transparent);
+  opacity:calc(.42 + var(--label-active) * .3);
+}
+
+.label-governance::before{
+  border-color:rgba(246,200,95,.74);
+  box-shadow:0 0 22px rgba(246,200,95,.3);
+}
+
+.label-governance::after{
+  background:linear-gradient(90deg, rgba(246,200,95,.38), rgba(246,200,95,.08), transparent);
+}
+
+.label-products::before{
+  border-color:rgba(65,215,209,.76);
+  box-shadow:0 0 22px rgba(65,215,209,.34);
+}
+
+.label-products::after{
+  background:linear-gradient(90deg, rgba(65,215,209,.38), rgba(65,215,209,.08), transparent);
 }
 
 .card-icon{
@@ -1841,6 +1944,11 @@ main{
   to{transform:translateX(-50%)}
 }
 
+@keyframes mapLabelFloat{
+  0%, 100%{transform:translate3d(var(--label-x), var(--label-y), 0)}
+  50%{transform:translate3d(var(--label-x), calc(var(--label-y) - 7px), 0)}
+}
+
 @media (max-width:1100px){
   .brand-slogan{
     display:none;
@@ -1853,6 +1961,30 @@ main{
 
   .hero-copy h1{
     max-width:20ch;
+  }
+
+  .hero-map-label{
+    opacity:.72;
+  }
+
+  .label-strategy{
+    right:16%;
+    top:24%;
+  }
+
+  .label-platform{
+    right:5%;
+    top:36%;
+  }
+
+  .label-governance{
+    right:13%;
+    top:48%;
+  }
+
+  .label-products{
+    right:4%;
+    top:60%;
   }
 
   .problem-grid,
@@ -2011,6 +2143,30 @@ main{
 
   .hero-sub{
     font-size:1rem;
+  }
+
+  .hero-map-label{
+    font-size:.62rem;
+    opacity:.5;
+  }
+
+  .hero-map-label::after{
+    width:42px;
+  }
+
+  .label-governance,
+  .label-products{
+    display:none;
+  }
+
+  .label-strategy{
+    right:5%;
+    top:28%;
+  }
+
+  .label-platform{
+    right:3%;
+    top:52%;
   }
 
   .about-wide-expertise{
@@ -2253,6 +2409,10 @@ main{
   .about-card h3,
   .why-card h3{
     overflow-wrap:anywhere;
+  }
+
+  .hero-map-label{
+    display:none;
   }
 
   .tech-pill{
