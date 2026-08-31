@@ -858,6 +858,11 @@ main{
   transition:transform .18s ease, background .18s ease, border-color .18s ease;
 }
 
+.entry-card-feature{
+  min-height:260px;
+  grid-column:1 / -1;
+}
+
 .entry-card:focus-visible{
   outline:3px solid var(--focus-ring);
   outline-offset:4px;
@@ -932,6 +937,21 @@ main{
 .service-panel p{
   margin-top:14px;
   font-size:1rem;
+}
+
+.service-link{
+  display:inline-flex;
+  margin-top:18px;
+  color:#9fdfff;
+  font-weight:800;
+  line-height:1.45;
+  text-decoration:underline;
+  text-decoration-thickness:2px;
+  text-underline-offset:4px;
+}
+
+.service-link:hover{
+  color:#d8f7ff;
 }
 
 .service-panel ul,
