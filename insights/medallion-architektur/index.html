@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- ARTICLE_SEO:START -->
+  <title>Medallion-Architektur: Bronze, Silver und Gold | Hanlea</title>
+  <meta name="description" content="Medallion-Architektur verständlich erklärt: Aufgaben von Bronze, Silver und Gold, ein Praxisbeispiel und Entscheidungen für Datenqualität und Governance." />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="theme-color" content="#070814" />
+  <link rel="canonical" href="https://www.hanlea.com/insights/medallion-architektur/" />
+  <meta property="og:title" content="Bronze, Silver, Gold: Wie aus Rohdaten nutzbare Daten werden | Hanlea Insights" />
+  <meta property="og:description" content="Medallion-Architektur verständlich erklärt: Aufgaben von Bronze, Silver und Gold, ein Praxisbeispiel und Entscheidungen für Datenqualität und Governance." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.hanlea.com/insights/medallion-architektur/" />
+  <meta property="og:site_name" content="Hanlea" />
+  <meta property="og:locale" content="de_DE" />
+  <meta property="og:image" content="https://www.hanlea.com/assets/og/medallion.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Bronze, Silver, Gold: Wie aus Rohdaten nutzbare Daten werden" />
+  <meta property="article:modified_time" content="2026-11-04" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Medallion-Architektur: Bronze, Silver und Gold | Hanlea" />
+  <meta name="twitter:description" content="Medallion-Architektur verständlich erklärt: Aufgaben von Bronze, Silver und Gold, ein Praxisbeispiel und Entscheidungen für Datenqualität und Governance." />
+  <meta name="twitter:image" content="https://www.hanlea.com/assets/og/medallion.png" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://www.hanlea.com/insights/medallion-architektur/#article",
+      "url": "https://www.hanlea.com/insights/medallion-architektur/",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.hanlea.com/insights/medallion-architektur/"
+      },
+      "headline": "Bronze, Silver, Gold: Wie aus Rohdaten nutzbare Daten werden",
+      "description": "Medallion-Architektur verständlich erklärt: Aufgaben von Bronze, Silver und Gold, ein Praxisbeispiel und Entscheidungen für Datenqualität und Governance.",
+      "inLanguage": "de-DE",
+      "articleSection": "Data Platforms",
+      "image": [
+        "https://www.hanlea.com/assets/og/medallion.png"
+      ],
+      "author": {
+        "@type": "Organization",
+        "@id": "https://www.hanlea.com/#organization",
+        "name": "Hanlea",
+        "url": "https://www.hanlea.com/#ueber-uns"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "@id": "https://www.hanlea.com/#organization",
+        "name": "Hanlea",
+        "url": "https://www.hanlea.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.hanlea.com/hanlea_transparent.png"
+        }
+      },
+      "dateCreated": "2026-11-04",
+      "dateModified": "2026-11-04",
+      "wordCount": 609,
+      "isBasedOn": {
+        "@type": "CreativeWork",
+        "name": "Ursprünglicher Hanlea-Beitragsentwurf: Bronze, Silver, Gold: Wie aus Rohdaten nutzbare Daten werden",
+        "dateCreated": "2026-09-30"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Startseite",
+          "item": "https://www.hanlea.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Insights",
+          "item": "https://www.hanlea.com/insights/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Medallion-Architektur",
+          "item": "https://www.hanlea.com/insights/medallion-architektur/"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+<!-- ARTICLE_SEO:END -->  <link rel="icon" href="../../favicon.png" type="image/png" />
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="stylesheet" href="../../assets/css/insights.css" />
+  <script src="../../assets/js/consent.js" defer></script>
+  <script src="../../assets/js/contact.js" defer></script>
+  <script src="../../assets/js/navigation.js" defer></script>
+</head>
+<body class="insights-page">
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+  <div class="bg-ambient" aria-hidden="true"></div>
+
+  <header class="nav" data-hero-passed="true">
+    <div class="container nav-inner">
+      <a class="brand" href="../../index.html" aria-label="Hanlea Startseite">
+        <img class="brand-logo" src="../../hanlea_transparent.png" alt="Hanlea" width="186" height="59" />
+        <span class="brand-slogan">From data to impact</span>
+      </a>
+      <nav id="primary-nav" class="nav-links" aria-label="Hauptnavigation">
+        <a href="../../index.html#einstieg">Einstieg</a>
+        <a href="../../index.html#leistungen">Leistungen</a>
+        <a href="../../index.html#ueber-uns">Expertise</a>
+        <a href="../../index.html#vorgehen">Vorgehen</a>
+        <a href="../../index.html#use-cases">Use Cases</a>
+        <a href="../index.html" aria-current="location">Insights</a>
+        <a class="nav-mobile-cta" href="mailto:info@hanlea.com" data-contact-open>Vorhaben besprechen</a>
+      </nav>
+      <a class="btn btn-primary nav-cta" href="mailto:info@hanlea.com" data-contact-open>Vorhaben besprechen</a>
+      <button class="nav-toggle" type="button" aria-controls="primary-nav" aria-expanded="false" aria-label="Navigation öffnen">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <article class="container" aria-labelledby="article-title">
+<!-- ARTICLE_HEADER:START -->
+      <header class="article-header">
+        <nav class="article-breadcrumb" aria-label="Brotkrumennavigation">
+          <ol><li><a href="../../index.html">Startseite</a></li><li><a href="../index.html">Insights</a></li><li><span aria-current="page">Medallion-Architektur</span></li></ol>
+        </nav>
+        <div class="insight-tags"><span>Data Platforms</span></div>
+        <h1 id="article-title">Bronze, Silver, Gold: Wie aus Rohdaten nutzbare Daten werden</h1>
+        <p class="article-lead">Die Medallion-Architektur ordnet Daten nach ihrem Verarbeitungsstand: Bronze bewahrt Quelldaten, Silver prüft und vereinheitlicht sie, Gold stellt fachliche Modelle bereit. Der Nutzen entsteht durch klare Übergänge, Qualitätsregeln und Verantwortlichkeiten in jeder Schicht.</p>
+        <div class="article-meta"><span>Von <a href="../../index.html#ueber-uns" rel="author">Hanlea</a></span><span>4 Min. Lesezeit</span><time datetime="2026-07-09">9. Juli 2026</time></div>
+      </header>
+<!-- ARTICLE_HEADER:END -->
+
+      <figure class="article-cover">
+        <img src="../../assets/illustrations/insight-medallion-wide.svg" alt="Drei verbundene Datenebenen für Bronze, Silver und Gold." width="1440" height="600" />
+        <figcaption>Von erhaltenen Quelldaten zu fachlich nutzbaren Datenprodukten.</figcaption>
+      </figure>
+
+      <div class="article-layout">
+        <nav class="article-toc" aria-labelledby="toc-title">
+          <h2 id="toc-title">In diesem Artikel</h2>
+          <ol>
+            <li><a href="#grundidee">Was bedeutet Medallion?</a></li>
+            <li><a href="#schichten">Bronze, Silver und Gold</a></li>
+            <li><a href="#praxisbeispiel">Beispiel: ein Umsatzbericht</a></li>
+            <li><a href="#technologien">Technologien einordnen</a></li>
+            <li><a href="#entscheidungen">Worauf es in der Umsetzung ankommt</a></li>
+            <li><a href="#fragen">Häufige Fragen</a></li>
+            <li><a href="#quellen">Quellen</a></li>
+          </ol>
+        </nav>
+
+        <div class="article-body">
+          <section id="grundidee" aria-labelledby="grundidee-title">
+            <h2 id="grundidee-title">Was bedeutet Medallion-Architektur?</h2>
+            <p>Eine moderne Datenplattform muss unterschiedliche Lieferstände und Qualitätsniveaus beherrschbar machen. Eine frisch eingetroffene Datei hat einen anderen Zweck als eine abgestimmte Kennzahl für das Management. Medallion trennt diese Aufgaben in nachvollziehbare Verarbeitungsschritte.</p>
+            <p><a href="https://docs.databricks.com/aws/en/lakehouse/medallion" target="_blank" rel="noopener">Databricks beschreibt Medallion als logisches Entwurfsmuster</a>, in dem Struktur und Datenqualität schrittweise verbessert werden. Das Muster ist eine Orientierung für die Architektur. Drei entsprechend benannte Ordner allein schaffen noch keine verlässliche Datenbasis.</p>
+          </section>
+          <section id="schichten" aria-labelledby="schichten-title">
+            <h2 id="schichten-title">Welche Aufgaben haben Bronze, Silver und Gold?</h2>
+            <div class="article-table-wrap" role="region" aria-label="Aufgaben der drei Medallion-Schichten" tabindex="0">
+              <table class="article-table article-table--prose">
+                <caption>Drei Schichten mit unterschiedlichen Aufgaben</caption>
+                <thead><tr><th scope="col">Schicht</th><th scope="col">Aufgabe</th><th scope="col">Ergebnis</th></tr></thead>
+                <tbody>
+                  <tr><th scope="row">Bronze</th><td>Quelldaten möglichst originalnah und mit Herkunft übernehmen.</td><td>Eine nachvollziehbare Grundlage für erneute Verarbeitung.</td></tr>
+                  <tr><th scope="row">Silver</th><td>Datentypen, Dubletten, fehlende Werte und Beziehungen prüfen.</td><td>Bereinigte, zusammenführbare Datensätze.</td></tr>
+                  <tr><th scope="row">Gold</th><td>Daten für definierte fachliche Fragen modellieren.</td><td>Kennzahlen und Datenmodelle für Berichte, Anwendungen und AI.</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p>Wichtig ist der Umgang mit fehlerhaften Daten. Ein unvollständiger Datensatz muss identifizierbar bleiben. Ob er verworfen, korrigiert oder in einen getrennten Prüfbereich geschrieben wird, ist eine bewusste fachliche Entscheidung.</p>
+          </section>
+          <section id="praxisbeispiel" aria-labelledby="praxisbeispiel-title">
+            <h2 id="praxisbeispiel-title">Ein Beispiel: Warum zwei Teams verschiedene Umsätze sehen</h2>
+            <p><strong>Das folgende Beispiel ist fiktiv.</strong> Ein Unternehmen erhält Bestellungen aus einem Shopsystem und Zahlungsinformationen aus dem ERP. Vertrieb und Finance berechnen daraus unterschiedliche Umsätze. Die Ursache liegt in der Frage, wann eine Bestellung zählt und wie Stornierungen behandelt werden.</p>
+            <p>In Bronze werden die jeweiligen Lieferstände mit Quelle und Eingangszeit erhalten. Dadurch kann das Team später nachvollziehen, welche Informationen zu einem bestimmten Zeitpunkt vorlagen.</p>
+            <p>In Silver werden Bestellnummern vereinheitlicht, Dubletten behandelt und Zahlungen den passenden Bestellungen zugeordnet. Eine Zahlung ohne bekannte Bestellung wird in einen Prüfbereich geschrieben. Das Team kann diese Fälle zählen und einen Verantwortlichen benennen.</p>
+            <p>In Gold entstehen getrennt definierte fachliche Sichten: etwa bestellter Umsatz für den Vertrieb und vereinnahmter Umsatz für Finance. Beide können korrekt sein, wenn Definition, Zeitraum und Zweck klar sind. Eine dokumentierte Überleitung erklärt die Unterschiede.</p>
+            <blockquote class="article-takeaway"><p>Eine verlässliche Kennzahl braucht eine nachvollziehbare Herkunft und eine abgestimmte fachliche Definition.</p></blockquote>
+          </section>
+          <section id="technologien" aria-labelledby="technologien-title">
+            <h2 id="technologien-title">Welche Rolle spielen die Technologien dahinter?</h2>
+            <p>Das Schichtenmodell beschreibt zunächst die Organisation der Daten. Die technischen Bausteine übernehmen unterschiedliche Aufgaben: Eine Verarbeitungsengine führt Transformationen aus, ein Tabellenformat verwaltet Tabellenzustände und ein Dateiformat beschreibt die gespeicherten Daten.</p>
+            <p><a href="https://delta.io/" target="_blank" rel="noopener">Delta Lake</a> ergänzt die Speicherung unter anderem um Transaktionen, Versionierung und Funktionen für Schemaänderungen. <a href="https://parquet.apache.org/docs/overview/" target="_blank" rel="noopener">Apache Parquet</a> ist ein spaltenorientiertes Dateiformat für effiziente Speicherung und Analyse. Diese Aufgaben ergänzen sich.</p>
+            <p>Für die Nachvollziehbarkeit beschreibt <a href="https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-lineage" target="_blank" rel="noopener">Unity Catalog Lineage</a>, wie Quellen, Transformationen und nachgelagerte Auswertungen zusammenhängen. Welche Metadaten erfasst werden können, hängt von den eingesetzten Komponenten und deren Einbindung ab.</p>
+          </section>
+          <section id="entscheidungen" aria-labelledby="entscheidungen-title">
+            <h2 id="entscheidungen-title">Was sollte ein Team vor der Umsetzung entscheiden?</h2>
+            <ul>
+              <li><strong>Qualitätsregeln:</strong> Welche Felder müssen vorhanden sein, welche Beziehungen stimmen und welche Fehler verhindern die Weiterverarbeitung?</li>
+              <li><strong>Verantwortung:</strong> Wer klärt fehlerhafte Lieferungen und wer genehmigt Änderungen an Kennzahlen?</li>
+              <li><strong>Wiederanlauf:</strong> Wie werden Korrekturen und verspätete Daten eingespielt, ohne Bestände unkontrolliert zu verdoppeln?</li>
+              <li><strong>Zugriff und Aufbewahrung:</strong> Wer benötigt welche Daten, und wie lange dürfen die jeweiligen Bestände gespeichert bleiben?</li>
+            </ul>
+            <p>Bei Hanlea verbinden wir diese Entscheidungen mit dem konkreten Datenprodukt. Ein guter Einstieg ist ein fachlich klarer Datenfluss mit wenigen Quellen, dokumentierten Qualitätsregeln und einem messbaren Ergebnis. Danach lässt sich beurteilen, welche Bausteine weitere Teams wiederverwenden können.</p>
+          </section>
+          <section id="fragen" aria-labelledby="fragen-title">
+            <h2 id="fragen-title">Häufige Fragen zur Medallion-Architektur</h2>
+            <h3>Muss jede Verarbeitung genau drei physische Kopien erzeugen?</h3>
+            <p>Das Muster beschreibt logische Aufgaben. Welche Tabellen, Sichten oder Materialisierungen tatsächlich benötigt werden, richtet sich nach Nutzung, Wiederanlauf und Betriebsanforderungen. Zusätzliche Kopien sollten einen klaren Zweck erfüllen.</p>
+            <h3>Ist Gold automatisch die beste Quelle für jeden AI-Use-Case?</h3>
+            <p>Ein aggregiertes Geschäftsmodell kann passende Details bereits verloren haben. Die geeignete Datenbasis hängt von der Aufgabe ab. Entscheidend sind nachvollziehbare Qualität, erlaubter Zugriff und die benötigte Granularität.</p>
+          </section>
+          <section id="quellen" class="article-sources" aria-labelledby="quellen-title">
+            <h2 id="quellen-title">Quellen &amp; weiterführende Informationen</h2>
+            <ol>
+              <li><a href="https://docs.databricks.com/aws/en/lakehouse/medallion" target="_blank" rel="noopener">Databricks: Medallion lakehouse architecture</a></li>
+              <li><a href="https://delta.io/" target="_blank" rel="noopener">Delta Lake: Funktionen und Architektur</a></li>
+              <li><a href="https://parquet.apache.org/docs/overview/" target="_blank" rel="noopener">Apache Parquet: Overview</a></li>
+              <li><a href="https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-lineage" target="_blank" rel="noopener">Databricks: Lineage in Unity Catalog</a></li>
+            </ol>
+            <p>Das Praxisbeispiel und die Umsetzungsempfehlungen sind eine eigene Ausarbeitung von Hanlea.</p>
+          </section>
+
+<!-- RELATED:START -->
+<section class="article-related" aria-labelledby="related-title"><h2 id="related-title">Weiterlesen</h2><ul>
+  <li><a href="../lakeflow-agentic-data-engineering/index.html">Wenn AI-Agenten Datenpipelines mitentwickeln</a></li>
+  <li><a href="../openjev-unity-gateway/index.html">Strukturierte Entscheidungen für Enterprise AI</a></li>
+</ul></section>
+<!-- RELATED:END -->
+          <div class="article-end"><a href="../index.html"><span aria-hidden="true">←</span> Zurück zu allen Insights</a></div>
+        </div>
+      </div>
+    </article>
+
+    <section class="insights-contact" aria-labelledby="article-contact-title">
+      <div class="container insights-contact-inner">
+        <div>
+          <h2 id="article-contact-title">Lassen Sie uns Ihr Vorhaben einordnen.</h2>
+          <p>Wir verbinden Datenstrategie, Plattformarchitektur und produktiven Betrieb.</p>
+        </div>
+        <a class="btn btn-secondary" href="mailto:info@hanlea.com" data-contact-open>Vorhaben besprechen <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="small">&copy; <span id="y"></span> Hanlea · Data &amp; AI Consulting</div>
+      <div class="footer-links">
+        <a class="small" href="../index.html">Insights</a>
+        <a class="small" href="../../impressum.html">Impressum</a>
+        <a class="small" href="../../datenschutz.html">Datenschutz</a>
+        <a class="small" href="https://www.linkedin.com/company/136064650/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="small" href="#datenschutzeinstellungen" data-consent-settings>Datenschutzeinstellungen</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

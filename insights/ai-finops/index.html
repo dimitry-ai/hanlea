@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- ARTICLE_SEO:START -->
+  <title>AI-FinOps: AI-Kosten durch Architektur steuern | Hanlea</title>
+  <meta name="description" content="Wie Unternehmen AI-Kosten durch Modellwahl, Kontextmanagement und Betriebsregeln steuern. Mit Rechenbeispiel und konkreten Einstiegsschritten." />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="theme-color" content="#070814" />
+  <link rel="canonical" href="https://www.hanlea.com/insights/ai-finops/" />
+  <meta property="og:title" content="Warum AI-Kosten ein Architekturthema sind | Hanlea Insights" />
+  <meta property="og:description" content="Wie Unternehmen AI-Kosten durch Modellwahl, Kontextmanagement und Betriebsregeln steuern. Mit Rechenbeispiel und konkreten Einstiegsschritten." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.hanlea.com/insights/ai-finops/" />
+  <meta property="og:site_name" content="Hanlea" />
+  <meta property="og:locale" content="de_DE" />
+  <meta property="og:image" content="https://www.hanlea.com/assets/og/ai-finops.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Warum AI-Kosten ein Architekturthema sind" />
+  <meta property="article:modified_time" content="2026-11-04" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="AI-FinOps: AI-Kosten durch Architektur steuern | Hanlea" />
+  <meta name="twitter:description" content="Wie Unternehmen AI-Kosten durch Modellwahl, Kontextmanagement und Betriebsregeln steuern. Mit Rechenbeispiel und konkreten Einstiegsschritten." />
+  <meta name="twitter:image" content="https://www.hanlea.com/assets/og/ai-finops.png" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://www.hanlea.com/insights/ai-finops/#article",
+      "url": "https://www.hanlea.com/insights/ai-finops/",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.hanlea.com/insights/ai-finops/"
+      },
+      "headline": "Warum AI-Kosten ein Architekturthema sind",
+      "description": "Wie Unternehmen AI-Kosten durch Modellwahl, Kontextmanagement und Betriebsregeln steuern. Mit Rechenbeispiel und konkreten Einstiegsschritten.",
+      "inLanguage": "de-DE",
+      "articleSection": "AI-FinOps & Architektur",
+      "image": [
+        "https://www.hanlea.com/assets/og/ai-finops.png"
+      ],
+      "author": {
+        "@type": "Organization",
+        "@id": "https://www.hanlea.com/#organization",
+        "name": "Hanlea",
+        "url": "https://www.hanlea.com/#ueber-uns"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "@id": "https://www.hanlea.com/#organization",
+        "name": "Hanlea",
+        "url": "https://www.hanlea.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.hanlea.com/hanlea_transparent.png"
+        }
+      },
+      "dateCreated": "2026-11-04",
+      "dateModified": "2026-11-04",
+      "wordCount": 1017,
+      "isBasedOn": {
+        "@type": "CreativeWork",
+        "name": "Ursprünglicher Hanlea-Beitragsentwurf: Warum AI-Kosten ein Architekturthema sind",
+        "dateCreated": "2026-09-14"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Startseite",
+          "item": "https://www.hanlea.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Insights",
+          "item": "https://www.hanlea.com/insights/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "AI-FinOps",
+          "item": "https://www.hanlea.com/insights/ai-finops/"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+<!-- ARTICLE_SEO:END -->  <link rel="icon" href="../../favicon.png" type="image/png" />
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="stylesheet" href="../../assets/css/insights.css" />
+  <script src="../../assets/js/consent.js" defer></script>
+  <script src="../../assets/js/contact.js" defer></script>
+  <script src="../../assets/js/navigation.js" defer></script>
+</head>
+<body class="insights-page">
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+  <div class="bg-ambient" aria-hidden="true"></div>
+
+  <header class="nav" data-hero-passed="true">
+    <div class="container nav-inner">
+      <a class="brand" href="../../index.html" aria-label="Hanlea Startseite">
+        <img class="brand-logo" src="../../hanlea_transparent.png" alt="Hanlea" width="186" height="59" />
+        <span class="brand-slogan">From data to impact</span>
+      </a>
+      <nav id="primary-nav" class="nav-links" aria-label="Hauptnavigation">
+        <a href="../../index.html#einstieg">Einstieg</a>
+        <a href="../../index.html#leistungen">Leistungen</a>
+        <a href="../../index.html#ueber-uns">Expertise</a>
+        <a href="../../index.html#vorgehen">Vorgehen</a>
+        <a href="../../index.html#use-cases">Use Cases</a>
+        <a href="../index.html" aria-current="location">Insights</a>
+        <a class="nav-mobile-cta" href="mailto:info@hanlea.com" data-contact-open>Vorhaben besprechen</a>
+      </nav>
+      <a class="btn btn-primary nav-cta" href="mailto:info@hanlea.com" data-contact-open>Vorhaben besprechen</a>
+      <button class="nav-toggle" type="button" aria-controls="primary-nav" aria-expanded="false" aria-label="Navigation öffnen">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <article class="container" aria-labelledby="article-title">
+<!-- ARTICLE_HEADER:START -->
+      <header class="article-header">
+        <nav class="article-breadcrumb" aria-label="Brotkrumennavigation">
+          <ol><li><a href="../../index.html">Startseite</a></li><li><a href="../index.html">Insights</a></li><li><span aria-current="page">AI-FinOps</span></li></ol>
+        </nav>
+        <div class="insight-tags"><span>AI-FinOps &amp; Architektur</span></div>
+        <h1 id="article-title">Warum AI-Kosten ein Architekturthema sind</h1>
+        <p class="article-lead">Ein AI-Prototyp kann günstig wirken. Sobald daraus ein produktiver Workflow mit Datenabruf, Modellaufrufen und automatisierten Aktionen wird, bestimmt die Architektur einen wesentlichen Teil der Rechnung. AI-FinOps macht diesen Zusammenhang sichtbar und steuerbar.</p>
+        <div class="article-meta"><span>Von <a href="../../index.html#ueber-uns" rel="author">Hanlea</a></span><span>6 Min. Lesezeit</span><time datetime="2026-05-12">12. Mai 2026</time></div>
+      </header>
+<!-- ARTICLE_HEADER:END -->
+
+      <figure class="article-cover">
+        <img src="../../assets/illustrations/ai-architecture-wide.svg" alt="Drei verbundene Architekturebenen für Strategie, Plattform und Betrieb." width="1440" height="600" />
+        <figcaption>AI-FinOps verbindet Strategie, Plattformarchitektur und produktiven Betrieb.</figcaption>
+      </figure>
+
+      <div class="article-layout">
+        <nav class="article-toc" aria-labelledby="toc-title">
+          <h2 id="toc-title">In diesem Artikel</h2>
+          <ol>
+            <li><a href="#vom-prototyp-zum-betrieb">Vom Prototyp zum Betrieb</a></li>
+            <li><a href="#was-ist-ai-finops">Was AI-FinOps bedeutet</a></li>
+            <li><a href="#kosten-pro-ergebnis">Kosten pro Ergebnis</a></li>
+            <li><a href="#architekturentscheidungen">Vier Architekturentscheidungen</a></li>
+            <li><a href="#praxisbeispiel">Ein konkretes Rechenbeispiel</a></li>
+            <li><a href="#einstieg">So gelingt der Einstieg</a></li>
+            <li><a href="#hanlea-perspektive">Unsere Perspektive</a></li>
+            <li><a href="#quellen">Quellen</a></li>
+          </ol>
+        </nav>
+
+        <div class="article-body">
+          <section id="vom-prototyp-zum-betrieb" aria-labelledby="operation-title">
+            <h2 id="operation-title">Vom Prototyp zum Betrieb verändert sich die Rechnung</h2>
+            <p>Ein Team testet einen AI-Assistenten. Eine Frage, ein Modellaufruf, eine brauchbare Antwort: Der Nutzen ist schnell sichtbar. Im späteren Betrieb muss derselbe Assistent Dokumente finden, Zugriffsrechte berücksichtigen, Antworten prüfen und unklare Fälle weitergeben. Dazu kommen wiederholte Versuche, längere Gesprächsverläufe und mehr Nutzer.</p>
+            <p>Der Preis eines einzelnen Modellaufrufs erklärt dann nur einen Ausschnitt. Für die Planung zählt der gesamte Ablauf: Wie häufig wird er ausgeführt? Wie viele Schritte benötigt er? Und wie viel Nacharbeit entsteht?</p>
+            <p>Auch <a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-cost-of-intelligence-how-cios-can-manage-ai-demand-at-scale" target="_blank" rel="noopener">McKinsey beschreibt AI-Kostensteuerung als gemeinsame Aufgabe von Nachfrageplanung, Architektur und Governance</a>. Aus unserer Sicht folgt daraus eine klare Konsequenz: Wirtschaftlichkeit gehört bereits in die Konzeption einer AI-Anwendung.</p>
+          </section>
+
+          <section id="was-ist-ai-finops" aria-labelledby="definition-title">
+            <h2 id="definition-title">AI-FinOps verbindet Verbrauch, Verantwortung und Nutzen</h2>
+            <p>AI-FinOps überträgt die Zusammenarbeit von Engineering, Finance und Fachbereichen auf den wirtschaftlichen Betrieb von AI. Teams ordnen Ausgaben einem Use Case zu, planen den Verbrauch und prüfen, welchen fachlichen Wert die Ergebnisse schaffen. Die <a href="https://www.finops.org/framework/technology-categories/ai/" target="_blank" rel="noopener">FinOps Foundation beschreibt dafür unter anderem Kostenzuordnung, Prognosen, Optimierung und Governance</a>.</p>
+            <p>Im Alltag braucht es dazu Antworten auf drei Fragen: Wer verantwortet den Use Case? Welche Qualität muss er liefern? Welcher Aufwand ist für dieses Ergebnis angemessen?</p>
+            <p>Die Zuordnung sollte bis in die Anwendung reichen. Ein gemeinsames AI-Budget lässt sich besser steuern, wenn sichtbar wird, welche Produkte und Workflows es verbrauchen. Mit dieser Transparenz können Fachbereich, Plattformteam und Finance gemeinsam über Ausbau und Verbesserungen entscheiden.</p>
+          </section>
+
+          <section id="kosten-pro-ergebnis" aria-labelledby="metrics-title">
+            <h2 id="metrics-title">Die relevante Einheit ist ein brauchbares Ergebnis</h2>
+            <p>Tokenverbrauch hilft, technische Kostentreiber zu erkennen. Für eine Geschäftsentscheidung braucht diese Zahl einen fachlichen Bezug: etwa Kosten pro geprüftem Dokument, beantworteter Serviceanfrage oder erfolgreich abgeschlossenem Vorgang. Diesen Zusammenhang zwischen Technologieausgaben und Leistung beschreibt die <a href="https://www.finops.org/framework/capabilities/unit-economics/" target="_blank" rel="noopener">FinOps Foundation unter Unit Economics</a>.</p>
+            <blockquote class="article-takeaway"><p>Kosten pro akzeptiertem Ergebnis = zugerechnete Betriebs- und Bearbeitungskosten ÷ fachlich akzeptierte Ergebnisse.</p></blockquote>
+            <p>Die Qualitätskriterien müssen vor dem Vergleich feststehen. Was gilt als korrekt, vollständig und verwendbar? In den Zähler gehören auch die Kosten erfolgloser Versuche. Suche, Infrastruktur, Prüfungen und menschliche Nacharbeit werden ebenfalls berücksichtigt. Gemeinsam genutzte Plattformkosten brauchen eine nachvollziehbare Zuordnung.</p>
+            <p>So lässt sich erkennen, ob ein günstigerer Modellaufruf tatsächlich wirtschaftlicher ist oder ob zusätzliche Fehler und Nacharbeit den Vorteil aufzehren.</p>
+          </section>
+
+          <section id="architekturentscheidungen" aria-labelledby="decisions-title">
+            <h2 id="decisions-title">Vier Architekturentscheidungen mit direktem Einfluss</h2>
+
+            <h3>1. Modelle nach Aufgabe auswählen</h3>
+            <p>Eine einfache Klassifikation und die Analyse widersprüchlicher Dokumente haben unterschiedliche Anforderungen. Ein Routing kann Aufgaben passenden Modellen zuweisen und schwierige Fälle gezielt eskalieren. Ob sich das lohnt, zeigt ein Vergleich mit repräsentativen Testfällen: Qualität, Laufzeit und Kosten werden gemeinsam bewertet.</p>
+
+            <h3>2. Kontext gezielt bereitstellen und Ergebnisse wiederverwenden</h3>
+            <p>Ein Assistent sollte die Informationen erhalten, die für seine Aufgabe relevant sind. Welche Dokumente und Textstellen das sind, ist eine Entscheidung über Datenzugriff und Retrieval. Stabile Inhalte oder geeignete Zwischenergebnisse können wiederverwendet werden.</p>
+            <p>Beim Caching zählen Aktualität und Berechtigungen: Eine gespeicherte Antwort muss zur Datenversion und zum Zugriffskontext des aktuellen Nutzers passen. <a href="https://learn.microsoft.com/en-us/azure/well-architected/ai/application-design#implement-multi-layer-caching-strategies" target="_blank" rel="noopener">Microsoft nennt dafür unter anderem passende Cache-Schlüssel, Ablaufzeiten und Regeln zur Aktualisierung</a>. Wiederverwendung braucht dieselbe Sorgfalt wie ein neuer Datenabruf.</p>
+
+            <h3>3. Automatisierte Abläufe begrenzen</h3>
+            <p>Agentische Workflows brauchen definierte Grenzen für Wiederholungen, Tool-Aufrufe, Laufzeit und parallele Ausführungen. Wenn eine Grenze erreicht ist, muss der nächste Schritt feststehen: abbrechen, später fortsetzen oder einen Menschen einbeziehen. Ein Budgetalarm allein legt dieses Verhalten noch nicht fest.</p>
+
+            <h3>4. Kosten im Workflow sichtbar machen</h3>
+            <p>Eine durchgängige Workflow-ID hilft, Modellaufrufe, Datenabrufe und Wiederholungen einem Vorgang zuzuordnen. Zusammen mit Use Case, Modell und zuständigem Team entsteht eine Grundlage für Kostenberichte. Die <a href="https://docs.aws.amazon.com/wellarchitected/latest/agentic-ai-lens/cost-optimization-design-principles.html" target="_blank" rel="noopener">AWS-Designprinzipien für agentische AI verbinden Verbrauchsgrenzen und Kostenzuordnung mit einer laufenden Rückkopplung in die Architektur</a>.</p>
+          </section>
+
+          <section id="praxisbeispiel" aria-labelledby="example-title">
+            <h2 id="example-title">Ein Rechenbeispiel: der interne Wissensassistent</h2>
+            <p>Ein interner Assistent beantwortet monatlich 10.000 Fragen zu Unternehmensrichtlinien. In einer ersten Variante nutzt jede Anfrage denselben umfangreichen Kontext und dasselbe Modell. Eine zweite Variante sucht passende Textstellen, nutzt Modell-Routing und verwendet geeignete Ergebnisse erneut.</p>
+            <p><strong>Die folgenden Zahlen sind frei gewählte Rechenannahmen.</strong> Sie sind keine Anbieterpreise und keine Ergebnisse eines Hanlea-Kundenprojekts. Für beide Varianten nehmen wir dieselbe fachliche Akzeptanzquote und denselben Aufwand für Prüfung und Nacharbeit an.</p>
+
+            <p id="table-hint" class="article-table-note">Bei Bedarf lässt sich die Tabelle seitlich scrollen.</p>
+            <div class="article-table-wrap" role="region" aria-label="Rechenbeispiel zu den monatlichen Kosten eines Wissensassistenten" aria-describedby="table-hint" tabindex="0">
+              <table class="article-table">
+                <caption>Fiktiver Vergleich pro Monat</caption>
+                <thead><tr><th scope="col">Kennzahl</th><th scope="col">Einheitlicher Workflow</th><th scope="col">Gezielt gesteuerter Workflow</th></tr></thead>
+                <tbody>
+                  <tr><th scope="row">Bearbeitete Anfragen</th><td>10.000</td><td>10.000</td></tr>
+                  <tr><th scope="row">Fachlich akzeptierte Ergebnisse</th><td>9.000</td><td>9.000</td></tr>
+                  <tr><th scope="row">Technischer Betrieb</th><td>800 €</td><td>400 €</td></tr>
+                  <tr><th scope="row">Prüfung und Nacharbeit</th><td>1.200 €</td><td>1.200 €</td></tr>
+                  <tr class="article-table-total"><th scope="row">Betriebs- und Bearbeitungskosten</th><td>2.000 €</td><td>1.600 €</td></tr>
+                  <tr class="article-table-total"><th scope="row">Kosten pro akzeptiertem Ergebnis</th><td>ca. 0,22 €</td><td>ca. 0,18 €</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="article-table-note">Technischer Betrieb umfasst hier Modellnutzung, Suche und zugerechnete Infrastruktur. Für Prüfung und Nacharbeit sind jeweils 20 Stunden zu kalkulatorisch 60 € angesetzt. Einmalige Entwicklungs- und Einführungskosten sind im Vergleich nicht enthalten.</p>
+
+            <p>Unter diesen Annahmen sinken die laufenden Gesamtkosten um 400 € im Monat. Wie viel zusätzliche Entwicklung dieser Vorteil rechtfertigt, hängt vom Nutzungszeitraum ab. Für eine Investitionsentscheidung müssen deshalb auch Einführung, Pflege und mögliche Änderungen an den Modellen in die Rechnung eingehen.</p>
+            <p>In einem echten Vergleich sind Akzeptanzquote und Nacharbeit Messgrößen. Verschlechtert sich die Qualität, wird der technische Vorteil möglicherweise kleiner oder verschwindet ganz. Genau deshalb gehören Qualitätsbewertung und Kostenmessung in denselben Test.</p>
+          </section>
+
+          <section id="einstieg" aria-labelledby="start-title">
+            <h2 id="start-title">So gelingt der Einstieg</h2>
+            <p>Ein klar abgegrenzter Use Case reicht aus, um die ersten Entscheidungen auf eine belastbare Grundlage zu stellen. Für den Einstieg empfehlen wir vier Schritte:</p>
+            <ol>
+              <li><strong>Erfolg und Verantwortung festlegen.</strong> Definieren Sie das gewünschte Ergebnis, Qualitätskriterien und einen Verantwortlichen aus dem Fachbereich.</li>
+              <li><strong>Den gesamten Ablauf messen.</strong> Erfassen Sie Modellnutzung, Datenabrufe, Wiederholungen, Laufzeit und Nacharbeit pro Vorgang.</li>
+              <li><strong>Varianten kontrolliert vergleichen.</strong> Prüfen Sie Modellwahl, Kontext und Wiederverwendung anhand derselben fachlichen Testfälle.</li>
+              <li><strong>Im Betrieb regelmäßig entscheiden.</strong> Bewerten Sie Verbrauch, Ergebnisqualität und Nutzen gemeinsam. Passen Sie Routing, Grenzen und Budgets an, wenn sich das Nutzungsmuster verändert.</li>
+            </ol>
+          </section>
+
+          <section id="hanlea-perspektive" aria-labelledby="perspective-title">
+            <h2 id="perspective-title">Unsere Perspektive: Wirtschaftlichkeit mitbauen</h2>
+            <p>Bei Hanlea betrachten wir AI-FinOps im Zusammenspiel aus Data &amp; AI Strategy, Plattformarchitektur, Governance, BI/Analytics und LLMOps. Welche Use Cases schaffen Wert? Wie werden Daten und Modelle eingebunden? Wie lassen sich Qualität, Verbrauch und Kosten im Betrieb steuern?</p>
+            <p>Aus diesen Fragen entstehen technische Entscheidungen und klare Verantwortlichkeiten. So wird aus einem funktionierenden Prototyp eine Anwendung, deren Nutzen und Aufwand sich nachvollziehbar bewerten lassen.</p>
+          </section>
+
+          <section id="quellen" class="article-sources" aria-labelledby="sources-title">
+            <h2 id="sources-title">Quellen &amp; weiterführende Informationen</h2>
+            <ol>
+              <li><a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-cost-of-intelligence-how-cios-can-manage-ai-demand-at-scale" target="_blank" rel="noopener">McKinsey: The cost of intelligence – How CIOs can manage AI demand at scale</a></li>
+              <li><a href="https://www.finops.org/framework/technology-categories/ai/" target="_blank" rel="noopener">FinOps Foundation: FinOps for AI</a></li>
+              <li><a href="https://www.finops.org/framework/capabilities/unit-economics/" target="_blank" rel="noopener">FinOps Foundation: Unit Economics</a></li>
+              <li><a href="https://learn.microsoft.com/en-us/azure/well-architected/ai/application-design" target="_blank" rel="noopener">Microsoft: Application Design for AI Workloads on Azure</a></li>
+              <li><a href="https://docs.aws.amazon.com/wellarchitected/latest/agentic-ai-lens/cost-optimization-design-principles.html" target="_blank" rel="noopener">AWS: Agentic AI Lens – Cost Optimization Design Principles</a></li>
+            </ol>
+            <p>Rechenbeispiel und Einstiegsempfehlungen sind eine eigene illustrative Ausarbeitung von Hanlea.</p>
+          </section>
+
+<!-- RELATED:START -->
+<section class="article-related" aria-labelledby="related-title"><h2 id="related-title">Weiterlesen</h2><ul>
+  <li><a href="../coding-agents/index.html">Coding Agents wechseln. Die Plattform bleibt.</a></li>
+  <li><a href="../openjev-unity-gateway/index.html">Strukturierte Entscheidungen für Enterprise AI</a></li>
+</ul></section>
+<!-- RELATED:END -->
+          <div class="article-end"><a href="../index.html"><span aria-hidden="true">←</span> Zurück zu allen Insights</a></div>
+        </div>
+      </div>
+    </article>
+
+    <section class="insights-contact" aria-labelledby="article-contact-title">
+      <div class="container insights-contact-inner">
+        <div>
+          <h2 id="article-contact-title">Wie wirtschaftlich läuft Ihr AI-Use-Case?</h2>
+          <p>Lassen Sie uns Architektur, Qualität und Kosten Ihres Vorhabens gemeinsam einordnen.</p>
+        </div>
+        <a class="btn btn-secondary" href="mailto:info@hanlea.com" data-contact-open>Vorhaben besprechen <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="small">&copy; <span id="y"></span> Hanlea · Data &amp; AI Consulting</div>
+      <div class="footer-links">
+        <a class="small" href="../index.html">Insights</a>
+        <a class="small" href="../../impressum.html">Impressum</a>
+        <a class="small" href="../../datenschutz.html">Datenschutz</a>
+        <a class="small" href="https://www.linkedin.com/company/136064650/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="small" href="#datenschutzeinstellungen" data-consent-settings>Datenschutzeinstellungen</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
