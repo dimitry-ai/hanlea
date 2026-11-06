@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="600" viewBox="0 0 960 600" fill="none">
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="960" y2="600" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#101c34" />
+      <stop offset="1" stop-color="#090c1c" />
+    </linearGradient>
+    <linearGradient id="flow" x1="180" y1="280" x2="780" y2="440" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7ad7f5" />
+      <stop offset="1" stop-color="#8e73ff" />
+    </linearGradient>
+    <radialGradient id="glow">
+      <stop stop-color="#6299e8" stop-opacity=".16" />
+      <stop offset="1" stop-color="#6299e8" stop-opacity="0" />
+    </radialGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" stroke="#b9d5ff" stroke-opacity=".055" />
+    </pattern>
+  </defs>
+  <path fill="url(#background)" d="M0 0h960v600H0z" />
+  <path fill="url(#grid)" d="M0 0h960v600H0z" />
+  <ellipse cx="480" cy="300" rx="450" ry="280" fill="url(#glow)" />
+  <g transform="translate(96 12) scale(0.8)">
+    <g stroke="#7ad7f5" stroke-opacity=".16">
+      <path d="m480 160 340 196-340 196L140 356l340-196Z" />
+      <path d="m480 128 396 228-396 228L84 356l396-228Z" stroke-dasharray="4 12" />
+      <path d="M480 128v456M84 356h792" stroke-dasharray="4 12" />
+    </g>
+    <path d="m480 232 230 132v64L480 560 250 428v-64l230-132Z" fill="#0b1125" stroke="#8e73ff" stroke-opacity=".36" />
+    <path d="m250 364 230 132 230-132M480 496v64" stroke="#8e73ff" stroke-opacity=".36" />
+    <path d="m480 168 230 132v64L480 496 250 364v-64l230-132Z" fill="#101a34" stroke="#91bbf5" stroke-opacity=".45" />
+    <path d="m250 300 230 132 230-132M480 432v64" stroke="#91bbf5" stroke-opacity=".45" />
+    <path d="m480 104 230 132v64L480 432 250 300v-64l230-132Z" fill="#13283b" stroke="#7ad7f5" stroke-opacity=".65" />
+    <path d="m250 236 230 132 230-132M480 368v64" stroke="#7ad7f5" stroke-opacity=".65" />
+    <path d="m336 236 144-82 144 82-144 83-144-83Z" fill="#7ad7f5" fill-opacity=".04" stroke="url(#flow)" stroke-width="2" />
+    <path d="m408 236 72-41 72 41-72 42-72-42Z" fill="#7ad7f5" fill-opacity=".12" stroke="#a5e7fa" />
+    <path d="M480 154v-38M624 236h84M336 236h-84M480 319v49" stroke="#a5e7fa" stroke-width="2" />
+    <g fill="#b6efff">
+      <circle cx="480" cy="154" r="5" />
+      <circle cx="624" cy="236" r="5" />
+      <circle cx="336" cy="236" r="5" />
+      <circle cx="480" cy="319" r="5" />
+    </g>
+    <g stroke="#97b7e8" stroke-opacity=".6">
+      <path d="M660 264h104v-66h56" />
+      <path d="M660 328h104v22h56" />
+      <path d="M660 392h104v110h56" />
+      <circle cx="660" cy="264" r="3" fill="#7ad7f5" />
+      <circle cx="660" cy="328" r="3" fill="#91bbf5" />
+      <circle cx="660" cy="392" r="3" fill="#8e73ff" />
+    </g>
+    <g font-family="sans-serif" font-size="14" letter-spacing="2" fill="#b9c3d8">
+      <text x="72" y="72">DATA &amp; AI / ARCHITECTURE</text>
+      <text x="72" y="644" fill="#7ad7f5">STRATEGIE</text>
+      <text x="380" y="644" fill="#91bbf5">PLATTFORM</text>
+      <text x="704" y="644" fill="#a58fff">BETRIEB</text>
+    </g>
+    <path d="M72 604h816" stroke="url(#flow)" stroke-opacity=".5" />
+    <g fill="#7ad7f5">
+      <circle cx="72" cy="604" r="3" />
+      <circle cx="384" cy="604" r="3" />
+    </g>
+    <circle cx="888" cy="604" r="3" fill="#8e73ff" />
+    <path d="M812 198h8M812 350h8M812 502h8" stroke="#b9c3d8" stroke-width="2" />
+  </g>
+</svg>

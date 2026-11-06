@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="600" viewBox="0 0 960 600" fill="none">
+  <defs>
+    <linearGradient id="bg" x2="960" y2="600" gradientUnits="userSpaceOnUse"><stop stop-color="#101c34"/><stop offset="1" stop-color="#090c1c"/></linearGradient>
+    <linearGradient id="flow" x1="160" y1="400" x2="800" y2="180" gradientUnits="userSpaceOnUse"><stop stop-color="#7ad7f5"/><stop offset="1" stop-color="#8e73ff"/></linearGradient>
+    <radialGradient id="glow"><stop stop-color="#6299e8" stop-opacity=".13"/><stop offset="1" stop-color="#6299e8" stop-opacity="0"/></radialGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse"><path d="M48 0H0V48" stroke="#b9d5ff" stroke-opacity=".055"/></pattern>
+  </defs>
+  <path fill="url(#bg)" d="M0 0h960v600H0z"/><path fill="url(#grid)" d="M0 0h960v600H0z"/>
+  <ellipse cx="480" cy="300" rx="430" ry="250" fill="url(#glow)"/>
+  <g stroke="#7ad7f5" stroke-opacity=".12"><path d="m480 100 370 214-370 214L110 314l370-214Z"/><path d="m480 136 310 178-310 178-310-178 310-178Z" stroke-dasharray="4 12"/></g>
+  <path d="M220 380h80l100-76h160l100-76h80" stroke="url(#flow)" stroke-width="2"/>
+  <path d="M220 400h88l100-76h160l100-76h72" stroke="url(#flow)" stroke-opacity=".18"/>
+  <g stroke="#b9a287" stroke-opacity=".75">
+    <path d="m220 250 104 60v82l-104 60-104-60v-82l104-60Z" fill="#171e2c"/>
+    <path d="m116 310 104 60 104-60M220 370v82M116 350l104 60 104-60"/>
+    <path d="m220 274 62 36-62 36-62-36 62-36Z" fill="#b9a287" fill-opacity=".08"/>
+  </g>
+  <g stroke="#9dbacc" stroke-opacity=".8">
+    <path d="m480 174 104 60v82l-104 60-104-60v-82l104-60Z" fill="#122333"/>
+    <path d="m376 234 104 60 104-60M480 294v82M376 274l104 60 104-60"/>
+    <path d="m480 198 62 36-62 36-62-36 62-36Z" fill="#9dbacc" fill-opacity=".1"/>
+  </g>
+  <g stroke="#d1bf8b" stroke-opacity=".85">
+    <path d="m740 98 104 60v82l-104 60-104-60v-82l104-60Z" fill="#172331"/>
+    <path d="m636 158 104 60 104-60M740 218v82M636 198l104 60 104-60"/>
+    <path d="m740 122 62 36-62 36-62-36 62-36Z" fill="#d1bf8b" fill-opacity=".12"/>
+  </g>
+  <g fill="#a5e7fa"><circle cx="324" cy="348" r="4"/><circle cx="584" cy="272" r="4"/></g>
+  <path d="M116 500h728" stroke="url(#flow)" stroke-opacity=".45"/>
+  <g font-family="sans-serif" font-size="14" letter-spacing="2">
+    <text x="56" y="56" fill="#b9c3d8">DATA PLATFORMS / MEDALLION</text>
+    <text x="176" y="540" fill="#b9a287">BRONZE</text><text x="440" y="540" fill="#9dbacc">SILVER</text><text x="712" y="540" fill="#d1bf8b">GOLD</text>
+  </g>
+</svg>

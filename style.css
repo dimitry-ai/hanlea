@@ -1831,6 +1831,7 @@ main{
 
 .footer-inner,
 .footer-links{
+  flex-wrap:wrap;
   display:flex;
   align-items:center;
   justify-content:space-between;
@@ -2021,28 +2022,14 @@ main{
   }
 }
 
-@media (max-width:820px){
-  :root{
-    --nav-height:70px;
+/* Keep the expanded desktop navigation clear of the brand and contact CTA. */
+@media (min-width:1101px) and (max-width:1320px){
+  .brand-slogan{
+    display:none;
   }
+}
 
-  .container{
-    width:min(100% - 32px, var(--max));
-  }
-
-  .section-pad{
-    padding:68px 0;
-  }
-
-  .tech-under-hero{
-    padding:68px 0;
-  }
-
-  .hero{
-    padding-top:52px;
-    padding-bottom:0;
-  }
-
+@media (max-width:1100px){
   .nav-inner{
     justify-content:flex-start;
     gap:10px;
@@ -2129,6 +2116,29 @@ main{
     margin-left:0;
     opacity:1;
     visibility:visible;
+  }
+}
+
+@media (max-width:820px){
+  :root{
+    --nav-height:70px;
+  }
+
+  .container{
+    width:min(100% - 32px, var(--max));
+  }
+
+  .section-pad{
+    padding:68px 0;
+  }
+
+  .tech-under-hero{
+    padding:68px 0;
+  }
+
+  .hero{
+    padding-top:52px;
+    padding-bottom:0;
   }
 
   .badge{
@@ -2227,6 +2237,10 @@ main{
   .footer-inner{
     align-items:flex-start;
     flex-direction:column;
+  }
+
+  .footer-links{
+    justify-content:flex-start;
   }
 
   .contact-modal{

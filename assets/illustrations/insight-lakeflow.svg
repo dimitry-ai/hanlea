@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="600" viewBox="0 0 960 600" fill="none">
+  <defs>
+    <linearGradient id="bg" x2="960" y2="600" gradientUnits="userSpaceOnUse"><stop stop-color="#101c34"/><stop offset="1" stop-color="#090c1c"/></linearGradient>
+    <linearGradient id="flow" x1="160" y1="260" x2="800" y2="400" gradientUnits="userSpaceOnUse"><stop stop-color="#7ad7f5"/><stop offset="1" stop-color="#8e73ff"/></linearGradient>
+    <radialGradient id="glow"><stop stop-color="#6299e8" stop-opacity=".15"/><stop offset="1" stop-color="#6299e8" stop-opacity="0"/></radialGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse"><path d="M48 0H0V48" stroke="#b9d5ff" stroke-opacity=".055"/></pattern>
+  </defs>
+  <path fill="url(#bg)" d="M0 0h960v600H0z"/><path fill="url(#grid)" d="M0 0h960v600H0z"/>
+  <ellipse cx="480" cy="290" rx="430" ry="250" fill="url(#glow)"/>
+  <path d="m480 140 360 208-360 208-360-208 360-208Z" stroke="#7ad7f5" stroke-opacity=".13" stroke-dasharray="4 12"/>
+  <g stroke="url(#flow)"><path d="M236 314h160m168 0h160" stroke-width="2"/><path d="m352 308 8 6-8 6m308-12 8 6-8 6" stroke-width="2"/><path d="M780 386v58H180v-58" stroke-opacity=".45" stroke-dasharray="5 9"/><path d="M480 182v70" stroke-width="1.5"/></g>
+  <g stroke="#7ad7f5" stroke-opacity=".7">
+    <rect x="116" y="254" width="128" height="132" rx="6" fill="#101f34"/>
+    <path d="M144 282h72m-72 20h48m-48 20h72m-72 20h48m-48 20h72" stroke-opacity=".6"/>
+  </g>
+  <g stroke="#91bbf5" stroke-opacity=".8">
+    <path d="m480 230 104 60v64l-104 60-104-60v-64l104-60Z" fill="#12263a"/>
+    <path d="m376 290 104 60 104-60M480 350v64"/>
+    <path d="m450 272-24 18 24 18m60-36 24 18-24 18m-18-46-24 56" stroke="#a5e7fa" stroke-width="2"/>
+  </g>
+  <g stroke="#a58fff" stroke-opacity=".8"><rect x="716" y="254" width="128" height="132" rx="6" fill="#161d38"/><path d="M742 360v-72m0 72h76m-62-12v-20m20 20v-36m20 36v-56" stroke-width="2"/></g>
+  <g stroke="#a5e7fa"><path d="m480 102 42 24v48l-42 24-42-24v-48l42-24Z" fill="#13283b"/><path d="m480 126 7 17 17 7-17 7-7 17-7-17-17-7 17-7 7-17Z" fill="#7ad7f5" fill-opacity=".12"/></g>
+  <g fill="#a5e7fa"><circle cx="316" cy="314" r="4"/><circle cx="644" cy="314" r="4"/></g>
+  <path d="M116 500h728" stroke="url(#flow)" stroke-opacity=".45"/>
+  <g font-family="sans-serif" font-size="14" letter-spacing="2">
+    <text x="56" y="56" fill="#b9c3d8">DATA ENGINEERING / LAKEFLOW</text>
+    <text x="144" y="540" fill="#7ad7f5">INGEST</text><text x="420" y="540" fill="#91bbf5">TRANSFORM</text><text x="736" y="540" fill="#a58fff">OPERATE</text>
+  </g>
+</svg>

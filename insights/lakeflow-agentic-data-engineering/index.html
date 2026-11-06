@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- ARTICLE_SEO:START -->
+  <title>Lakeflow: Agentic Data Engineering mit Kontrolle | Hanlea</title>
+  <meta name="description" content="Lakeflow und Agentic Data Engineering erklärt: Ingestion, Pipelines, Orchestrierung, Genie Code und Governance mit einem konkreten Fehlerszenario." />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="theme-color" content="#070814" />
+  <link rel="canonical" href="https://www.hanlea.com/insights/lakeflow-agentic-data-engineering/" />
+  <meta property="og:title" content="Wenn AI-Agenten Datenpipelines mitentwickeln | Hanlea Insights" />
+  <meta property="og:description" content="Lakeflow und Agentic Data Engineering erklärt: Ingestion, Pipelines, Orchestrierung, Genie Code und Governance mit einem konkreten Fehlerszenario." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.hanlea.com/insights/lakeflow-agentic-data-engineering/" />
+  <meta property="og:site_name" content="Hanlea" />
+  <meta property="og:locale" content="de_DE" />
+  <meta property="og:image" content="https://www.hanlea.com/assets/og/lakeflow.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Wenn AI-Agenten Datenpipelines mitentwickeln" />
+  <meta property="article:modified_time" content="2026-11-04" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Lakeflow: Agentic Data Engineering mit Kontrolle | Hanlea" />
+  <meta name="twitter:description" content="Lakeflow und Agentic Data Engineering erklärt: Ingestion, Pipelines, Orchestrierung, Genie Code und Governance mit einem konkreten Fehlerszenario." />
+  <meta name="twitter:image" content="https://www.hanlea.com/assets/og/lakeflow.png" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://www.hanlea.com/insights/lakeflow-agentic-data-engineering/#article",
+      "url": "https://www.hanlea.com/insights/lakeflow-agentic-data-engineering/",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.hanlea.com/insights/lakeflow-agentic-data-engineering/"
+      },
+      "headline": "Wenn AI-Agenten Datenpipelines mitentwickeln",
+      "description": "Lakeflow und Agentic Data Engineering erklärt: Ingestion, Pipelines, Orchestrierung, Genie Code und Governance mit einem konkreten Fehlerszenario.",
+      "inLanguage": "de-DE",
+      "articleSection": "Data Engineering",
+      "image": [
+        "https://www.hanlea.com/assets/og/lakeflow.png"
+      ],
+      "author": {
+        "@type": "Organization",
+        "@id": "https://www.hanlea.com/#organization",
+        "name": "Hanlea",
+        "url": "https://www.hanlea.com/#ueber-uns"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "@id": "https://www.hanlea.com/#organization",
+        "name": "Hanlea",
+        "url": "https://www.hanlea.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.hanlea.com/hanlea_transparent.png"
+        }
+      },
+      "dateCreated": "2026-11-04",
+      "dateModified": "2026-11-04",
+      "wordCount": 692,
+      "isBasedOn": {
+        "@type": "CreativeWork",
+        "name": "Ursprünglicher Hanlea-Beitragsentwurf: Wenn AI-Agenten Datenpipelines mitentwickeln",
+        "dateCreated": "2026-10-30"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Startseite",
+          "item": "https://www.hanlea.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Insights",
+          "item": "https://www.hanlea.com/insights/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Lakeflow",
+          "item": "https://www.hanlea.com/insights/lakeflow-agentic-data-engineering/"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+<!-- ARTICLE_SEO:END -->  <link rel="icon" href="../../favicon.png" type="image/png" />
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="stylesheet" href="../../assets/css/insights.css" />
+  <script src="../../assets/js/consent.js" defer></script>
+  <script src="../../assets/js/contact.js" defer></script>
+  <script src="../../assets/js/navigation.js" defer></script>
+</head>
+<body class="insights-page">
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+  <div class="bg-ambient" aria-hidden="true"></div>
+
+  <header class="nav" data-hero-passed="true">
+    <div class="container nav-inner">
+      <a class="brand" href="../../index.html" aria-label="Hanlea Startseite">
+        <img class="brand-logo" src="../../hanlea_transparent.png" alt="Hanlea" width="186" height="59" />
+        <span class="brand-slogan">From data to impact</span>
+      </a>
+      <nav id="primary-nav" class="nav-links" aria-label="Hauptnavigation">
+        <a href="../../index.html#einstieg">Einstieg</a>
+        <a href="../../index.html#leistungen">Leistungen</a>
+        <a href="../../index.html#ueber-uns">Expertise</a>
+        <a href="../../index.html#vorgehen">Vorgehen</a>
+        <a href="../../index.html#use-cases">Use Cases</a>
+        <a href="../index.html" aria-current="location">Insights</a>
+        <a class="nav-mobile-cta" href="mailto:info@hanlea.com" data-contact-open>Vorhaben besprechen</a>
+      </nav>
+      <a class="btn btn-primary nav-cta" href="mailto:info@hanlea.com" data-contact-open>Vorhaben besprechen</a>
+      <button class="nav-toggle" type="button" aria-controls="primary-nav" aria-expanded="false" aria-label="Navigation öffnen">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <article class="container" aria-labelledby="article-title">
+<!-- ARTICLE_HEADER:START -->
+      <header class="article-header">
+        <nav class="article-breadcrumb" aria-label="Brotkrumennavigation">
+          <ol><li><a href="../../index.html">Startseite</a></li><li><a href="../index.html">Insights</a></li><li><span aria-current="page">Lakeflow</span></li></ol>
+        </nav>
+        <div class="insight-tags"><span>Data Engineering</span></div>
+        <h1 id="article-title">Wenn AI-Agenten Datenpipelines mitentwickeln</h1>
+        <p class="article-lead">AI-Unterstützung im Data Engineering braucht Kontext über Quellen, Transformationen und Abhängigkeiten. Lakeflow verbindet Bausteine für Datenaufnahme, Verarbeitung und Orchestrierung. Mit Genie Code kommt Unterstützung bei der Entwicklung hinzu. Verantwortliche Teams müssen fachliche Korrektheit und Betrieb weiterhin gezielt prüfen.</p>
+        <div class="article-meta"><span>Von <a href="../../index.html#ueber-uns" rel="author">Hanlea</a></span><span>4 Min. Lesezeit</span><time datetime="2026-10-27">27. Oktober 2026</time></div>
+      </header>
+<!-- ARTICLE_HEADER:END -->
+
+      <figure class="article-cover">
+        <img src="../../assets/illustrations/insight-lakeflow-wide.svg" alt="Ein Datenfluss verbindet Aufnahme, Transformation und Betrieb unter AI-Unterstützung." width="1440" height="600" />
+        <figcaption>AI-Unterstützung wirkt im Zusammenhang von Datenfluss, Orchestrierung und Kontrolle.</figcaption>
+      </figure>
+
+      <div class="article-layout">
+        <nav class="article-toc" aria-labelledby="toc-title">
+          <h2 id="toc-title">In diesem Artikel</h2>
+          <ol>
+            <li><a href="#kontext">Warum Kontext entscheidend ist</a></li>
+            <li><a href="#bausteine">Die Lakeflow-Bausteine</a></li>
+            <li><a href="#genie-code">Was Genie Code unterstützt</a></li>
+            <li><a href="#praxisbeispiel">Beispiel: eine fehlgeschlagene Pipeline</a></li>
+            <li><a href="#betrieb">Kontrollierte Übergaben</a></li>
+            <li><a href="#einstieg">So lässt sich der Nutzen prüfen</a></li>
+            <li><a href="#fragen">Häufige Fragen</a></li>
+            <li><a href="#quellen">Quellen</a></li>
+          </ol>
+        </nav>
+
+        <div class="article-body">
+          <section id="kontext" aria-labelledby="kontext-title">
+            <h2 id="kontext-title">Warum reicht es nicht, wenn ein Agent SQL schreiben kann?</h2>
+            <p>Eine einzelne Transformation lässt sich oft schnell formulieren. Im Betrieb muss sie jedoch zur Datenquelle, zum fachlichen Modell und zu den nachfolgenden Anwendungen passen. Ein syntaktisch gültiger Join kann Datensätze vervielfachen; eine scheinbar harmlose Filterregel kann wichtige Fälle ausschließen.</p>
+            <p>Für sinnvolle Unterstützung braucht ein Agent deshalb mehr als den aktuellen Fehlertext. Er benötigt nachvollziehbaren Kontext darüber, welche Daten verarbeitet werden, welche Annahmen gelten und welche Ergebnisse erwartet werden.</p>
+          </section>
+          <section id="bausteine" aria-labelledby="bausteine-title">
+            <h2 id="bausteine-title">Welche Aufgaben übernehmen die Lakeflow-Bausteine?</h2>
+            <h3>Ingestion: Daten übernehmen</h3>
+            <p>Für die Datenaufnahme unterscheidet <a href="https://docs.databricks.com/aws/en/ingestion/" target="_blank" rel="noopener">Databricks unter anderem verwaltete Konnektoren und stärker anpassbare SQL- und Spark-Ansätze</a>. Die Wahl richtet sich nach Quelle und benötigter Kontrolle. Authentifizierung, Änderungen im Quellschema und der Umgang mit erneuten Lieferungen bleiben wichtige Architekturfragen.</p>
+            <h3>Transformation: Datenflüsse deklarativ beschreiben</h3>
+            <p><a href="https://docs.databricks.com/aws/en/ldp/" target="_blank" rel="noopener">Spark Declarative Pipelines auf Lakeflow</a> unterstützen Batch- und Streaming-Verarbeitung in SQL und Python. Teams beschreiben die gewünschten Transformationen. Für die fachliche Qualität müssen sie weiterhin passende Regeln und erwartete Ergebnisse festlegen.</p>
+            <h3>Orchestrierung: Aufgaben und Abhängigkeiten ausführen</h3>
+            <p><a href="https://docs.databricks.com/aws/en/jobs/" target="_blank" rel="noopener">Lakeflow Jobs</a> koordiniert wiederkehrende Aufgaben mit Zeitplänen, Abhängigkeiten und Kontrollfluss. So kann etwa eine Transformation erst nach dem erfolgreichen Laden einer Quelle starten und bei einem Fehler eine definierte Folgeaktion auslösen.</p>
+          </section>
+          <section id="genie-code" aria-labelledby="genie-code-title">
+            <h2 id="genie-code-title">Was kann Genie Code bei der Entwicklung unterstützen?</h2>
+            <p>Nach der <a href="https://docs.databricks.com/aws/en/designer/genie-code" target="_blank" rel="noopener">Dokumentation für Lakeflow Designer</a> kann Genie Code Operatoren hinzufügen, konfigurieren und verbinden, Ausdrücke schreiben sowie bei Fehlern helfen. Die Funktion nutzt Plattformkontext und muss im jeweiligen Workspace verfügbar sein.</p>
+            <p>Ein hilfreicher Auftrag benennt deshalb Quelle, Ziel und fachliche Kriterien. „Bereinige die Kundendaten“ lässt viele Entscheidungen offen. Konkreter wäre: „Vereinheitliche die Datentypen dieser Felder; schreibe unvollständige Datensätze in einen Prüfbereich; erhalte die ursprüngliche Kundenkennung.“</p>
+            <p>Für uns liegt der Wert in einer schnelleren, nachvollziehbaren Ausarbeitung solcher Schritte. Die fachliche Bewertung der vorgeschlagenen Logik muss im Arbeitsablauf verankert bleiben.</p>
+          </section>
+          <section id="praxisbeispiel" aria-labelledby="praxisbeispiel-title">
+            <h2 id="praxisbeispiel-title">Ein Beispiel: Ein Quellsystem liefert ein anderes Datumsformat</h2>
+            <p><strong>Das folgende Szenario ist fiktiv.</strong> Ein Lieferant ändert das Format eines Datumsfeldes. Ein Teil der täglichen Bestellungen kann dadurch nicht mehr in die erwartete Silver-Tabelle geschrieben werden.</p>
+            <p>Eine AI-Unterstützung könnte den fehlerhaften Verarbeitungsschritt und betroffene Werte untersuchen und eine Anpassung der Umwandlung vorschlagen. Die Entscheidung hängt aber davon ab, ob beispielsweise Tag und Monat eindeutig erkennbar sind. Eine großzügigere Konvertierung könnte fehlerhafte Datumswerte unbemerkt akzeptieren.</p>
+            <p>Ein kontrollierter Ablauf prüft daher zunächst eine Auswahl betroffener und bisher gültiger Datensätze. Die neue Regel muss beides korrekt behandeln. Unklare Werte bleiben separat erkennbar. Erst nach der Prüfung wird die Änderung übernommen und die Verarbeitung des betroffenen Zeitraums gezielt nachgeholt.</p>
+            <blockquote class="article-takeaway"><p>Ein behobener technischer Fehler ist erst dann ein gutes Ergebnis, wenn die fachliche Bedeutung der Daten erhalten bleibt.</p></blockquote>
+          </section>
+          <section id="betrieb" aria-labelledby="betrieb-title">
+            <h2 id="betrieb-title">Welche Übergaben müssen kontrolliert bleiben?</h2>
+            <p><a href="https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-lineage" target="_blank" rel="noopener">Lineage in Unity Catalog</a> kann helfen, Abhängigkeiten und nachgelagerte Auswirkungen zu verstehen. Für den konkreten Ablauf empfehlen wir zusätzlich vier klar geregelte Übergaben:</p>
+            <ul>
+              <li><strong>Vom Problem zum Vorschlag:</strong> Fehlerbild, betroffene Daten und erwartetes Verhalten dokumentieren.</li>
+              <li><strong>Vom Vorschlag zum Test:</strong> Die Änderung gegen gültige Daten, Fehlerfälle und fachliche Kennzahlen prüfen.</li>
+              <li><strong>Vom Test zur Freigabe:</strong> Verantwortliche und erlaubte automatische Aktionen festlegen.</li>
+              <li><strong>Von der Freigabe zum Betrieb:</strong> Ausführung überwachen und einen nachvollziehbaren Rückweg vorsehen.</li>
+            </ul>
+            <p>Zugriffsrechte und Laufzeitgrenzen gehören in denselben Entwurf. Ein Entwicklungsassistent sollte nur die Daten und Aktionen erreichen, die für seine Aufgabe vorgesehen sind.</p>
+          </section>
+          <section id="einstieg" aria-labelledby="einstieg-title">
+            <h2 id="einstieg-title">Wie lässt sich der Nutzen realistisch prüfen?</h2>
+            <p>Ein guter Pilot enthält wiederkehrende Aufgaben mit bekannten fachlichen Erwartungen. Gemessen werden etwa Zeit bis zum geprüften Vorschlag, Nacharbeit, bestandene Qualitätsprüfungen und der Aufwand für einen sicheren Wiederanlauf.</p>
+            <p>Bei Hanlea verbinden wir diese Bewertung mit Plattformarchitektur und Betriebsverantwortung. So wird sichtbar, welche Schritte sich sinnvoll unterstützen lassen und wo zusätzlicher Kontext oder bessere Datenmodelle zuerst helfen würden.</p>
+          </section>
+          <section id="fragen" aria-labelledby="fragen-title">
+            <h2 id="fragen-title">Häufige Fragen zu Agentic Data Engineering</h2>
+            <h3>Heißt AI-Unterstützung, dass Änderungen automatisch produktiv gehen?</h3>
+            <p>Das ist eine gesonderte Betriebsentscheidung. Vorschlag, Prüfung und produktive Ausführung können unterschiedliche Berechtigungen und Freigaben benötigen. Die verfügbaren Funktionen ersetzen diese Festlegung nicht.</p>
+            <h3>Ist eine automatisch reparierte Pipeline fachlich korrekt?</h3>
+            <p>Ein erfolgreicher Lauf belegt zunächst die technische Ausführbarkeit. Fachliche Korrektheit muss an erwarteten Daten und Ergebnissen geprüft werden.</p>
+          </section>
+          <section id="quellen" class="article-sources" aria-labelledby="quellen-title">
+            <h2 id="quellen-title">Quellen &amp; weiterführende Informationen</h2>
+            <ol>
+              <li><a href="https://docs.databricks.com/aws/en/ingestion/" target="_blank" rel="noopener">Databricks: Ingestion mit SQL und Spark APIs</a></li>
+              <li><a href="https://docs.databricks.com/aws/en/ldp/" target="_blank" rel="noopener">Databricks: Spark Declarative Pipelines auf Lakeflow</a></li>
+              <li><a href="https://docs.databricks.com/aws/en/jobs/" target="_blank" rel="noopener">Databricks: Lakeflow Jobs</a></li>
+              <li><a href="https://docs.databricks.com/aws/en/designer/genie-code" target="_blank" rel="noopener">Databricks: Genie Code in Lakeflow Designer</a></li>
+              <li><a href="https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-lineage" target="_blank" rel="noopener">Databricks: Lineage in Unity Catalog</a></li>
+            </ol>
+            <p>Das Fehlerszenario und die Bewertungsempfehlungen sind eine eigene Ausarbeitung von Hanlea.</p>
+          </section>
+
+<!-- RELATED:START -->
+<section class="article-related" aria-labelledby="related-title"><h2 id="related-title">Weiterlesen</h2><ul>
+  <li><a href="../medallion-architektur/index.html">Bronze, Silver, Gold: Wie aus Rohdaten nutzbare Daten werden</a></li>
+  <li><a href="../coding-agents/index.html">Coding Agents wechseln. Die Plattform bleibt.</a></li>
+</ul></section>
+<!-- RELATED:END -->
+          <div class="article-end"><a href="../index.html"><span aria-hidden="true">←</span> Zurück zu allen Insights</a></div>
+        </div>
+      </div>
+    </article>
+
+    <section class="insights-contact" aria-labelledby="article-contact-title">
+      <div class="container insights-contact-inner">
+        <div>
+          <h2 id="article-contact-title">Lassen Sie uns Ihr Vorhaben einordnen.</h2>
+          <p>Wir verbinden Datenstrategie, Plattformarchitektur und produktiven Betrieb.</p>
+        </div>
+        <a class="btn btn-secondary" href="mailto:info@hanlea.com" data-contact-open>Vorhaben besprechen <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="small">&copy; <span id="y"></span> Hanlea · Data &amp; AI Consulting</div>
+      <div class="footer-links">
+        <a class="small" href="../index.html">Insights</a>
+        <a class="small" href="../../impressum.html">Impressum</a>
+        <a class="small" href="../../datenschutz.html">Datenschutz</a>
+        <a class="small" href="https://www.linkedin.com/company/136064650/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="small" href="#datenschutzeinstellungen" data-consent-settings>Datenschutzeinstellungen</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
