@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none" role="img" aria-labelledby="title description">
+  <title id="title">Databricks Genie: Warum autonome KI klare Geschäftsregeln braucht</title>
+  <desc id="description">Hanlea Insights über Daten, fachliche Definitionen und kontrollierte Aktionen. Die Grafik zeigt Datenquellen, Geschäftsregeln, Genie und eine Freigabe.</desc>
+  <defs>
+    <linearGradient id="background" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#101c34" />
+      <stop offset="1" stop-color="#090c1c" />
+    </linearGradient>
+    <linearGradient id="line" x1="60" y1="540" x2="1140" y2="540" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7ad7f5" />
+      <stop offset="1" stop-color="#a58fff" />
+    </linearGradient>
+    <clipPath id="illustration-clip"><rect x="620" y="137" width="548" height="342.5" rx="16" /></clipPath>
+  </defs>
+  <path fill="url(#background)" d="M0 0h1200v630H0z" />
+  <image href="../../hanlea_transparent.png" x="60" y="41" width="174" height="55" />
+  <g font-family="Arial, sans-serif">
+    <text x="1140" y="76" text-anchor="end" fill="#b9c3d8" font-size="16" letter-spacing="3">INSIGHTS</text>
+    <text x="60" y="188" fill="#7ad7f5" font-size="24" font-weight="bold">Databricks Genie</text>
+    <g fill="#f1f5ff" font-size="49" font-weight="bold" letter-spacing="-1.5">
+      <text x="60" y="268">Autonome KI braucht</text>
+      <text x="60" y="329">klare Geschäftsregeln.</text>
+    </g>
+    <g fill="#b9c3d8" font-size="21">
+      <text x="60" y="401">Wie Daten, Definitionen und Freigaben</text>
+      <text x="60" y="433">einen verlässlichen Workflow ermöglichen.</text>
+    </g>
+    <text x="60" y="584" fill="#dce6f5" font-size="18">hanlea.com/insights</text>
+    <text x="1140" y="584" text-anchor="end" fill="#b9c3d8" font-size="16">Data &amp; AI Consulting</text>
+  </g>
+  <image href="../illustrations/insight-genie.svg" x="620" y="137" width="548" height="342.5" clip-path="url(#illustration-clip)" />
+  <path d="M60 540h1080" stroke="url(#line)" stroke-opacity=".55" />
+</svg>

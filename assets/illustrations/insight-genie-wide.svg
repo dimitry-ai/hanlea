@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="600" viewBox="0 0 1440 600" fill="none" role="img" aria-labelledby="genie-title genie-description">
+  <title id="genie-title">Geschäftsregeln als Grundlage für KI-Agenten</title>
+  <desc id="genie-description">Aufträge, Rechnungen und Stornos werden über geprüfte Definitionen, Zeiträume und Verantwortlichkeiten mit Genie und einer anschließenden Freigabe verbunden. Schematische Darstellung von Hanlea.</desc>
+  <defs>
+    <linearGradient id="bg" x2="1440" y2="600" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#101c34" />
+      <stop offset="1" stop-color="#090c1c" />
+    </linearGradient>
+    <linearGradient id="flow" x1="223" y1="258" x2="737" y2="480" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7ad7f5" />
+      <stop offset="1" stop-color="#a58fff" />
+    </linearGradient>
+    <radialGradient id="glow">
+      <stop stop-color="#6299e8" stop-opacity=".19" />
+      <stop offset="1" stop-color="#6299e8" stop-opacity="0" />
+    </radialGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" stroke="#b9d5ff" stroke-opacity=".055" />
+    </pattern>
+  </defs>
+  <path fill="url(#bg)" d="M0 0h1440v600H0z" />
+  <path fill="url(#grid)" d="M0 0h1440v600H0z" />
+  <ellipse cx="720" cy="300" rx="662.4" ry="320" fill="url(#glow)" />
+  <g transform="translate(240 0)">
+    <g font-family="Arial, sans-serif">
+      <text x="480" y="62" text-anchor="middle" fill="#b9c3d8" font-size="14" letter-spacing="2.3">DATEN / KONTEXT / AKTION</text>
+      <g stroke="#7ad7f5" stroke-opacity=".55" stroke-width="1.5">
+        <path d="M275 208v29h205v29M480 208v58M685 208v29H480" />
+        <path d="M480 376v40H340v28" />
+        <path d="M452 480h80" />
+      </g>
+      <g fill="#101e33" stroke="#7ad7f5" stroke-opacity=".3">
+        <rect x="185" y="112" width="180" height="96" rx="14" />
+        <rect x="390" y="112" width="180" height="96" rx="14" />
+        <rect x="595" y="112" width="180" height="96" rx="14" />
+      </g>
+      <g fill="#7ad7f5" fill-opacity=".8">
+        <rect x="207" y="135" width="7" height="18" rx="2" />
+        <rect x="220" y="128" width="7" height="25" rx="2" />
+        <rect x="233" y="140" width="7" height="13" rx="2" />
+      </g>
+      <g stroke="#9bbdff" stroke-width="1.8" stroke-linecap="round">
+        <path d="M413 130h25v25h-25zM419 138h12M419 145h12" />
+        <path d="m619 144 7 7 15-18M618 130h25v25" stroke="#b19cff" />
+      </g>
+      <g fill="#dce6f5" font-size="17">
+        <text x="207" y="185">Aufträge</text>
+        <text x="412" y="185">Rechnungen</text>
+        <text x="617" y="185">Stornos</text>
+      </g>
+      <rect x="223" y="258" width="514" height="118" rx="20" fill="#7ad7f5" fill-opacity=".035" stroke="url(#flow)" stroke-width="1.5" />
+      <circle cx="265" cy="300" r="16" fill="#7ad7f5" fill-opacity=".12" stroke="#7ad7f5" stroke-opacity=".6" />
+      <path d="m258 300 5 5 10-11" stroke="#a5e7fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      <text x="298" y="306" fill="#e8f4ff" font-size="20" font-weight="bold" letter-spacing=".5">Geprüfte Geschäftsregeln</text>
+      <text x="480" y="347" text-anchor="middle" fill="#a9bed3" font-size="16">Definition · Zeitraum · Verantwortung</text>
+      <g>
+        <rect x="228" y="444" width="224" height="76" rx="15" fill="#142b3c" stroke="#7ad7f5" stroke-opacity=".65" />
+        <path d="m258 461 15 9v18l-15 9-15-9v-18zM243 470l15 9 15-9M258 479v18" stroke="#a5e7fa" stroke-width="1.3" />
+        <text x="287" y="476" fill="#e8f4ff" font-size="18" font-weight="bold">Genie</text>
+        <text x="287" y="498" fill="#a9bed3" font-size="13">Analyse &amp; Vorschlag</text>
+        <path d="m522 474 9 6-9 6" stroke="#b19cff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        <rect x="532" y="444" width="224" height="76" rx="15" fill="#201b39" stroke="#a58fff" stroke-opacity=".65" />
+        <circle cx="562" cy="480" r="14" fill="#a58fff" fill-opacity=".09" stroke="#b19cff" />
+        <path d="m556 480 4 4 8-9" stroke="#d6c9ff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+        <text x="588" y="476" fill="#f0eaff" font-size="18" font-weight="bold">Freigabe</text>
+        <text x="588" y="498" fill="#bcb0d3" font-size="13">Prüfen &amp; handeln</text>
+      </g>
+      <circle cx="480" cy="237" r="4" fill="#a5e7fa" />
+      <circle cx="480" cy="416" r="4" fill="#a5e7fa" />
+      <path d="M210 552h540" stroke="url(#flow)" stroke-opacity=".3" />
+    </g>
+  </g>
+</svg>
