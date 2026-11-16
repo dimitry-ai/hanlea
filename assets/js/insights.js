@@ -5,6 +5,7 @@
   if (!feature || !grid || !count) return;
 
   const root = feature.dataset.siteRoot || "../";
+  const articleUrl = (path) => root + (location.protocol === "file:" ? path : path.replace(/index\.html$/, ""));
   const formatDate = (date) => new Intl.DateTimeFormat("de-DE", {
     day: "numeric", month: "long", year: "numeric", timeZone: "UTC"
   }).format(new Date(`${date}T00:00:00Z`));
@@ -57,7 +58,7 @@
     const card = node("article");
     card.dataset.insightTopic = article.id;
     const link = node("a", "insight-feature");
-    link.href = root + article.path;
+    link.href = articleUrl(article.path);
     const titleId = `insight-title-${article.id}`;
     const summaryId = `insight-summary-${article.id}`;
     link.setAttribute("aria-labelledby", titleId);
@@ -89,7 +90,7 @@
     let content = card;
     if (isAvailable(article)) {
       content = node("a", "insight-topic-link");
-      content.href = root + article.path;
+      content.href = articleUrl(article.path);
       content.setAttribute("aria-labelledby", `insight-title-${article.id}`);
       card.append(content);
     }
@@ -124,5 +125,12 @@
   };
 
   window.HanleaInsights = Object.freeze({ render, sortArticles });
-  render();
+  // Generated HTML is the initial page. Rebuild only when the fallback is needed.
+  const entries = window.HANLEA_INSIGHTS;
+  const expected = Array.isArray(entries)
+    ? [...sortArticles(entries), ...entries.filter((article) => article.status === "planned")].map((article) => article.id)
+    : [];
+  const existing = [...feature.querySelectorAll("[data-insight-topic]"), ...grid.querySelectorAll("[data-insight-topic]")]
+    .map((element) => element.dataset.insightTopic);
+  if (expected.length && JSON.stringify(existing) !== JSON.stringify(expected)) render();
 })();

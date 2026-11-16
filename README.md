@@ -12,9 +12,11 @@ JavaScript funktionieren auch beim direkten Öffnen der HTML-Dateien im Browser.
 - `assets/js/contact.js`: gemeinsames Beratungsformular mit Validierung und Versand.
 - `scripts/build-insights.py`: erzeugt statische Karten, Artikel-Metadaten, JSON-LD und Sitemap.
 - `scripts/check-site.py`: prüft Links, Daten, strukturiertes Markup und lokale Ressourcen.
+- `scripts/prepare-pages.py`: vereinheitlicht interne Navigationslinks im Deployment-Artefakt.
+- `docs/insights-seo-audit.md`: dokumentiert Live-Befunde und Schritte für die Search Console.
 
-Die fünf fertigen Fachartikel behandeln AI-FinOps, Medallion-Architektur, Coding
-Agents, Lakeflow sowie OpenJev / Unity Gateway. Die World Tour ist aus der
+Die sechs fertigen Fachartikel behandeln AI-FinOps, Medallion-Architektur, Coding
+Agents, Lakeflow, OpenJev / Unity Gateway sowie Databricks Genie. Die World Tour ist aus der
 Übersicht und Sitemap herausgenommen. Bestehende Grafikdateien bleiben erhalten.
 
 Die Website ist die zentrale fachliche Quelle. LinkedIn-Posts greifen die
@@ -32,7 +34,7 @@ Kernaussagen auf und verlinken auf den jeweiligen Artikel.
 3. `status: "ready"` bedeutet ausgearbeitet und indexierbar. `draft` markiert
    einen sichtbaren Entwurf mit `noindex`. `published` wird ebenfalls unterstützt.
    `planned` ist eine Themenvorschau ohne Artikel. Beim bisherigen vollständigen
-   Satz sind alle fünf Artikel `ready`.
+   Satz sind alle sechs Artikel `ready`.
 4. `date` steuert das sichtbare Artikeldatum und die Sortierung. `sourceDate`
    hält das dokumentierte Datum des ursprünglichen Beitragsentwurfs fest.
    `updatedAt` nur bei tatsächlicher fachlicher Überarbeitung ändern;
@@ -42,6 +44,8 @@ Kernaussagen auf und verlinken auf den jeweiligen Artikel.
 5. Ein eigenes Social-Vorschaubild unter `ogImage` ablegen (PNG, 1200 × 630).
    Das Artikel-Headerbild verwendet das breite SVG-Format 1440 × 600. Die
    Übersicht hat eine eigene Vorschaugrafik; beide Dateipfade werden zentral gepflegt.
+   Für Genie liegt die bearbeitbare Social-Bildvorlage daneben als
+   `assets/og/databricks-genie.svg`; das PNG ist deren Browser-Export.
 6. Generieren und prüfen:
 
 ```sh
@@ -51,7 +55,8 @@ python3 scripts/check-site.py
 
 Der Generator aktualisiert Überschriften und Einleitungen aus den Metadaten,
 Schätzungen der Lesezeit, Canonicals, Social-Metadaten, Autorenangaben,
-BlogPosting- und BreadcrumbList-JSON-LD sowie verknüpfte Artikel. Er schreibt
+BlogPosting- und BreadcrumbList-JSON-LD sowie verknüpfte Artikel. Die drei neuesten
+indexierbaren Artikel werden zusätzlich direkt auf der Startseite verlinkt. Er schreibt
 alle Übersichtskarten in das HTML; Crawler benötigen dafür kein JavaScript.
 Der Browser verwendet weiterhin denselben zentralen Datensatz.
 
@@ -63,7 +68,7 @@ von Hand einsortiert werden.
 
 ## Datumsverlauf der bestehenden Themen
 
-Die sichtbaren Artikeldaten sind redaktionell von März bis Oktober 2026 verteilt.
+Die sichtbaren Artikeldaten reichen von März bis November 2026.
 `date` steuert diese Zeitachse in Übersicht und Artikelkopf. Dort stehen Autor,
 Lesezeit und ein Datum; ein zusätzliches Aktualisierungsdatum wird nicht angezeigt.
 
@@ -74,21 +79,27 @@ Lesezeit und ein Datum; ein zusätzliches Aktualisierungsdatum wird nicht angeze
 | Medallion-Architektur | 9. Juli 2026 | 30. September 2026 |
 | OpenJev / Unity Gateway | 3. September 2026 | 12. Oktober 2026 |
 | Lakeflow | 27. Oktober 2026 | 30. Oktober 2026 |
+| Databricks Genie | 13. November 2026 | 13. November 2026 |
 
-`sourceDate` stammt aus den ersten dokumentierten Beitragsentwürfen im separaten
-LinkedIn-Repository und wird in JSON-LD unter `isBasedOn` verwendet. Die
-Web-Ausarbeitungen sind vom 4. November 2026; `dateCreated` und `dateModified`
+`sourceDate` stammt bei den ersten fünf Themen aus den dokumentierten
+Beitragsentwürfen im separaten LinkedIn-Repository und wird in JSON-LD unter
+`isBasedOn` verwendet. Der Genie-Artikel wurde am 13. November 2026 direkt für
+die Website ausgearbeitet; dieses Datum gilt auch für seinen Themenentwurf.
+Die ersten fünf Web-Ausarbeitungen sind vom 4. November 2026; `dateCreated` und `dateModified`
 beziehen sich auf die tatsächliche Erstellung und Überarbeitung. Ein bestätigtes
 Erstveröffentlichungsdatum wird separat über `publishedAt` / `datePublished` gepflegt.
 
 ## SEO und KI-Suche
 
 Die Artikel sind indexierbar vorbereitet, enthalten statisches HTML, direkte
-Kurzantworten, klare Überschriften, sichtbare Autoren- und Aktualisierungsangaben,
+Kurzantworten, klare Überschriften, sichtbare Autoren- und Artikeldatumsangaben,
 Primärquellen sowie interne Links. Der Generator hält Metadaten und JSON-LD mit
 dem sichtbaren Inhalt konsistent. `sitemap.xml` nennt nur kanonische Seiten,
 keine Weiterleitungen; `robots.txt` verweist auf die Sitemap und blockiert die
 reguläre Suche nicht. Social-Vorschauen besitzen artikelbezogene PNG-Bilder.
+`lastmod` wird pro Artikel aus seiner tatsächlichen fachlichen Überarbeitung
+ermittelt. Für Seiten ohne gepflegtes Änderungsdatum bleibt es weg. Artikel und
+Insights-Übersicht sind im strukturierten Markup miteinander verbunden.
 
 Der ältere Musterpfad leitet auf AI-FinOps weiter und bleibt `noindex`.
 
@@ -125,5 +136,23 @@ Die `index.html` im Hauptordner direkt öffnen und **Insights** anklicken.
 Optional `python3 -m http.server 8000` starten und `http://localhost:8000/` öffnen.
 
 Der GitHub-Pages-Workflow generiert und prüft die Insights vor dem Jekyll-Build.
+Nach dem Jekyll-Build normalisiert `prepare-pages.py` Links wie
+`insights/ai-finops/index.html` zu `insights/ai-finops/`. Dadurch verwenden
+Navigation, Canonicals und Sitemap auf der veröffentlichten Website dieselbe
+URL-Form. Im Checkout bleiben explizite HTML-Dateipfade für `file://` erhalten.
+Die Übersicht nutzt ihr generiertes HTML direkt; ein JavaScript-Fallback
+erzeugt bei Bedarf online ebenfalls Verzeichnis-URLs.
+
+Das fertige Artefakt wird separat geprüft:
+
+```sh
+python3 scripts/prepare-pages.py _site
+python3 scripts/check-site.py --root _site --public
+```
+
+Die Prüfung erkennt auch nicht erreichbare Artikel, abweichende Sitemap- und
+Canonical-URLs sowie falsche Änderungsdaten. `_config.yml` schließt interne
+Dokumentation, README und Wartungsskripte aus der veröffentlichten Website aus.
+
 Er veröffentlicht bei einem Push auf `main`. Die aktuelle Arbeit liegt lokal
 auf `feature/insights`; das Generieren oder Prüfen führt keine Veröffentlichung aus.

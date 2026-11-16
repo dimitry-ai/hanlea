@@ -2,19 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.hanlea.com/</loc>
-    <lastmod>2026-11-04</lastmod>
   </url>
   <url>
     <loc>https://www.hanlea.com/insights/</loc>
-    <lastmod>2026-11-04</lastmod>
+    <lastmod>2026-11-13</lastmod>
   </url>
   <url>
     <loc>https://www.hanlea.com/impressum.html</loc>
-    <lastmod>2026-11-04</lastmod>
   </url>
   <url>
     <loc>https://www.hanlea.com/datenschutz.html</loc>
-    <lastmod>2026-11-04</lastmod>
+  </url>
+  <url>
+    <loc>https://www.hanlea.com/insights/databricks-genie/</loc>
+    <lastmod>2026-11-13</lastmod>
   </url>
   <url>
     <loc>https://www.hanlea.com/insights/lakeflow-agentic-data-engineering/</loc>

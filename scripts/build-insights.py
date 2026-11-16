@@ -17,8 +17,8 @@ REGISTRY = ROOT / 'assets/js/insights-data.js'
 MONTHS = ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember']
 AVAILABLE = {'ready', 'published', 'draft'}
 
-def load_articles():
-    literal = REGISTRY.read_text().split('window.HANLEA_INSIGHTS = ', 1)[1].strip().removesuffix(';')
+def load_articles(root=ROOT):
+    literal = (root / 'assets/js/insights-data.js').read_text().split('window.HANLEA_INSIGHTS = ', 1)[1].strip().removesuffix(';')
     entries = json.loads(literal)
     ids = [entry['id'] for entry in entries]
     if len(ids) != len(set(ids)):
@@ -27,8 +27,8 @@ def load_articles():
         if entry['status'] in AVAILABLE:
             for key in ['date', 'createdAt', 'updatedAt']:
                 date.fromisoformat(entry[key])
-            path = (ROOT / entry['path']).resolve()
-            if not path.is_relative_to(ROOT) or not path.is_file():
+            path = (root / entry['path']).resolve()
+            if not path.is_relative_to(root) or not path.is_file():
                 raise ValueError(f'Missing or invalid article: {entry["path"]}')
             for key in ['sourceDate', 'publishedAt']:
                 if entry.get(key):
@@ -82,7 +82,9 @@ def article_schema(entry, words):
     work = {
         '@type': 'BlogPosting', '@id': url+'#article', 'url': url,
         'mainEntityOfPage': {'@type': 'WebPage', '@id': url},
+        'isPartOf': {'@type': 'CollectionPage', '@id': ORIGIN+'insights/#webpage', 'url': ORIGIN+'insights/', 'name': 'Hanlea Insights'},
         'headline': entry['title'], 'description': entry['description'],
+        'abstract': entry['lead'],
         'inLanguage': 'de-DE', 'articleSection': entry['category'],
         'image': [ORIGIN+entry['ogImage']],
         'author': {'@type': 'Organization', '@id': ORIGIN+'#organization', 'name': 'Hanlea', 'url': ORIGIN+'#ueber-uns'},
@@ -168,6 +170,16 @@ def card(entry, page, featured=False):
     <div class="insight-topic-footer"><span><time datetime="{entry['date']}">{date_label}</time> · {entry['readingMinutes']} Min.</span><span class="insight-topic-read">Artikel lesen →</span></div>
   </div></a></article>'''
 
+def home_card(entry):
+    id = entry['id']
+    return f'''          <a class="card home-insight-card" href="{escape(entry['path'], quote=True)}" data-home-insight="{id}" aria-labelledby="home-insight-{id}">
+            <span class="section-kicker">{escape(entry['category'])}</span>
+            <h3 id="home-insight-{id}">{escape(entry['title'])}</h3>
+            <p>{escape(entry['summary'])}</p>
+            <span class="home-insight-meta">{display_date(entry)} · {entry['readingMinutes']} Min. Lesezeit</span>
+            <span class="home-insight-read">Artikel lesen <span aria-hidden="true">→</span></span>
+          </a>'''
+
 def build(check=False):
     entries = load_articles()
     output = {}
@@ -189,6 +201,25 @@ def build(check=False):
     header = '/* Central metadata. Edit this JSON-compatible array, then run python3 scripts/build-insights.py.\n   date controls the editorial timeline; sourceDate records the original draft;\n   updatedAt records the actual article revision. */\n'
     output[REGISTRY] = header+'window.HANLEA_INSIGHTS = '+json.dumps(entries, ensure_ascii=False, indent=2)+';\n'
     available = sorted((a for a in entries if a['status'] in AVAILABLE), key=lambda a: (-date.fromisoformat(a['date']).toordinal(), a['id']))
+    indexable = [a for a in available if a['status'] != 'draft']
+    home = ROOT/'index.html'
+    home_text = home.read_text()
+    home_section = '''    <section id="insights" class="section-pad" aria-labelledby="home-insights-title">
+      <div class="container">
+        <div class="section-heading compact">
+          <span class="section-kicker">Insights</span>
+          <h2 id="home-insights-title">Wissen für Ihre Data- und AI-Entscheidungen.</h2>
+          <p>Unsere aktuellen Fachartikel zu Datenplattformen, KI und produktivem Betrieb.</p>
+        </div>
+        <div class="home-insights-grid">
+'''+ '\n'.join(home_card(a) for a in indexable[:3])+'''
+        </div>
+        <a class="btn btn-secondary home-insights-all" href="insights/index.html">Alle Insights ansehen <span aria-hidden="true">→</span></a>
+      </div>
+    </section>'''
+    if '<!-- HOME_INSIGHTS:START -->' not in home_text:
+        home_text = home_text.replace('    <section id="qa"', '<!-- HOME_INSIGHTS:START --><!-- HOME_INSIGHTS:END -->\n\n    <section id="qa"', 1)
+    output[home] = replace_block(home_text, 'HOME_INSIGHTS', home_section)
     page = ROOT/'insights/index.html'
     text = page.read_text()
     if '<!-- INSIGHTS_FEATURE:START -->' not in text:
@@ -204,24 +235,34 @@ def build(check=False):
         text = text[:start]+'\n<!-- INSIGHTS_GRID:START --><!-- INSIGHTS_GRID:END -->\n'+text[closing:]
     text = replace_block(text, 'INSIGHTS_GRID', '\n'.join(card(a, page) for a in available[1:]))
     text = re.sub(r'(<span id="insights-count">).*?(</span>)', lambda m: m[1]+f'{len(entries):02d} Themen · {len(available):02d} Artikel'+m[2], text)
-    collection = {'@context': 'https://schema.org', '@type': 'CollectionPage', 'url': ORIGIN+'insights/', 'name': 'Hanlea Insights', 'inLanguage': 'de-DE', 'mainEntity': {
-      '@type': 'ItemList', 'itemListElement': [{'@type': 'ListItem', 'position': n+1, 'url': canonical(a), 'name': a['title']} for n,a in enumerate(available)]}}
+    collection = {'@context': 'https://schema.org', '@type': 'CollectionPage', '@id': ORIGIN+'insights/#webpage',
+      'url': ORIGIN+'insights/', 'name': 'Hanlea Insights', 'inLanguage': 'de-DE',
+      'description': 'Fachartikel von Hanlea zu Datenplattformen, Enterprise AI, Strategie und Governance.',
+      'isPartOf': {'@type': 'WebSite', '@id': ORIGIN+'#website', 'url': ORIGIN, 'name': 'Hanlea'},
+      'publisher': {'@type': 'Organization', '@id': ORIGIN+'#organization', 'name': 'Hanlea', 'url': ORIGIN},
+      'breadcrumb': {'@type': 'BreadcrumbList', 'itemListElement': [
+        {'@type': 'ListItem', 'position': 1, 'name': 'Startseite', 'item': ORIGIN},
+        {'@type': 'ListItem', 'position': 2, 'name': 'Insights', 'item': ORIGIN+'insights/'}]},
+      'mainEntity': {'@type': 'ItemList', 'numberOfItems': len(indexable),
+        'itemListElement': [{'@type': 'ListItem', 'position': n+1, 'url': canonical(a), 'name': a['title']} for n,a in enumerate(indexable)]}}
     value = '<script type="application/ld+json">\n'+jsonld(collection)+'\n  </script>'
     if '<!-- COLLECTION_SEO:START -->' not in text:
         text = text.replace('</head>', '<!-- COLLECTION_SEO:START --><!-- COLLECTION_SEO:END -->\n</head>', 1)
     text = replace_block(text, 'COLLECTION_SEO', value)
     output[page] = text
 
-    lastmod = max(a['updatedAt'] for a in available)
     ET.register_namespace('', 'http://www.sitemaps.org/schemas/sitemap/0.9')
     ns = '{http://www.sitemaps.org/schemas/sitemap/0.9}'
     sitemap = ET.Element(ns+'urlset')
-    urls = [ORIGIN, ORIGIN+'insights/', ORIGIN+'impressum.html', ORIGIN+'datenschutz.html']
-    urls += [canonical(a) for a in available if a['status'] != 'draft']
-    for url in urls:
+    # Unknown revision dates stay omitted; one new article must not refresh every URL.
+    urls = [(ORIGIN, None), (ORIGIN+'insights/', max((a['updatedAt'] for a in indexable), default=None)),
+            (ORIGIN+'impressum.html', None), (ORIGIN+'datenschutz.html', None)]
+    urls += [(canonical(a), a['updatedAt']) for a in indexable]
+    for url, lastmod in urls:
         item = ET.SubElement(sitemap, ns+'url')
         ET.SubElement(item, ns+'loc').text = url
-        ET.SubElement(item, ns+'lastmod').text = lastmod
+        if lastmod:
+            ET.SubElement(item, ns+'lastmod').text = lastmod
     ET.indent(sitemap, space='  ')
     output[ROOT/'sitemap.xml'] = '<?xml version="1.0" encoding="UTF-8"?>\n'+ET.tostring(sitemap, encoding='unicode')+'\n'
     output[ROOT/'robots.txt'] = 'User-agent: *\nAllow: /\n\nSitemap: '+ORIGIN+'sitemap.xml\n'

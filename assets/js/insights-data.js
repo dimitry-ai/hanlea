@@ -41,7 +41,8 @@ window.HANLEA_INSIGHTS = [
     "category": "Data Platforms",
     "related": [
       "lakeflow",
-      "openjev"
+      "openjev",
+      "databricks-genie"
     ],
     "status": "ready",
     "path": "insights/medallion-architektur/index.html",
@@ -68,7 +69,8 @@ window.HANLEA_INSIGHTS = [
     "category": "Agentic AI",
     "related": [
       "ai-finops",
-      "openjev"
+      "openjev",
+      "databricks-genie"
     ],
     "status": "ready",
     "path": "insights/coding-agents/index.html",
@@ -136,5 +138,33 @@ window.HANLEA_INSIGHTS = [
     "ogImage": "assets/og/openjev.png",
     "readingMinutes": 4,
     "breadcrumbTitle": "OpenJev / Unity Gateway"
+  },
+  {
+    "id": "databricks-genie",
+    "status": "ready",
+    "date": "2026-11-13",
+    "sourceDate": "2026-11-13",
+    "path": "insights/databricks-genie/index.html",
+    "title": "Databricks Genie: Warum autonome KI klare Geschäftsregeln braucht",
+    "seoTitle": "Databricks Genie: Autonome KI & Geschäftsregeln | Hanlea",
+    "description": "Was Databricks Genie und Genie Ontology für Unternehmen verändern: Geschäftsregeln, Datenqualität und Freigaben – mit Umsatzbeispiel und fünf Prüffragen.",
+    "summary": "Wie Daten, Kennzahlen und Freigaben einen verlässlichen Agenten-Workflow ermöglichen – mit einer fiktiven Umsatzanalyse und fünf Fragen für den Einstieg.",
+    "lead": "Drei Dashboards. Drei Definitionen von Umsatz. Und jetzt soll KI damit arbeiten. Mit dem neuen Genie rückt Databricks fortlaufende Aufgaben in den Mittelpunkt. Für Unternehmen stellt sich damit eine konkrete Frage: Auf welcher fachlichen Grundlage darf ein Agent analysieren und handeln?",
+    "category": "Agentic AI",
+    "image": "assets/illustrations/insight-genie.svg",
+    "coverImage": "assets/illustrations/insight-genie-wide.svg",
+    "imageWidth": 960,
+    "imageHeight": 600,
+    "author": "Hanlea",
+    "createdAt": "2026-11-13",
+    "updatedAt": "2026-11-13",
+    "related": [
+      "medallion",
+      "ai-finops",
+      "coding-agents"
+    ],
+    "ogImage": "assets/og/databricks-genie.png",
+    "readingMinutes": 7,
+    "breadcrumbTitle": "Databricks Genie"
   }
 ];
