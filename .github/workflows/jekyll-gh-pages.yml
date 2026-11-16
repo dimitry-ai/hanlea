@@ -39,6 +39,8 @@ jobs:
         with:
           source: ./
           destination: ./_site
+      - name: Fix permissions
+        run: sudo chown -R "$(id -u):$(id -g)" _site
       - name: Prepare canonical navigation URLs
         run: python3 scripts/prepare-pages.py _site
       - name: Validate deployment artifact
