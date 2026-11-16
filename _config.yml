@@ -1,6 +1,8 @@
+
 url: "https://www.hanlea.com"
 baseurl: ""
 exclude:
   - README.md
   - scripts
   - docs
+  - assets/logos/tech/SOURCES.md
